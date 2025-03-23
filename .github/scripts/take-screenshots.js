@@ -65,15 +65,17 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get PR number from environment
-        const prNumber = process.env.PR_NUMBER;
-        console.log('PR number:', prNumber);
+        // Get PR SHA values from environment
+        const baseSha = process.env.PR_BASE_SHA;
+        const headSha = process.env.PR_HEAD_SHA;
+        console.log('Base SHA:', baseSha);
+        console.log('Head SHA:', headSha);
         
-        // Get added files in PR
+        // Get changed files in PR
         let changedFiles;
         try {
-            // Get files changed in PR compared to main
-            const command = 'git diff --name-only origin/main...HEAD';
+            // Get files changed between base and head SHA
+            const command = `git diff --name-only ${baseSha} ${headSha}`;
             console.log('Running command:', command);
             const output = execSync(command, { encoding: 'utf8' }).trim();
             changedFiles = output
@@ -82,7 +84,12 @@ async function processChangedGames() {
             console.log('Files in PR:', changedFiles);
         } catch (error) {
             console.error('Error getting PR files:', error);
-            process.exit(1);
+            // Try fallback to find all game.json files
+            console.log('Trying fallback to find all game.json files...');
+            const findCommand = 'find . -name "game.json" -not -path "*/node_modules/*"';
+            const findOutput = execSync(findCommand, { encoding: 'utf8' }).trim();
+            changedFiles = findOutput.split('\n').filter(Boolean);
+            console.log('Found files:', changedFiles);
         }
 
         if (!changedFiles?.length) {

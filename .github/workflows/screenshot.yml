@@ -40,7 +40,9 @@ jobs:
           node-version: '20.19.0'
 
       - name: Install Dependencies
-        run: npm install puppeteer
+        run: |
+          npm install puppeteer
+          npm install sharp
 
       - name: Create Screenshots Directory
         run: mkdir -p screenshots
@@ -53,7 +55,9 @@ jobs:
       - name: Generate Screenshots
         run: |
           set -x
-          ALL_CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}" node .github/scripts/take-screenshots.js
+          echo "Changed files to process: ${{ steps.changed-files.outputs.all_changed_files }}"
+          export ALL_CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
+          node .github/scripts/take-screenshots.js
           set +x
 
       - name: Add and Commit Screenshots

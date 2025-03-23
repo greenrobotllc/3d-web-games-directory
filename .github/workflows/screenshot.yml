@@ -1,51 +1,48 @@
-name: Generate Screenshots
+name: Game Screenshot Generator
 
 on:
-  push:
-    paths:
-      - '**/game.json'
   pull_request:
     paths:
-      - '**/game.json'
+      - 'games/*/game.json'
 
 jobs:
   screenshot:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 2
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
-    - name: Get changed files
-      id: changed_files
-      uses: jitterbit/get-changed-files@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '16'
+      - name: Install dependencies
+        run: |
+          npm install puppeteer sharp
 
-    - name: Install dependencies
-      run: |
-        npm install puppeteer sharp
+      - name: Fetch changed files
+        id: changed_files
+        run: |
+          echo "CHANGED_FILES=$(jq -r '.pull_request.changed_files | join(\" \")' $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
 
-    - name: Debug changed files
-      run: |
-        echo "All changed files: ${{ steps.changed_files.outputs.all }}"
-        echo "Added files: ${{ steps.changed_files.outputs.added }}"
-        echo "Modified files: ${{ steps.changed_files.outputs.modified }}"
+      - name: Generate Screenshots
+        run: |
+          node .github/scripts/take-screenshots.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED_FILES: ${{ env.CHANGED_FILES }}
 
-    - name: Generate Screenshots
-      env:
-        CHANGED_FILES: ${{ steps.changed_files.outputs.all }}
-      run: node .github/scripts/take-screenshots.js
-
-    - name: Commit changes
-      if: steps.changed_files.outputs.all != ''
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "Update game screenshots and game.json files"
+      - name: Commit screenshots
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add games/*/images/*.jpg
+          git commit -m "Add game screenshots [skip ci]" || echo "No changes to commit"
+          git push

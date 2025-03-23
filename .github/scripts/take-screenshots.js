@@ -29,7 +29,7 @@ async function takeScreenshot(url, outputPath) {
         });
 
         // Wait additional time for any animations/loading
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await page.waitForTimeout(2000);
 
         // Take screenshot
         await page.screenshot({
@@ -60,78 +60,58 @@ async function takeScreenshot(url, outputPath) {
 }
 
 async function processChangedGames() {
-    try {
-        // Debug current directory
-        console.log('Current working directory:', process.cwd());
-        
-        // Get changed files from environment
-        const changedFilesStr = process.env.CHANGED_FILES;
-        console.log('Changed files from environment:', changedFilesStr);
-        
-        if (!changedFilesStr) {
-            console.error('No CHANGED_FILES environment variable found');
-            process.exit(1);
+    // Get list of changed files from environment variable
+    const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
+
+    if (changedFiles.length === 0) {
+        console.log('No changed files found in PR');
+        return;
+    }
+
+    // Process each changed game.json
+    for (const file of changedFiles) {
+        if (!file.endsWith('game.json')) continue;
+
+        const gameDir = path.dirname(file);
+        const gameJson = JSON.parse(
+            await fs.readFile(file, 'utf8')
+        );
+
+        if (!gameJson.url) {
+            console.log(`No URL found in ${file}, skipping`);
+            continue;
         }
 
-        // Split and filter for game.json files
-        const changedFiles = changedFilesStr.split(' ').filter(f => f && f.endsWith('game.json'));
-        console.log('Found changed game.json files:', changedFiles);
+        // Create images directory if it doesn't exist
+        const imagesDir = path.join(gameDir, 'images');
+        await fs.mkdir(imagesDir, { recursive: true });
 
-        if (!changedFiles?.length) {
-            console.log('No game.json files found in changes');
-            return;
-        }
+        // Generate timestamp for the filename
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const screenshotPath = path.join(
+            imagesDir, 
+            `screenshot-${timestamp}.jpg`
+        );
 
-        // Process each game.json
-        for (const filename of changedFiles) {
-            console.log(`Processing file: ${filename}`);
-            const gameDir = path.dirname(filename);
-            console.log(`Game directory: ${gameDir}`);
-            
-            const fileContent = await fs.readFile(filename, 'utf8');
-            console.log(`File content length: ${fileContent.length}`);
-            
-            const gameJson = JSON.parse(fileContent);
+        // Take screenshot
+        await takeScreenshot(gameJson.url, screenshotPath);
 
-            if (!gameJson.url) {
-                console.log(`No URL found in ${filename}, skipping`);
-                continue;
-            }
+        // Update game.json with new screenshot
+        gameJson.cover_image = {
+            type: "github",
+            path: `images/screenshot-${timestamp}.jpg`
+        };
+        gameJson.thumbnail = {
+            type: "auto"
+        };
 
-            // Create images directory if it doesn't exist
-            const imagesDir = path.join(gameDir, 'images');
-            await fs.mkdir(imagesDir, { recursive: true });
+        // Write updated game.json
+        await fs.writeFile(
+            file,
+            JSON.stringify(gameJson, null, 2)
+        );
 
-            // Generate timestamp for the filename
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const screenshotPath = path.join(
-                imagesDir, 
-                `screenshot-${timestamp}.jpg`
-            );
-
-            // Take screenshot
-            await takeScreenshot(gameJson.url, screenshotPath);
-
-            // Update game.json with new screenshot
-            gameJson.cover_image = {
-                type: "github",
-                path: `images/screenshot-${timestamp}.jpg`
-            };
-            gameJson.thumbnail = {
-                type: "auto"
-            };
-
-            // Write updated game.json
-            await fs.writeFile(
-                filename,
-                JSON.stringify(gameJson, null, 2)
-            );
-
-            console.log(`Successfully processed ${gameJson.title}`);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        process.exit(1);
+        console.log(`Successfully processed ${gameJson.title}`);
     }
 }
 
@@ -139,4 +119,4 @@ async function processChangedGames() {
 processChangedGames().catch(error => {
     console.error('Error:', error);
     process.exit(1);
-}); 
+});

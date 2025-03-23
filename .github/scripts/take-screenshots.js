@@ -60,60 +60,75 @@ async function takeScreenshot(url, outputPath) {
 }
 
 async function processChangedGames() {
-    // Get list of changed files from git
-    const gitDiff = process.env.GITHUB_EVENT_PATH 
-        ? JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'))
-        : null;
+    try {
+        // Get list of changed files from git
+        const gitDiff = process.env.GITHUB_EVENT_PATH 
+            ? JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'))
+            : null;
 
-    if (!gitDiff?.pull_request?.changed_files) {
-        console.log('No changed files found in PR');
-        return;
-    }
-
-    // Process each changed game.json
-    for (const file of gitDiff.pull_request.changed_files) {
-        if (!file.filename.endsWith('game.json')) continue;
-
-        const gameDir = path.dirname(file.filename);
-        const gameJson = JSON.parse(
-            await fs.readFile(file.filename, 'utf8')
-        );
-
-        if (!gameJson.url) {
-            console.log(`No URL found in ${file.filename}, skipping`);
-            continue;
+        if (!gitDiff) {
+            console.log('No GITHUB_EVENT_PATH found');
+            return;
         }
 
-        // Create images directory if it doesn't exist
-        const imagesDir = path.join(gameDir, 'images');
-        await fs.mkdir(imagesDir, { recursive: true });
+        console.log('GitHub Event:', JSON.stringify(gitDiff, null, 2));
 
-        // Generate timestamp for the filename
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const screenshotPath = path.join(
-            imagesDir, 
-            `screenshot-${timestamp}.jpg`
-        );
+        // Get changed files from the pull request
+        const changedFiles = gitDiff.pull_request?.files || [];
+        
+        if (!changedFiles.length) {
+            console.log('No changed files found in PR');
+            return;
+        }
 
-        // Take screenshot
-        await takeScreenshot(gameJson.url, screenshotPath);
+        // Process each changed game.json
+        for (const file of changedFiles) {
+            if (!file.filename.endsWith('game.json')) continue;
 
-        // Update game.json with new screenshot
-        gameJson.cover_image = {
-            type: "github",
-            path: `images/screenshot-${timestamp}.jpg`
-        };
-        gameJson.thumbnail = {
-            type: "auto"
-        };
+            const gameDir = path.dirname(file.filename);
+            const gameJson = JSON.parse(
+                await fs.readFile(file.filename, 'utf8')
+            );
 
-        // Write updated game.json
-        await fs.writeFile(
-            file.filename,
-            JSON.stringify(gameJson, null, 2)
-        );
+            if (!gameJson.url) {
+                console.log(`No URL found in ${file.filename}, skipping`);
+                continue;
+            }
 
-        console.log(`Successfully processed ${gameJson.title}`);
+            // Create images directory if it doesn't exist
+            const imagesDir = path.join(gameDir, 'images');
+            await fs.mkdir(imagesDir, { recursive: true });
+
+            // Generate timestamp for the filename
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            const screenshotPath = path.join(
+                imagesDir, 
+                `screenshot-${timestamp}.jpg`
+            );
+
+            // Take screenshot
+            await takeScreenshot(gameJson.url, screenshotPath);
+
+            // Update game.json with new screenshot
+            gameJson.cover_image = {
+                type: "github",
+                path: `images/screenshot-${timestamp}.jpg`
+            };
+            gameJson.thumbnail = {
+                type: "auto"
+            };
+
+            // Write updated game.json
+            await fs.writeFile(
+                file.filename,
+                JSON.stringify(gameJson, null, 2)
+            );
+
+            console.log(`Successfully processed ${gameJson.title}`);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        process.exit(1);
     }
 }
 

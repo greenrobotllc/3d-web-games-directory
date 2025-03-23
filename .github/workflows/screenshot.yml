@@ -16,7 +16,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        fetch-depth: 2 # Important for git diff
+        fetch-depth: 2
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -25,6 +25,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install puppeteer sharp
+
+    - name: Debug git diff
+      run: |
+        if [[ $GITHUB_EVENT_NAME == "pull_request" ]]; then
+          git diff origin/${{ github.event.pull_request.base.ref }}
+        else
+          git diff HEAD~1
+        fi
 
     - name: Get changed game.json files
       id: changed-files
@@ -36,6 +44,7 @@ jobs:
         fi
         echo "CHANGED_FILES=$changed_files" >> $GITHUB_ENV
         echo "Changed files: $changed_files" # debug
+
     - name: Take screenshots
       run: node .github/scripts/take-screenshots.js
 

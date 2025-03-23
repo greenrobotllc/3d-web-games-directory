@@ -40,6 +40,8 @@ jobs:
         echo "Modified files: ${{ steps.changed_files.outputs.modified }}"
 
     - name: Generate Screenshots
+      env:
+        CHANGED_FILES_JSON: ${{ toJSON(steps.changed_files.outputs) }}
       run: node .github/scripts/take-screenshots.js
 
     - name: Commit changes

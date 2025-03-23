@@ -64,19 +64,27 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Read jitterbit output file
-        const outputPath = process.env.GITHUB_OUTPUT || '';
-        console.log('Reading changed files from:', outputPath);
+        // Get changed files from environment JSON
+        const changedFilesJson = process.env.CHANGED_FILES_JSON;
+        console.log('Changed files JSON:', changedFilesJson);
         
-        let changedFiles = [];
-        if (outputPath) {
-            const output = await fs.readFile(outputPath, 'utf8');
-            const allFilesMatch = output.match(/^all=(.*)$/m);
-            if (allFilesMatch) {
-                changedFiles = allFilesMatch[1].split(' ').filter(f => f.endsWith('game.json'));
-            }
+        if (!changedFilesJson) {
+            console.error('No CHANGED_FILES_JSON environment variable found');
+            process.exit(1);
         }
+
+        // Parse the JSON and get all changed files
+        const changedFilesData = JSON.parse(changedFilesJson);
+        console.log('Parsed changed files data:', changedFilesData);
         
+        // Combine all types of changes and filter for game.json
+        const allFiles = [
+            ...(changedFilesData.all?.split(' ') || []),
+            ...(changedFilesData.added?.split(' ') || []),
+            ...(changedFilesData.modified?.split(' ') || [])
+        ];
+        
+        const changedFiles = [...new Set(allFiles)].filter(f => f && f.endsWith('game.json'));
         console.log('Found changed game.json files:', changedFiles);
 
         if (!changedFiles?.length) {

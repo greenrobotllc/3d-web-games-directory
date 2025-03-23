@@ -16,8 +16,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          
+      - name: Fetch PR
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream
+          git checkout -b pr-branch
+          git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-changes
+          git merge pr-changes
           
       - name: Setup Git
         run: |
@@ -37,24 +43,21 @@ jobs:
       - name: Debug Git Info
         run: |
           echo "PR Number: ${{ github.event.pull_request.number }}"
-          echo "Current branch: $(git branch --show-current)"
-          echo "Remote URL: $(git remote get-url origin)"
+          echo "Base SHA: ${{ github.event.pull_request.base.sha }}"
+          echo "Head SHA: ${{ github.event.pull_request.head.sha }}"
           echo "Changed files:"
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+          git diff --name-only origin/main HEAD
           
       - name: Generate Screenshots
         run: node .github/scripts/take-screenshots.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           
       - name: Commit Screenshots
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             git add .
             git commit -m "Add screenshots for updated games"
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-            git push origin HEAD
-          fi
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.head_ref }}
 

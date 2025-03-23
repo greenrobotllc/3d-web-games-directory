@@ -65,31 +65,40 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get PR SHA values from environment
-        const baseSha = process.env.PR_BASE_SHA;
-        const headSha = process.env.PR_HEAD_SHA;
-        console.log('Base SHA:', baseSha);
-        console.log('Head SHA:', headSha);
+        // Get PR number from environment
+        const prNumber = process.env.PR_NUMBER;
+        console.log('PR number:', prNumber);
         
         // Get changed files in PR
         let changedFiles;
         try {
-            // Get files changed between base and head SHA
-            const command = `git diff --name-only ${baseSha} ${headSha}`;
+            // Get files changed in PR compared to main
+            const command = 'git diff --name-only origin/main HEAD';
             console.log('Running command:', command);
             const output = execSync(command, { encoding: 'utf8' }).trim();
             changedFiles = output
                 .split('\n')
                 .filter(file => file && file.endsWith('game.json'));
             console.log('Files in PR:', changedFiles);
+
+            if (!changedFiles.length) {
+                // Try alternative command
+                const altCommand = 'git diff --name-only HEAD^';
+                console.log('Trying alternative command:', altCommand);
+                const altOutput = execSync(altCommand, { encoding: 'utf8' }).trim();
+                changedFiles = altOutput
+                    .split('\n')
+                    .filter(file => file && file.endsWith('game.json'));
+                console.log('Files from alternative command:', changedFiles);
+            }
         } catch (error) {
             console.error('Error getting PR files:', error);
-            // Try fallback to find all game.json files
-            console.log('Trying fallback to find all game.json files...');
-            const findCommand = 'find . -name "game.json" -not -path "*/node_modules/*"';
+            // Try fallback to find recently modified game.json files
+            console.log('Trying fallback to find recently modified game.json files...');
+            const findCommand = 'find . -name "game.json" -not -path "*/node_modules/*" -type f -mmin -10';
             const findOutput = execSync(findCommand, { encoding: 'utf8' }).trim();
             changedFiles = findOutput.split('\n').filter(Boolean);
-            console.log('Found files:', changedFiles);
+            console.log('Found recently modified files:', changedFiles);
         }
 
         if (!changedFiles?.length) {

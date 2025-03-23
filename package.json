@@ -1,0 +1,13 @@
+{
+  "name": "3d-web-games-directory",
+  "version": "1.0.0",
+  "description": "3D Web Games Directory",
+  "type": "module",
+  "scripts": {
+    "test": "node test-screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.8.2",
+    "sharp": "^0.33.0"
+  }
+} 

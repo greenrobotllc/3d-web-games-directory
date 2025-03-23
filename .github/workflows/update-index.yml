@@ -1,0 +1,47 @@
+name: Update Game Index
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  update-index:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: imagick
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libmagickwand-dev
+        pecl install imagick
+        docker-php-ext-enable imagick
+        
+    - name: Validate games
+      run: php scripts/validate_games.php
+      
+    - name: Generate index
+      run: php scripts/generate_index.php
+      
+    - name: Generate categories
+      run: php scripts/generate_categories.php
+      
+    - name: Generate atlas
+      run: php scripts/generate_atlas.php
+      
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add index.json categories/ static/images/game-atlas.png
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update game index, categories, and atlas" && git push) 

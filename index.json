@@ -1,0 +1,22 @@
+{
+    "categories": [
+        {
+            "name": "FPS",
+            "slug": "fps.md",
+            "game_count": 1,
+            "games": [
+                "3d-tank-battle"
+            ]
+        }
+    ],
+    "games": [
+        {
+            "id": "3d-tank-battle",
+            "title": "3D Tank Battle",
+            "description": "An intense multiplayer tank battle game in 3D. Battle against other players in real-time tank combat with realistic physics and explosive action.",
+            "url": "https:\/\/3dtankbattle.com",
+            "category": "FPS",
+            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-22T23-50-46-275Z.jpg"
+        }
+    ]
+}

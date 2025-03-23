@@ -8,12 +8,21 @@ on:
 jobs:
   screenshot:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 2
+        fetch-depth: 0
+
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v41
+      with:
+        files: |
+          **/game.json
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -21,26 +30,21 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
-
-    - name: Get changed files
-      id: changed-files
       run: |
-        echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'game.json' | tr '\n' ' ')" >> $GITHUB_ENV
+        npm install puppeteer sharp
 
     - name: Debug Info
       run: |
-        echo "Changed game.json files: ${{ env.CHANGED_FILES }}"
-        echo "Before SHA: ${{ github.event.before }}"
-        echo "After SHA: ${{ github.sha }}"
+        echo "Changed game.json files: ${{ steps.changed-files.outputs.all_changed_files }}"
+        echo "Number of changed files: ${{ steps.changed-files.outputs.all_changed_files_count }}"
 
     - name: Generate Screenshots
       run: node .github/scripts/take-screenshots.js
       env:
-        CHANGED_FILES: ${{ env.CHANGED_FILES }}
+        CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
 
     - name: Commit changes
-      if: env.CHANGED_FILES != ''
+      if: steps.changed-files.outputs.all_changed_files_count > 0
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"

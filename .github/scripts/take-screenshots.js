@@ -65,44 +65,24 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get PR number from environment
-        const prNumber = process.env.PR_NUMBER;
-        console.log('PR number:', prNumber);
-        
         // Get changed files in PR
         let changedFiles;
         try {
-            // Get files changed in PR compared to main
-            const command = 'git diff --name-only origin/main HEAD';
+            // Get files changed between previous and current commit
+            const command = 'git diff --name-only HEAD^1 HEAD';
             console.log('Running command:', command);
             const output = execSync(command, { encoding: 'utf8' }).trim();
             changedFiles = output
                 .split('\n')
                 .filter(file => file && file.endsWith('game.json'));
-            console.log('Files in PR:', changedFiles);
-
-            if (!changedFiles.length) {
-                // Try alternative command
-                const altCommand = 'git diff --name-only HEAD^';
-                console.log('Trying alternative command:', altCommand);
-                const altOutput = execSync(altCommand, { encoding: 'utf8' }).trim();
-                changedFiles = altOutput
-                    .split('\n')
-                    .filter(file => file && file.endsWith('game.json'));
-                console.log('Files from alternative command:', changedFiles);
-            }
+            console.log('Changed files:', changedFiles);
         } catch (error) {
-            console.error('Error getting PR files:', error);
-            // Try fallback to find recently modified game.json files
-            console.log('Trying fallback to find recently modified game.json files...');
-            const findCommand = 'find . -name "game.json" -not -path "*/node_modules/*" -type f -mmin -10';
-            const findOutput = execSync(findCommand, { encoding: 'utf8' }).trim();
-            changedFiles = findOutput.split('\n').filter(Boolean);
-            console.log('Found recently modified files:', changedFiles);
+            console.error('Error getting changed files:', error);
+            process.exit(1);
         }
 
         if (!changedFiles?.length) {
-            console.log('No game.json files found in PR');
+            console.log('No game.json files found in changes');
             return;
         }
 

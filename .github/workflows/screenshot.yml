@@ -15,20 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          
-      - name: Fetch PR
-        run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream
-          git checkout -b pr-branch
-          git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-changes
-          git merge pr-changes
-          
-      - name: Setup Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fetch-depth: 2
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -42,17 +29,18 @@ jobs:
           
       - name: Debug Git Info
         run: |
-          echo "PR Number: ${{ github.event.pull_request.number }}"
-          echo "Base SHA: ${{ github.event.pull_request.base.sha }}"
-          echo "Head SHA: ${{ github.event.pull_request.head.sha }}"
           echo "Changed files:"
-          git diff --name-only origin/main HEAD
+          git diff --name-only HEAD^1 HEAD
           
       - name: Generate Screenshots
         run: node .github/scripts/take-screenshots.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
       - name: Commit Screenshots
         run: |

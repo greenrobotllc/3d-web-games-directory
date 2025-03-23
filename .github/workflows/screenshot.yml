@@ -1,48 +1,43 @@
-name: Take Screenshots
+name: Generate Screenshots
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - '**/game.json'
 
 jobs:
-  take_screenshots:
+  screenshot:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-    - name: Checkout code
+    - name: Check out repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: '16'
 
     - name: Install dependencies
-      run: npm install puppeteer sharp
+      run: |
+        npm install puppeteer sharp
 
-    - name: Get changed files (explicit)
+    - name: Get changed files
       id: changed-files
       run: |
-        if [[ $GITHUB_EVENT_NAME == "pull_request" ]]; then
-          # Get files modified in the pull request
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.ref }}...${{ github.sha }} | grep 'game.json' | tr '\n' ' ')
-        else
-          # Get files modified in the last commit
-          CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD | grep 'game.json' | tr '\n' ' ')
-        fi
+        CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD | grep 'game.json' || true)
         echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
-        echo "Changed files: $CHANGED_FILES" # Debug output
+        echo "Changed files: $CHANGED_FILES"
 
-    - name: Take screenshots
+    - name: Generate Screenshots
       run: node .github/scripts/take-screenshots.js
 
     - name: Commit changes
+      if: env.CHANGED_FILES != ''
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Update game screenshots and game.json files"

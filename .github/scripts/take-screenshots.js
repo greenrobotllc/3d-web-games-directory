@@ -61,37 +61,36 @@ async function takeScreenshot(url, outputPath) {
 
 async function processChangedGames() {
     try {
-        // Get list of changed files from git
-        const gitDiff = process.env.GITHUB_EVENT_PATH 
-            ? JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'))
-            : null;
-
-        if (!gitDiff) {
-            console.log('No GITHUB_EVENT_PATH found');
-            return;
-        }
-
-        console.log('GitHub Event:', JSON.stringify(gitDiff, null, 2));
-
-        // Get changed files from the pull request
-        const changedFiles = gitDiff.pull_request?.files || [];
+        // Get list of changed files using git command
+        const execSync = require('child_process').execSync;
         
+        // Get the base branch (usually main)
+        const baseBranch = process.env.GITHUB_BASE_REF || 'main';
+        console.log(`Base branch: ${baseBranch}`);
+        
+        // Get list of changed files between base branch and current branch
+        const changedFiles = execSync(`git diff --name-only origin/${baseBranch}...HEAD`)
+            .toString()
+            .trim()
+            .split('\n')
+            .filter(file => file.endsWith('game.json'));
+
         if (!changedFiles.length) {
-            console.log('No changed files found in PR');
+            console.log('No game.json files changed');
             return;
         }
+
+        console.log('Changed game.json files:', changedFiles);
 
         // Process each changed game.json
-        for (const file of changedFiles) {
-            if (!file.filename.endsWith('game.json')) continue;
-
-            const gameDir = path.dirname(file.filename);
+        for (const filename of changedFiles) {
+            const gameDir = path.dirname(filename);
             const gameJson = JSON.parse(
-                await fs.readFile(file.filename, 'utf8')
+                await fs.readFile(filename, 'utf8')
             );
 
             if (!gameJson.url) {
-                console.log(`No URL found in ${file.filename}, skipping`);
+                console.log(`No URL found in ${filename}, skipping`);
                 continue;
             }
 
@@ -120,7 +119,7 @@ async function processChangedGames() {
 
             // Write updated game.json
             await fs.writeFile(
-                file.filename,
+                filename,
                 JSON.stringify(gameJson, null, 2)
             );
 

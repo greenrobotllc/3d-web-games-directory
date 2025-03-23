@@ -1,42 +1,48 @@
-name: Game Screenshot Generator
+name: Generate Screenshots
 
 on:
   pull_request:
     paths:
-      - 'games/*/game.json'
+      - '**/game.json'
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   screenshot:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
           fetch-depth: 0
-
+          ref: ${{ github.head_ref }}
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
+          
       - name: Install dependencies
         run: |
-          npm install puppeteer sharp
-
-      - name: Generate Screenshots
+          npm ci
+          npm install -g puppeteer sharp
+          
+      - name: Configure Git
         run: |
-          node .github/scripts/take-screenshots.js
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+      - name: Generate Screenshots
+        run: node .github/scripts/take-screenshots.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit screenshots
+          
+      - name: Commit Screenshots
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add games/*/images/*.jpg
-          git commit -m "Add game screenshots [skip ci]" || echo "No changes to commit"
-          git push 
+          if [[ -n $(git status -s) ]]; then
+            git add .
+            git commit -m "Add screenshots for updated games"
+            git push
+          fi
+

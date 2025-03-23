@@ -16,15 +16,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Fetch PR branch
+      - name: Fetch PR changes
         run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream
-          git checkout -b pr-branch
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-branch
+          git checkout pr-branch
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,29 +33,27 @@ jobs:
           npm init -y
           npm install puppeteer sharp
           
+      - name: Debug Git Info
+        run: |
+          echo "Current branch:"
+          git branch --show-current
+          echo "PR Files:"
+          git diff --name-only origin/main...HEAD
+          
       - name: Generate Screenshots
         run: node .github/scripts/take-screenshots.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Debug Info
-        run: |
-          echo "Current branch:"
-          git branch --show-current
-          echo "Changed files:"
-          git diff --name-only HEAD^
-          echo "Git status:"
-          git status
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           
       - name: Commit Screenshots
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [[ -n $(git status --porcelain) ]]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
             git add .
             git commit -m "Add screenshots for updated games"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_HEAD_REF} --force
-          else
-            echo "No changes to commit"
-          fi
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${{ github.head_ref }}
 

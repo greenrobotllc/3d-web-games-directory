@@ -65,30 +65,28 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get PR number and SHA from environment
-        const prNumber = process.env.GITHUB_REF?.split('/')[2] || '';
-        const baseSHA = process.env.GITHUB_BASE_REF || 'main';
+        // Get PR number from environment
+        const prNumber = process.env.PR_NUMBER;
         console.log('PR number:', prNumber);
-        console.log('Base ref:', baseSHA);
         
         // Get added files in PR
         let changedFiles;
         try {
-            // Get only added files from the PR
-            const command = 'git diff --diff-filter=A --name-only HEAD~1';
+            // Get files changed in PR compared to main
+            const command = 'git diff --name-only origin/main...HEAD';
             console.log('Running command:', command);
             const output = execSync(command, { encoding: 'utf8' }).trim();
             changedFiles = output
                 .split('\n')
                 .filter(file => file && file.endsWith('game.json'));
-            console.log('Added files:', changedFiles);
+            console.log('Files in PR:', changedFiles);
         } catch (error) {
-            console.error('Error getting added files:', error);
+            console.error('Error getting PR files:', error);
             process.exit(1);
         }
 
         if (!changedFiles?.length) {
-            console.log('No new game.json files found');
+            console.log('No game.json files found in PR');
             return;
         }
 

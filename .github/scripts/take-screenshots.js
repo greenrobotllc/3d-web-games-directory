@@ -31,7 +31,7 @@ async function takeScreenshot(url, outputPath) {
 
         // Wait additional time for any animations/loading
         console.log('Waiting for page to stabilize...');
-        await page.waitForTimeout(5000);
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         // Take screenshot
         console.log('Taking screenshot...');

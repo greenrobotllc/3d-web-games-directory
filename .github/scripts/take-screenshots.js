@@ -22,16 +22,19 @@ async function takeScreenshot(url, outputPath) {
         const page = await browser.newPage();
         await page.setViewport(MOBILE_VIEWPORT);
         
-        // Navigate with timeout and wait for network idle
+        // Navigate with increased timeout and less strict network idle
+        console.log(`Navigating to ${url}...`);
         await page.goto(url, {
-            waitUntil: ['networkidle0', 'domcontentloaded'],
-            timeout: 30000
+            waitUntil: ['domcontentloaded', 'networkidle2'],
+            timeout: 60000
         });
 
         // Wait additional time for any animations/loading
-        await page.waitForTimeout(2000);
+        console.log('Waiting for page to stabilize...');
+        await page.waitForTimeout(5000);
 
         // Take screenshot
+        console.log('Taking screenshot...');
         await page.screenshot({
             path: outputPath,
             fullPage: false,
@@ -40,6 +43,7 @@ async function takeScreenshot(url, outputPath) {
         });
 
         // Optimize and resize image
+        console.log('Optimizing screenshot...');
         await sharp(outputPath)
             .resize(512, 512, {
                 fit: 'contain',
@@ -50,10 +54,30 @@ async function takeScreenshot(url, outputPath) {
 
         // Replace original with optimized version
         await fs.rename(outputPath + '.tmp', outputPath);
+        console.log('Screenshot completed successfully');
 
     } catch (error) {
         console.error(`Error taking screenshot of ${url}:`, error);
-        throw error;
+        // Try one more time with just domcontentloaded
+        try {
+            console.log('Retrying with minimal wait conditions...');
+            const page = await browser.newPage();
+            await page.setViewport(MOBILE_VIEWPORT);
+            await page.goto(url, {
+                waitUntil: ['domcontentloaded'],
+                timeout: 30000
+            });
+            await page.screenshot({
+                path: outputPath,
+                fullPage: false,
+                type: 'jpeg',
+                quality: 90
+            });
+            console.log('Retry successful');
+        } catch (retryError) {
+            console.error('Retry also failed:', retryError);
+            throw error;
+        }
     } finally {
         await browser.close();
     }

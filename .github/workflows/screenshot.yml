@@ -57,7 +57,10 @@ jobs:
         run: |
           set -x
           pwd
+          echo "Root directory contents:"
           ls -la
+          echo "Games directory contents:"
+          ls -la games/
           echo "Changed files to process: ${{ steps.changed-files.outputs.all_changed_files }}"
           export ALL_CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           node .github/scripts/take-screenshots.js

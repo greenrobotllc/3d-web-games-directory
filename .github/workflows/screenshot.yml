@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - '**/game.json'
+  pull_request:
+    paths:
+      - '**/game.json'
 
 jobs:
   screenshot:
@@ -17,6 +20,10 @@ jobs:
       with:
         fetch-depth: 2
 
+    - name: Get changed files
+      id: changed_files
+      uses: jitterbit/get-changed-files@v1
+
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
@@ -26,19 +33,19 @@ jobs:
       run: |
         npm install puppeteer sharp
 
-    - name: Get changed files
-      id: changed-files
+    - name: Debug changed files
       run: |
-        CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD | grep 'game.json' || true)
-        echo "files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
+        echo "All changed files: ${{ steps.changed_files.outputs.all }}"
+        echo "Added files: ${{ steps.changed_files.outputs.added }}"
+        echo "Modified files: ${{ steps.changed_files.outputs.modified }}"
 
     - name: Generate Screenshots
       env:
-        CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
+        CHANGED_FILES: ${{ steps.changed_files.outputs.all }}
       run: node .github/scripts/take-screenshots.js
 
     - name: Commit changes
-      if: steps.changed-files.outputs.files != ''
+      if: steps.changed_files.outputs.all != ''
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Update game screenshots and game.json files"

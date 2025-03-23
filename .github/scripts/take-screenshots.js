@@ -64,27 +64,17 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get changed files from environment JSON
-        const changedFilesJson = process.env.CHANGED_FILES_JSON;
-        console.log('Changed files JSON:', changedFilesJson);
+        // Get changed files from environment
+        const changedFilesStr = process.env.CHANGED_FILES;
+        console.log('Changed files from environment:', changedFilesStr);
         
-        if (!changedFilesJson) {
-            console.error('No CHANGED_FILES_JSON environment variable found');
+        if (!changedFilesStr) {
+            console.error('No CHANGED_FILES environment variable found');
             process.exit(1);
         }
 
-        // Parse the JSON and get all changed files
-        const changedFilesData = JSON.parse(changedFilesJson);
-        console.log('Parsed changed files data:', changedFilesData);
-        
-        // Combine all types of changes and filter for game.json
-        const allFiles = [
-            ...(changedFilesData.all?.split(' ') || []),
-            ...(changedFilesData.added?.split(' ') || []),
-            ...(changedFilesData.modified?.split(' ') || [])
-        ];
-        
-        const changedFiles = [...new Set(allFiles)].filter(f => f && f.endsWith('game.json'));
+        // Split and filter for game.json files
+        const changedFiles = changedFilesStr.split(' ').filter(f => f && f.endsWith('game.json'));
         console.log('Found changed game.json files:', changedFiles);
 
         if (!changedFiles?.length) {

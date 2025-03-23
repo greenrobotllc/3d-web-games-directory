@@ -41,7 +41,7 @@ jobs:
 
     - name: Generate Screenshots
       env:
-        CHANGED_FILES_JSON: ${{ toJSON(steps.changed_files.outputs) }}
+        CHANGED_FILES: ${{ steps.changed_files.outputs.all }}
       run: node .github/scripts/take-screenshots.js
 
     - name: Commit changes

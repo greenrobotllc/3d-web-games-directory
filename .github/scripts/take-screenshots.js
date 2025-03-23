@@ -62,6 +62,10 @@ async function takeScreenshot(url, outputPath) {
 
 async function processChangedGames() {
     try {
+        // Debug current directory
+        console.log('Current working directory:', process.cwd());
+        console.log('Directory contents:', await fs.readdir('.'));
+
         // Get the base branch (usually main)
         const baseBranch = process.env.GITHUB_BASE_REF || 'main';
         console.log(`Base branch: ${baseBranch}`);
@@ -69,19 +73,25 @@ async function processChangedGames() {
         // Get list of changed files between base branch and current branch
         let changedFiles;
         try {
-            changedFiles = execSync(`git diff --name-only origin/${baseBranch}...HEAD`, { encoding: 'utf8' })
+            // First try to get files from git diff
+            const gitDiffCommand = `git diff --name-only origin/${baseBranch}...HEAD`;
+            console.log('Running git command:', gitDiffCommand);
+            changedFiles = execSync(gitDiffCommand, { encoding: 'utf8' })
                 .trim()
                 .split('\n')
                 .filter(file => file && file.endsWith('game.json'));
+            console.log('Files from git diff:', changedFiles);
         } catch (error) {
             console.log('Error getting changed files:', error);
-            // Fallback to checking all game.json files in the current directory
-            console.log('Falling back to checking current directory...');
-            const allFiles = execSync('git ls-files "*.json"', { encoding: 'utf8' })
+            // Fallback to finding all game.json files
+            console.log('Falling back to find command...');
+            const findCommand = 'find . -name "game.json"';
+            console.log('Running find command:', findCommand);
+            changedFiles = execSync(findCommand, { encoding: 'utf8' })
                 .trim()
                 .split('\n')
-                .filter(file => file && file.endsWith('game.json'));
-            changedFiles = allFiles;
+                .filter(Boolean);
+            console.log('Files from find:', changedFiles);
         }
 
         if (!changedFiles.length) {
@@ -91,12 +101,16 @@ async function processChangedGames() {
 
         console.log('Processing game.json files:', changedFiles);
 
-        // Process each changed game.json
+        // Process each game.json
         for (const filename of changedFiles) {
+            console.log(`Processing file: ${filename}`);
             const gameDir = path.dirname(filename);
-            const gameJson = JSON.parse(
-                await fs.readFile(filename, 'utf8')
-            );
+            console.log(`Game directory: ${gameDir}`);
+            
+            const fileContent = await fs.readFile(filename, 'utf8');
+            console.log(`File content length: ${fileContent.length}`);
+            
+            const gameJson = JSON.parse(fileContent);
 
             if (!gameJson.url) {
                 console.log(`No URL found in ${filename}, skipping`);

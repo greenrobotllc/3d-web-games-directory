@@ -56,6 +56,8 @@ jobs:
       - name: Generate Screenshots
         run: |
           set -x
+          pwd
+          ls -la
           echo "Changed files to process: ${{ steps.changed-files.outputs.all_changed_files }}"
           export ALL_CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
           node .github/scripts/take-screenshots.js

@@ -1,48 +1,35 @@
 name: Game Screenshot Generator
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
-    paths:
-      - 'games/*/game.json'
+    branches:
+      - main
 
 jobs:
-  screenshot:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: |
-          npm install puppeteer sharp
-
-      - name: Fetch changed files
-        id: changed_files
-        run: |
-          echo "CHANGED_FILES=$(jq -r '.pull_request.changed_files | join(\" \")' $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-
-      - name: Generate Screenshots
-        run: |
-          node .github/scripts/take-screenshots.js
+          node-version: '14'
+      - run: npm install
+      - run: npm run build
+      - name: Debug - List Files
+        run: ls -la
+      - name: Debug - List Staged Files
+        run: git status
+      - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CHANGED_FILES: ${{ env.CHANGED_FILES }}
-
-      - name: Commit screenshots
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add games/*/images/*.jpg
-          git commit -m "Add game screenshots [skip ci]" || echo "No changes to commit"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Automated commit by GitHub Actions"
           git push

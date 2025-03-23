@@ -53,7 +53,7 @@ jobs:
       - name: Generate Screenshots
         run: |
           set -x
-          node .github/scripts/take-screenshots.js
+          ALL_CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}" node .github/scripts/take-screenshots.js
           set +x
 
       - name: Add and Commit Screenshots

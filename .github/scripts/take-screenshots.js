@@ -61,7 +61,7 @@ async function takeScreenshot(url, outputPath) {
 
 async function processChangedGames() {
     // Get list of changed files from environment variable
-    const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
+    const changedFiles = process.env.ALL_CHANGED_FILES?.split(' ') || [];
 
     if (changedFiles.length === 0) {
         console.log('No changed files found in PR');

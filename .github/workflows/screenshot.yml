@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 2
 
@@ -26,24 +26,18 @@ jobs:
     - name: Install dependencies
       run: npm install puppeteer sharp
 
-    - name: Debug git diff
-      run: |
-        if [[ $GITHUB_EVENT_NAME == "pull_request" ]]; then
-          git diff origin/${{ github.event.pull_request.base.ref }}
-        else
-          git diff HEAD~1
-        fi
-
-    - name: Get changed game.json files
+    - name: Get changed files (explicit)
       id: changed-files
       run: |
         if [[ $GITHUB_EVENT_NAME == "pull_request" ]]; then
-          changed_files=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} | grep 'game.json' | tr '\n' ' ')
+          # Get files modified in the pull request
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.ref }}...${{ github.sha }} | grep 'game.json' | tr '\n' ' ')
         else
-          changed_files=$(git diff --name-only HEAD~1 | grep 'game.json' | tr '\n' ' ')
+          # Get files modified in the last commit
+          CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD | grep 'game.json' | tr '\n' ' ')
         fi
-        echo "CHANGED_FILES=$changed_files" >> $GITHUB_ENV
-        echo "Changed files: $changed_files" # debug
+        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+        echo "Changed files: $CHANGED_FILES" # Debug output
 
     - name: Take screenshots
       run: node .github/scripts/take-screenshots.js

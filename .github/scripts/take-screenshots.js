@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
+import { execSync } from 'child_process';
 
 const MOBILE_VIEWPORT = {
     width: 390,
@@ -61,26 +62,34 @@ async function takeScreenshot(url, outputPath) {
 
 async function processChangedGames() {
     try {
-        // Get list of changed files using git command
-        const execSync = require('child_process').execSync;
-        
         // Get the base branch (usually main)
         const baseBranch = process.env.GITHUB_BASE_REF || 'main';
         console.log(`Base branch: ${baseBranch}`);
         
         // Get list of changed files between base branch and current branch
-        const changedFiles = execSync(`git diff --name-only origin/${baseBranch}...HEAD`)
-            .toString()
-            .trim()
-            .split('\n')
-            .filter(file => file.endsWith('game.json'));
+        let changedFiles;
+        try {
+            changedFiles = execSync(`git diff --name-only origin/${baseBranch}...HEAD`, { encoding: 'utf8' })
+                .trim()
+                .split('\n')
+                .filter(file => file && file.endsWith('game.json'));
+        } catch (error) {
+            console.log('Error getting changed files:', error);
+            // Fallback to checking all game.json files in the current directory
+            console.log('Falling back to checking current directory...');
+            const allFiles = execSync('git ls-files "*.json"', { encoding: 'utf8' })
+                .trim()
+                .split('\n')
+                .filter(file => file && file.endsWith('game.json'));
+            changedFiles = allFiles;
+        }
 
         if (!changedFiles.length) {
-            console.log('No game.json files changed');
+            console.log('No game.json files found');
             return;
         }
 
-        console.log('Changed game.json files:', changedFiles);
+        console.log('Processing game.json files:', changedFiles);
 
         // Process each changed game.json
         for (const filename of changedFiles) {

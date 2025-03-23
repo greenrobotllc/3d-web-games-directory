@@ -30,7 +30,7 @@ async function takeScreenshot(url, outputPath) {
         });
 
         // Wait additional time for any animations/loading
-        await page.waitForTimeout(2000);
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
         // Take screenshot
         await page.screenshot({
@@ -64,44 +64,33 @@ async function processChangedGames() {
     try {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
-        console.log('Directory contents:', await fs.readdir('.'));
-
-        // Get list of changed files
+        
+        // Get PR number and SHA from environment
+        const prNumber = process.env.GITHUB_REF?.split('/')[2] || '';
+        const baseSHA = process.env.GITHUB_BASE_REF || 'main';
+        console.log('PR number:', prNumber);
+        console.log('Base ref:', baseSHA);
+        
+        // Get added files in PR
         let changedFiles;
         try {
-            // Try different git commands to find changed files
-            const commands = [
-                'git diff --name-only HEAD^',
-                'git diff --name-only HEAD~1',
-                'git show --name-only',
-                'find . -name "game.json"'
-            ];
-
-            for (const command of commands) {
-                console.log(`Trying command: ${command}`);
-                try {
-                    const output = execSync(command, { encoding: 'utf8' }).trim();
-                    const files = output.split('\n').filter(file => file && file.endsWith('game.json'));
-                    if (files.length > 0) {
-                        console.log(`Found files using '${command}':`, files);
-                        changedFiles = files;
-                        break;
-                    }
-                } catch (e) {
-                    console.log(`Command '${command}' failed:`, e.message);
-                }
-            }
+            // Get only added files from the PR
+            const command = 'git diff --diff-filter=A --name-only HEAD~1';
+            console.log('Running command:', command);
+            const output = execSync(command, { encoding: 'utf8' }).trim();
+            changedFiles = output
+                .split('\n')
+                .filter(file => file && file.endsWith('game.json'));
+            console.log('Added files:', changedFiles);
         } catch (error) {
-            console.error('Error finding changed files:', error);
+            console.error('Error getting added files:', error);
             process.exit(1);
         }
 
         if (!changedFiles?.length) {
-            console.log('No game.json files found');
+            console.log('No new game.json files found');
             return;
         }
-
-        console.log('Processing game.json files:', changedFiles);
 
         // Process each game.json
         for (const filename of changedFiles) {

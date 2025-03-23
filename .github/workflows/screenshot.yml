@@ -1,59 +1,50 @@
 name: Generate Screenshots
 
 on:
-  pull_request:
+  push:
     paths:
       - '**/game.json'
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   screenshot:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-          
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v46
-        with:
-          files: |
-            **/game.json
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          
-      - name: Install dependencies
-        run: |
-          npm init -y
-          npm install puppeteer sharp
-          
-      - name: Debug Git Info
-        run: |
-          echo "Changed game.json files:"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
-          
-      - name: Generate Screenshots
-        run: node .github/scripts/take-screenshots.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-          
-      - name: Setup Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-      - name: Commit Screenshots
-        run: |
-          if [[ -n $(git status --porcelain) ]]; then
-            git add .
-            git commit -m "Add screenshots for updated games"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.head_ref }}
+    - name: Check out repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Get changed files
+      id: changed-files
+      run: |
+        echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'game.json' | tr '\n' ' ')" >> $GITHUB_ENV
+
+    - name: Debug Info
+      run: |
+        echo "Changed game.json files: ${{ env.CHANGED_FILES }}"
+        echo "Before SHA: ${{ github.event.before }}"
+        echo "After SHA: ${{ github.sha }}"
+
+    - name: Generate Screenshots
+      run: node .github/scripts/take-screenshots.js
+      env:
+        CHANGED_FILES: ${{ env.CHANGED_FILES }}
+
+    - name: Commit changes
+      if: env.CHANGED_FILES != ''
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Add screenshots for updated games"
+        git push
 

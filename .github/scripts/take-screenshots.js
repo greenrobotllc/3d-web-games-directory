@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer';
 import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
-import { execSync } from 'child_process';
 
 const MOBILE_VIEWPORT = {
     width: 390,
@@ -65,22 +64,17 @@ async function processChangedGames() {
         // Debug current directory
         console.log('Current working directory:', process.cwd());
         
-        // Get changed files in PR
-        let changedFiles;
-        try {
-            // Get files changed between previous and current commit
-            const command = 'git diff --name-only HEAD^1 HEAD';
-            console.log('Running command:', command);
-            const output = execSync(command, { encoding: 'utf8' }).trim();
-            changedFiles = output
-                .split('\n')
-                .filter(file => file && file.endsWith('game.json'));
-            console.log('Changed files:', changedFiles);
-        } catch (error) {
-            console.error('Error getting changed files:', error);
+        // Get changed files from environment variable
+        const changedFilesStr = process.env.CHANGED_FILES;
+        console.log('Changed files from environment:', changedFilesStr);
+        
+        if (!changedFilesStr) {
+            console.error('No CHANGED_FILES environment variable found');
             process.exit(1);
         }
 
+        const changedFiles = changedFilesStr.split(' ');
+        
         if (!changedFiles?.length) {
             console.log('No game.json files found in changes');
             return;

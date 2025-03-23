@@ -18,13 +18,20 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v39
+        with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
+          sha: ${{ github.event.pull_request.head.sha }}
+
       - name: Verify PR Branch
         run: |
           echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
           echo "Listing files in the repository:"
           ls -al
-          echo "Listing changed files:"
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

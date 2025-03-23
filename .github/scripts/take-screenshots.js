@@ -66,35 +66,37 @@ async function processChangedGames() {
         console.log('Current working directory:', process.cwd());
         console.log('Directory contents:', await fs.readdir('.'));
 
-        // Get the base branch (usually main)
-        const baseBranch = process.env.GITHUB_BASE_REF || 'main';
-        console.log(`Base branch: ${baseBranch}`);
-        
-        // Get list of changed files between base branch and current branch
+        // Get list of changed files
         let changedFiles;
         try {
-            // First try to get files from git diff
-            const gitDiffCommand = `git diff --name-only origin/${baseBranch}...HEAD`;
-            console.log('Running git command:', gitDiffCommand);
-            changedFiles = execSync(gitDiffCommand, { encoding: 'utf8' })
-                .trim()
-                .split('\n')
-                .filter(file => file && file.endsWith('game.json'));
-            console.log('Files from git diff:', changedFiles);
+            // Try different git commands to find changed files
+            const commands = [
+                'git diff --name-only HEAD^',
+                'git diff --name-only HEAD~1',
+                'git show --name-only',
+                'find . -name "game.json"'
+            ];
+
+            for (const command of commands) {
+                console.log(`Trying command: ${command}`);
+                try {
+                    const output = execSync(command, { encoding: 'utf8' }).trim();
+                    const files = output.split('\n').filter(file => file && file.endsWith('game.json'));
+                    if (files.length > 0) {
+                        console.log(`Found files using '${command}':`, files);
+                        changedFiles = files;
+                        break;
+                    }
+                } catch (e) {
+                    console.log(`Command '${command}' failed:`, e.message);
+                }
+            }
         } catch (error) {
-            console.log('Error getting changed files:', error);
-            // Fallback to finding all game.json files
-            console.log('Falling back to find command...');
-            const findCommand = 'find . -name "game.json"';
-            console.log('Running find command:', findCommand);
-            changedFiles = execSync(findCommand, { encoding: 'utf8' })
-                .trim()
-                .split('\n')
-                .filter(Boolean);
-            console.log('Files from find:', changedFiles);
+            console.error('Error finding changed files:', error);
+            process.exit(1);
         }
 
-        if (!changedFiles.length) {
+        if (!changedFiles?.length) {
             console.log('No game.json files found');
             return;
         }

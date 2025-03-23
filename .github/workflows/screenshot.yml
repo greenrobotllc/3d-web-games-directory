@@ -16,8 +16,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.head_ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          
+      - name: Fetch PR branch
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream
+          git checkout -b pr-branch
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,32 +32,33 @@ jobs:
           node-version: '20'
           
       - name: Install dependencies
-        working-directory: 3d-web-games-directory
         run: |
           npm init -y
           npm install puppeteer sharp
           
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
       - name: Generate Screenshots
-        working-directory: 3d-web-games-directory
-        run: node ../.github/scripts/take-screenshots.js
+        run: node .github/scripts/take-screenshots.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Debug Info
         run: |
-          pwd
-          ls -la
+          echo "Current branch:"
+          git branch --show-current
+          echo "Changed files:"
+          git diff --name-only HEAD^
+          echo "Git status:"
           git status
           
       - name: Commit Screenshots
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git add .
-          git diff --staged --quiet || git commit -m "Add screenshots for updated games"
-          git push origin HEAD
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "Add screenshots for updated games"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_HEAD_REF} --force
+          else
+            echo "No changes to commit"
+          fi
 

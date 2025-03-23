@@ -1,9 +1,6 @@
 name: Game Screenshot Generator
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -12,24 +9,51 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout PR Branch
+        uses: actions/checkout@v4
         with:
-          node-version: '14'
-      - run: npm install
-      - run: npm run build
-      - name: Debug - List Files
-        run: ls -la
-      - name: Debug - List Staged Files
-        run: git status
-      - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Verify PR Branch
+        run: |
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+          echo "Listing files in the repository:"
+          ls -al
+          echo "Listing changed files:"
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.0'
+
+      - name: Enable Debug Logging
+        run: |
+          echo "Enabling debug logging"
+          export ACTIONS_STEP_DEBUG=true
+
+      - name: Generate Screenshots
+        run: |
+          set -x
+          node .github/scripts/take-screenshots.js
+          set +x
+
+      - name: Add and Commit Screenshots
+        if: always()
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Automated commit by GitHub Actions"
-          git push
+          git add screenshots/ # Add the directory where screenshots are saved
+          git commit -m "Add screenshots"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Changes
+        if: always()
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -30,14 +30,15 @@ jobs:
       id: changed-files
       run: |
         CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD | grep 'game.json' || true)
-        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
-        echo "Changed files: $CHANGED_FILES"
+        echo "files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
 
     - name: Generate Screenshots
+      env:
+        CHANGED_FILES: ${{ steps.changed-files.outputs.files }}
       run: node .github/scripts/take-screenshots.js
 
     - name: Commit changes
-      if: env.CHANGED_FILES != ''
+      if: steps.changed-files.outputs.files != ''
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Update game screenshots and game.json files"

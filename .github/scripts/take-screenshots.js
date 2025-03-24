@@ -11,6 +11,37 @@ const MOBILE_VIEWPORT = {
     hasTouch: true
 };
 
+const waitTillHTMLRendered = async (page, timeout = 30000) => {
+    const checkDurationMsecs = 1000;
+    const maxChecks = timeout / checkDurationMsecs;
+    let lastHTMLSize = 0;
+    let checkCounts = 1;
+    let countStableSizeIterations = 0;
+    const minStableSizeIterations = 3;
+
+    while(checkCounts++ <= maxChecks){
+        let html = await page.content();
+        let currentHTMLSize = html.length; 
+
+        let bodyHTMLSize = await page.evaluate(() => document.body.innerHTML.length);
+
+        console.log('last: ', lastHTMLSize, ' <> curr: ', currentHTMLSize, " body html size: ", bodyHTMLSize);
+
+        if(lastHTMLSize != 0 && currentHTMLSize == lastHTMLSize) 
+            countStableSizeIterations++;
+        else 
+            countStableSizeIterations = 0; //reset the counter
+
+        if(countStableSizeIterations >= minStableSizeIterations) {
+            console.log("Page rendered fully..");
+            break;
+        }
+
+        lastHTMLSize = currentHTMLSize;
+        await new Promise(resolve => setTimeout(resolve, checkDurationMsecs));
+    }  
+};
+
 async function takeScreenshot(url, outputPath) {
     console.log(`Taking screenshot of ${url}`);
     const browser = await puppeteer.launch({
@@ -22,16 +53,16 @@ async function takeScreenshot(url, outputPath) {
         const page = await browser.newPage();
         await page.setViewport(MOBILE_VIEWPORT);
         
-        // Navigate with increased timeout and less strict network idle
+        // Navigate and wait for initial load
         console.log(`Navigating to ${url}...`);
         await page.goto(url, {
-            waitUntil: ['domcontentloaded', 'networkidle2'],
-            timeout: 60000
+            waitUntil: 'load',
+            timeout: 30000
         });
 
-        // Wait additional time for any animations/loading
-        console.log('Waiting for page to stabilize...');
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        // Wait for the page to be fully rendered
+        console.log('Waiting for page to fully render...');
+        await waitTillHTMLRendered(page);
 
         // Take screenshot
         console.log('Taking screenshot...');
@@ -58,15 +89,17 @@ async function takeScreenshot(url, outputPath) {
 
     } catch (error) {
         console.error(`Error taking screenshot of ${url}:`, error);
-        // Try one more time with just domcontentloaded
+        // Try one more time with minimal wait conditions
         try {
             console.log('Retrying with minimal wait conditions...');
             const page = await browser.newPage();
             await page.setViewport(MOBILE_VIEWPORT);
             await page.goto(url, {
-                waitUntil: ['domcontentloaded'],
+                waitUntil: 'domcontentloaded',
                 timeout: 30000
             });
+            // Still wait for rendering but with shorter timeout
+            await waitTillHTMLRendered(page, 15000);
             await page.screenshot({
                 path: outputPath,
                 fullPage: false,

@@ -14,7 +14,7 @@ const MOBILE_VIEWPORT = {
 async function takeScreenshot(url, outputPath) {
     console.log(`Taking screenshot of ${url}`);
     const browser = await puppeteer.launch({
-        headless: 'new',
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 

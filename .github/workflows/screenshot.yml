@@ -17,7 +17,15 @@ jobs:
       - name: Checkout PR Branch
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout ${{ github.event.pull_request.head.ref }}
 
       - name: Get Changed Files
         id: changed-files
@@ -70,15 +78,13 @@ jobs:
       - name: Add and Commit Screenshots
         if: always()
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add screenshots/
+          git add games/fly.pieter.com/images/
+          git add games/fly.pieter.com/game.json
           git commit -m "Add screenshots" || true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push Changes
         if: always()
-        run: git push
+        run: |
+          git push origin ${{ github.event.pull_request.head.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

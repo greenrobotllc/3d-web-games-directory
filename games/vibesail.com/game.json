@@ -3,5 +3,13 @@
   "url": "https://vibesail.com",
   "description": "A relaxing 3D sailing experience where you navigate through beautiful waters and discover hidden islands. Perfect for unwinding and enjoying the peaceful atmosphere.",
   "how_to_play": "Use WASD or arrow keys to control your sailboat. Adjust the sails to catch the wind and navigate through the waters. On mobile, use the virtual joystick!",
-  "category": "Other"
-} 
+  "category": "Other",
+  "cover_image": {
+    "type": "github",
+    "path": "screenshots/vibesail.com-2025-03-25T02-05-29-811Z.jpg"
+  },
+  "thumbnail": {
+    "type": "github",
+    "path": "images/thumb.jpg"
+  }
+}

@@ -13,6 +13,13 @@
             "games": [
                 "bruno-simon-portfolio"
             ]
+        },
+        {
+            "name": "Simulator",
+            "game_count": 1,
+            "games": [
+                "fly.pieter.com"
+            ]
         }
     ],
     "games": [
@@ -23,7 +30,7 @@
             "url": "https:\/\/3dtankbattle.com",
             "category": "FPS",
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
-            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-25T01-20-33-912Z.jpg",
+            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-25T01-23-00-533Z.jpg",
             "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
         },
         {
@@ -33,8 +40,18 @@
             "url": "https:\/\/bruno-simon.com\/",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
-            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-25T01-20-40-087Z.jpg",
+            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-25T01-23-19-659Z.jpg",
             "thumbnail": "\/games\/bruno-simon-portfolio\/images\/thumb.jpg"
+        },
+        {
+            "id": "fly.pieter.com",
+            "title": "Fly.Pieter.com",
+            "description": "A fun free-to-play MMO flight sim, made with AI. Fly and dogfight with your friends online.",
+            "url": "https:\/\/fly.pieter.com",
+            "category": "Simulator",
+            "how_to_play": "Fly your plane with the controls on your keyboard or using the virtual joystick on mobile",
+            "screenshot": "\/games\/fly.pieter.com\/screenshots\/fly.pieter.com-2025-03-25T01-23-06-724Z.jpg",
+            "thumbnail": "\/games\/fly.pieter.com\/images\/thumb.jpg"
         }
     ]
 }

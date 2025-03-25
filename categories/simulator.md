@@ -1,5 +1,8 @@
 # Simulator Games
 
-_No games in this category yet._
+### [Fly.Pieter.com](https://fly.pieter.com)
 
-Want to add a game? Check out our [contribution guidelines](../README.md#how-to-add-your-game-)!
+<img src="/games/fly.pieter.com/screenshots/fly.pieter.com-2025-03-25T01-23-06-724Z.jpg" width="200" height="200" alt="Fly.Pieter.com screenshot">
+
+A fun free-to-play MMO flight sim, made with AI. Fly and dogfight with your friends online.
+

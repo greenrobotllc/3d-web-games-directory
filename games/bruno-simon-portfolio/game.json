@@ -1,11 +1,15 @@
 {
-  "url": "https://bruno-simon.com/",
   "title": "Bruno Simon Portfolio",
+  "url": "https://bruno-simon.com/",
+  "description": "An interactive 3D portfolio where you drive a car through a playful environment",
+  "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
+  "category": "Other",
   "cover_image": {
     "type": "github",
-    "path": "images/screenshot-2025-03-25T01-00-47-084Z.jpg"
+    "path": "screenshots/bruno-simon-portfolio-2025-03-25T01-11-59-135Z.jpg"
   },
   "thumbnail": {
-    "type": "auto"
+    "type": "github",
+    "path": "images/thumb.jpg"
   }
 }

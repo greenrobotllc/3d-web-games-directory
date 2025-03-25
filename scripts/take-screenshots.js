@@ -130,6 +130,7 @@ async function processChangedGames() {
         if (!file.endsWith('game.json')) continue;
 
         const gameDir = path.dirname(file);
+        const gameName = path.basename(gameDir);
         const gameJson = JSON.parse(
             await fs.readFile(file, 'utf8')
         );
@@ -139,27 +140,42 @@ async function processChangedGames() {
             continue;
         }
 
-        // Create images directory if it doesn't exist
+        // Create screenshots directory if it doesn't exist
+        const screenshotsDir = path.join(gameDir, 'screenshots');
+        await fs.mkdir(screenshotsDir, { recursive: true });
+
+        // Create images directory for thumbnail
         const imagesDir = path.join(gameDir, 'images');
         await fs.mkdir(imagesDir, { recursive: true });
 
         // Generate timestamp for the filename
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const screenshotPath = path.join(
-            imagesDir, 
-            `screenshot-${timestamp}.jpg`
+            screenshotsDir, 
+            `${gameName}-${timestamp}.jpg`
         );
 
         // Take screenshot
         await takeScreenshot(gameJson.url, screenshotPath);
 
+        // Generate thumbnail
+        const thumbPath = path.join(imagesDir, 'thumb.jpg');
+        await sharp(screenshotPath)
+            .resize(200, 200, {
+                fit: 'contain',
+                background: { r: 0, g: 0, b: 0, alpha: 0 }
+            })
+            .jpeg({ quality: 85 })
+            .toFile(thumbPath);
+
         // Update game.json with new screenshot
         gameJson.cover_image = {
             type: "github",
-            path: `images/screenshot-${timestamp}.jpg`
+            path: `screenshots/${path.basename(screenshotPath)}`
         };
         gameJson.thumbnail = {
-            type: "auto"
+            type: "github",
+            path: "images/thumb.jpg"
         };
 
         // Write updated game.json

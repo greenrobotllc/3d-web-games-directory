@@ -48,8 +48,11 @@ To add your game to the directory:
 3. Add a `game.json` file with your game's information:
    ```json
    {
+     "title": "Your Game Title",
      "url": "https://your-game-url.com",
-     "title": "Your Game Title"
+     "description": "A detailed description of your game",
+     "how_to_play": "Instructions on how to play your game (controls, objectives, etc.)",
+     "category": "One of: FPS, Action, Adventure, Racing, Puzzle, Other"
    }
    ```
 
@@ -62,27 +65,29 @@ That's it! Once your PR is submitted, I will:
 
 You don't need to worry about screenshots or thumbnails - these will be generated automatically when processing your PR.
 
-### Game.json Schema
+### Game.json Fields
 
 Required fields:
+- `title`: The name of your game
 - `url`: The URL where your game can be played
-- `title`: The title of your game
+- `description`: A detailed description of your game
+- `how_to_play`: Instructions for playing your game
+- `category`: The game's category (FPS, Action, Adventure, Racing, Puzzle, Other)
 
-Optional fields:
-- `description`: A short description of your game
-- `author`: Your name or organization
-- `tags`: Array of tags describing your game (e.g., ["racing", "multiplayer"])
-
-Example:
+Example game.json:
 ```json
 {
-  "url": "https://your-game-url.com",
-  "title": "Your Amazing Game",
-  "description": "A fantastic 3D web game about...",
-  "author": "Your Name",
-  "tags": ["action", "multiplayer", "webgl"]
+  "title": "Bruno Simon Portfolio",
+  "url": "https://bruno-simon.com/",
+  "description": "An interactive 3D portfolio where you drive a car through a playful environment",
+  "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
+  "category": "Other"
 }
 ```
+
+The following fields will be added automatically:
+- `cover_image`: Screenshot of your game (generated automatically)
+- `thumbnail`: Thumbnail version of the screenshot (generated automatically)
 
 ## View the Games 🎲
 

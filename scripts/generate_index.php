@@ -71,47 +71,6 @@ class IndexGenerator {
         file_put_contents($this->categoriesDir . '/all-games.md', $content);
     }
 
-    private function generateJsonIndex() {
-        $indexData = [
-            'categories' => [],
-            'games' => []
-        ];
-
-        // Add all games with their full data
-        foreach ($this->games as $game) {
-            $gameData = [
-                'id' => $game['id'],
-                'title' => $game['title'],
-                'description' => $game['description'],
-                'url' => $game['url'],
-                'category' => $game['category']
-            ];
-
-            // Add screenshot if available
-            $screenshotPath = $this->getLatestScreenshot($game['id']);
-            if ($screenshotPath) {
-                $gameData['screenshot'] = str_replace(__DIR__ . '/..', '', $screenshotPath);
-            }
-
-            $indexData['games'][] = $gameData;
-        }
-
-        // Add categories with their games
-        foreach ($this->categories as $categoryName => $categoryGames) {
-            $indexData['categories'][] = [
-                'name' => $categoryName,
-                'slug' => $this->getCategoryFilename($categoryName),
-                'game_count' => count($categoryGames),
-                'games' => array_map(function($game) {
-                    return $game['id'];
-                }, $categoryGames)
-            ];
-        }
-
-        // Write the index file
-        file_put_contents(__DIR__ . '/../index.json', json_encode($indexData, JSON_PRETTY_PRINT));
-    }
-
     private function generateCategoryFiles() {
         foreach ($this->categories as $category => $games) {
             $filename = $this->getCategoryFilename($category);
@@ -131,20 +90,64 @@ class IndexGenerator {
         $url = $game['url'];
         $gameId = $game['id'];
         
-        // Get the latest screenshot
-        $screenshotPath = $this->getLatestScreenshot($gameId);
-        
         $content = "### [$title]($url)\n\n";
         
         // Add screenshot if available
+        $screenshotPath = $this->getLatestScreenshot($gameId);
         if ($screenshotPath) {
-            $relativeScreenshotPath = str_replace(__DIR__ . '/..', '', $screenshotPath);
-            $content .= "<img src=\"$relativeScreenshotPath\" width=\"200\" height=\"200\" alt=\"$title screenshot\">\n\n";
+            $content .= "<img src=\"$screenshotPath\" width=\"200\" height=\"200\" alt=\"$title screenshot\">\n\n";
         }
         
         $content .= "$description\n\n";
         
         return $content;
+    }
+
+    private function generateJsonIndex() {
+        $indexData = [
+            'categories' => [],
+            'games' => []
+        ];
+
+        // Add all games with their full data
+        foreach ($this->games as $game) {
+            $gameData = [
+                'id' => $game['id'],
+                'title' => $game['title'],
+                'description' => $game['description'],
+                'url' => $game['url'],
+                'category' => $game['category'],
+                'how_to_play' => $game['how_to_play']
+            ];
+
+            // Add screenshot if available
+            $screenshotPath = $this->getLatestScreenshot($game['id']);
+            if ($screenshotPath) {
+                $gameData['screenshot'] = $screenshotPath;
+            }
+
+            // Add thumbnail
+            $thumbPath = "/games/{$game['id']}/images/thumb.jpg";
+            if (file_exists(__DIR__ . "/.." . $thumbPath)) {
+                $gameData['thumbnail'] = $thumbPath;
+            }
+
+            $indexData['games'][] = $gameData;
+        }
+
+        // Add categories with their games
+        foreach ($this->categories as $categoryName => $categoryGames) {
+            $indexData['categories'][] = [
+                'name' => $categoryName,
+                'game_count' => count($categoryGames),
+                'games' => array_map(function($game) {
+                    return $game['id'];
+                }, $categoryGames)
+            ];
+        }
+
+        // Write the index file
+        file_put_contents(__DIR__ . '/../index.json', json_encode($indexData, JSON_PRETTY_PRINT));
     }
 
     private function getLatestScreenshot($gameId) {
@@ -159,7 +162,8 @@ class IndexGenerator {
         }
 
         // Return the most recent screenshot (last in alphabetical order due to timestamp)
-        return end($screenshots);
+        $latestScreenshot = end($screenshots);
+        return str_replace(__DIR__ . '/..', '', $latestScreenshot);
     }
 
     private function getCategoryFilename($category) {

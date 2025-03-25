@@ -148,6 +148,19 @@ async function processChangedGames() {
         const imagesDir = path.join(gameDir, 'images');
         await fs.mkdir(imagesDir, { recursive: true });
 
+        // Clean up old files
+        console.log('Cleaning up old files...');
+        const oldScreenshots = await fs.readdir(screenshotsDir);
+        for (const file of oldScreenshots) {
+            await fs.unlink(path.join(screenshotsDir, file));
+        }
+        const oldImages = await fs.readdir(imagesDir);
+        for (const file of oldImages) {
+            if (file !== 'thumb.jpg') {
+                await fs.unlink(path.join(imagesDir, file));
+            }
+        }
+
         // Generate timestamp for the filename
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const screenshotPath = path.join(

@@ -2,10 +2,16 @@
     "categories": [
         {
             "name": "FPS",
-            "slug": "fps.md",
             "game_count": 1,
             "games": [
                 "3d-tank-battle"
+            ]
+        },
+        {
+            "name": "Other",
+            "game_count": 1,
+            "games": [
+                "bruno-simon-portfolio"
             ]
         }
     ],
@@ -16,7 +22,19 @@
             "description": "An intense multiplayer tank battle game in 3D. Battle against other players in real-time tank combat with realistic physics and explosive action.",
             "url": "https:\/\/3dtankbattle.com",
             "category": "FPS",
-            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-22T23-50-46-275Z.jpg"
+            "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
+            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-25T01-20-33-912Z.jpg",
+            "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
+        },
+        {
+            "id": "bruno-simon-portfolio",
+            "title": "Bruno Simon Portfolio",
+            "description": "An interactive 3D portfolio where you drive a car through a playful environment",
+            "url": "https:\/\/bruno-simon.com\/",
+            "category": "Other",
+            "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
+            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-25T01-20-40-087Z.jpg",
+            "thumbnail": "\/games\/bruno-simon-portfolio\/images\/thumb.jpg"
         }
     ]
 }

@@ -6,9 +6,10 @@
   "category": "FPS",
   "cover_image": {
     "type": "github",
-    "path": "screenshots/3d-tank-battle-2025-03-22T23-50-46-275Z.jpg"
+    "path": "screenshots/3d-tank-battle-2025-03-25T01-20-33-912Z.jpg"
   },
   "thumbnail": {
-    "type": "auto"
+    "type": "github",
+    "path": "images/thumb.jpg"
   }
 }

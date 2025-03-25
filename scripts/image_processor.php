@@ -1,36 +1,81 @@
 <?php
 
 class ImageProcessor {
-    public function generateThumbnail($sourcePath, $destPath) {
-        $image = new Imagick($sourcePath);
-        
-        // Convert to RGB if needed
-        if ($image->getImageColorspace() == Imagick::COLORSPACE_CMYK) {
-            $image->transformImageColorspace(Imagick::COLORSPACE_SRGB);
+    public function generateThumbnail($sourcePath, $targetPath, $size = 200) {
+        // Load the image
+        $image = $this->loadImage($sourcePath);
+        if (!$image) {
+            throw new Exception("Failed to load image: $sourcePath");
         }
-        
-        // Resize to 256x256 maintaining aspect ratio
-        $image->resizeImage(256, 256, Imagick::FILTER_LANCZOS, 1, true);
-        
-        // Create white background
-        $bg = new Imagick();
-        $bg->newImage(256, 256, new ImagickPixel('white'));
-        
-        // Center the resized image
-        $geometry = $image->getImageGeometry();
-        $x = (256 - $geometry['width']) / 2;
-        $y = (256 - $geometry['height']) / 2;
-        
-        // Composite image onto white background
-        $bg->compositeImage($image, Imagick::COMPOSITE_OVER, $x, $y);
-        
-        // Set quality and save
-        $bg->setImageCompressionQuality(85);
-        $bg->writeImage($destPath);
-        
+
+        // Get original dimensions
+        $width = imagesx($image);
+        $height = imagesy($image);
+
+        // Create square thumbnail
+        $thumb = imagecreatetruecolor($size, $size);
+
+        // Preserve transparency for PNG images
+        imagealphablending($thumb, false);
+        imagesavealpha($thumb, true);
+
+        // Calculate scaling and positioning for center crop
+        $scale = max($size / $width, $size / $height);
+        $scaledWidth = $width * $scale;
+        $scaledHeight = $height * $scale;
+        $x = ($size - $scaledWidth) / 2;
+        $y = ($size - $scaledHeight) / 2;
+
+        // Resize and crop
+        imagecopyresampled(
+            $thumb, $image,
+            $x, $y,
+            0, 0,
+            $scaledWidth, $scaledHeight,
+            $width, $height
+        );
+
+        // Save thumbnail
+        $this->saveImage($thumb, $targetPath);
+
         // Clean up
-        $image->destroy();
-        $bg->destroy();
+        imagedestroy($image);
+        imagedestroy($thumb);
+    }
+
+    private function loadImage($path) {
+        $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        
+        switch ($extension) {
+            case 'jpg':
+            case 'jpeg':
+                return imagecreatefromjpeg($path);
+            case 'png':
+                return imagecreatefrompng($path);
+            case 'gif':
+                return imagecreatefromgif($path);
+            default:
+                throw new Exception("Unsupported image format: $extension");
+        }
+    }
+
+    private function saveImage($image, $path) {
+        $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        
+        switch ($extension) {
+            case 'jpg':
+            case 'jpeg':
+                imagejpeg($image, $path, 90);
+                break;
+            case 'png':
+                imagepng($image, $path, 9);
+                break;
+            case 'gif':
+                imagegif($image, $path);
+                break;
+            default:
+                throw new Exception("Unsupported output format: $extension");
+        }
     }
 
     public function optimizeImage($sourcePath, $destPath = null) {

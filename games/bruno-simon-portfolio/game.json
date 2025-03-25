@@ -1,0 +1,11 @@
+{
+  "url": "https://bruno-simon.com/",
+  "title": "Bruno Simon Portfolio",
+  "cover_image": {
+    "type": "github",
+    "path": "images/screenshot-2025-03-25T01-00-47-084Z.jpg"
+  },
+  "thumbnail": {
+    "type": "auto"
+  }
+}

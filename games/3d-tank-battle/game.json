@@ -4,10 +4,6 @@
   "description": "An intense multiplayer tank battle game in 3D. Battle against other players in real-time tank combat with realistic physics and explosive action.",
   "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
   "category": "FPS",
-  "cover_image": {
-    "type": "github",
-    "path": "images/3d-tank-battle-2025-03-28T18-51-44-331Z.jpg"
-  },
   "thumbnail": "/games/3d-tank-battle/images/thumb.jpg",
-  "screenshot": "/games/3d-tank-battle/screenshots/3d-tank-battle-2025-03-28T18-54-01-728Z.jpg"
+  "screenshot": "/games/3d-tank-battle/screenshots/3d-tank-battle-2025-03-28T18-58-32-338Z.jpg"
 }

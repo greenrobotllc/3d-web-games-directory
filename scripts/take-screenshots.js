@@ -180,7 +180,12 @@ async function takeScreenshot(url, gameId) {
         const gameJsonPath = path.join('games', gameId, 'game.json');
         const gameData = JSON.parse(fs.readFileSync(gameJsonPath, 'utf8'));
         
-        // Use simple paths relative to root
+        // Remove cover_image if it exists
+        if ('cover_image' in gameData) {
+            delete gameData.cover_image;
+        }
+        
+        // Only update screenshot and thumbnail paths
         gameData.screenshot = '/games/' + gameId + '/screenshots/' + path.basename(screenshotPath);
         gameData.thumbnail = '/games/' + gameId + '/images/thumb.jpg';
 

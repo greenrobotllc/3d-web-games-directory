@@ -4,10 +4,6 @@
   "description": "An interactive 3D portfolio where you drive a car through a playful environment",
   "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
   "category": "Other",
-  "cover_image": {
-    "type": "github",
-    "path": "images/bruno-simon-portfolio-2025-03-28T18-52-17-856Z.jpg"
-  },
   "thumbnail": "/games/bruno-simon-portfolio/images/thumb.jpg",
-  "screenshot": "/games/bruno-simon-portfolio/screenshots/bruno-simon-portfolio-2025-03-28T18-54-35-686Z.jpg"
+  "screenshot": "/games/bruno-simon-portfolio/screenshots/bruno-simon-portfolio-2025-03-28T18-59-05-738Z.jpg"
 }

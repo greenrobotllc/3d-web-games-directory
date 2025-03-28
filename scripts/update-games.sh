@@ -7,13 +7,16 @@ set -e
 REPO_PATH=$(pwd)
 MAIN_BRANCH="main"
 GAMES_DIR="games"
+LAST_COMMIT_FILE=".last_processed_commit"
 
 # Parse arguments
 PROCESS_ALL=false
+FORCE=false
 LIMIT=0
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --all) PROCESS_ALL=true ;;
+        --force) FORCE=true ;;
         --limit=*) LIMIT="${1#*=}" ;;
         *) echo "Unknown parameter: $1"; exit 1 ;;
     esac
@@ -25,13 +28,18 @@ echo "Starting games directory update process..."
 # Ensure we're in the repository directory
 cd $REPO_PATH
 
-# Update repository
-echo "Updating repository..."
-git fetch origin
-git checkout $MAIN_BRANCH
-git pull origin $MAIN_BRANCH
+# Get current commit hash (needed for all modes)
+CURRENT_COMMIT=$(git rev-parse HEAD)
 
-if [ "$PROCESS_ALL" = true ]; then
+# Update repository
+if [ "$FORCE" = false ]; then
+    echo "Updating repository..."
+    git fetch origin
+    git checkout $MAIN_BRANCH
+    git pull origin $MAIN_BRANCH
+fi
+
+if [ "$FORCE" = true ] || [ "$PROCESS_ALL" = true ]; then
     # Process all game.json files
     echo "Processing all games..."
     # Convert newlines to spaces and remove trailing space
@@ -39,12 +47,10 @@ if [ "$PROCESS_ALL" = true ]; then
 else
     # Find new or modified game.json files
     echo "Checking for new or modified games..."
-    LAST_COMMIT_FILE=".last_processed_commit"
-    LAST_COMMIT=$(cat $LAST_COMMIT_FILE 2>/dev/null || echo "HEAD^")
-    CURRENT_COMMIT=$(git rev-parse HEAD)
+    LAST_COMMIT=$(cat "$LAST_COMMIT_FILE" 2>/dev/null || echo "HEAD^")
 
     # Convert newlines to spaces and remove trailing space
-    CHANGED_FILES=$(git diff --name-only $LAST_COMMIT $CURRENT_COMMIT | grep "game.json" | tr '\n' ' ' | sed 's/ *$//' || true)
+    CHANGED_FILES=$(git diff --name-only "$LAST_COMMIT" "$CURRENT_COMMIT" | grep "game.json" | tr '\n' ' ' | sed 's/ *$//' || true)
     
     if [ -z "$CHANGED_FILES" ]; then
         echo "No new or modified game.json files found."
@@ -73,10 +79,11 @@ fi
 # Generate index files
 echo "Generating index files..."
 php scripts/generate_index.php
+php scripts/generate_categories.php
 
-# Update last processed commit
-if [ "$PROCESS_ALL" = false ]; then
-    echo $CURRENT_COMMIT > $LAST_COMMIT_FILE
+# Update last processed commit if not in force mode
+if [ "$FORCE" = false ]; then
+    echo "$CURRENT_COMMIT" > "$LAST_COMMIT_FILE"
 fi
 
 echo "Process completed successfully!" 

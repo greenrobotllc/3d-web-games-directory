@@ -103,16 +103,10 @@ class CategoryGenerator {
     private function formatGameEntry($game) {
         $content = "## {$game['title']}\n\n";
         
-        // Add cover image if available
-        if (isset($game['cover_image']) && $game['cover_image']['type'] === 'github') {
-            $coverPath = "../games/{$game['id']}/{$game['cover_image']['path']}";
-            $content .= "<img src=\"$coverPath\" alt=\"{$game['title']} cover image\" width=\"512\" height=\"512\">\n\n";
-        }
-
         // Add thumbnail if available
         if (isset($game['thumbnail']) && $game['thumbnail']['type'] === 'github') {
             $thumbPath = "../games/{$game['id']}/{$game['thumbnail']['path']}";
-            $content .= "<img src=\"$thumbPath\" alt=\"{$game['title']} thumbnail\" width=\"200\" height=\"200\">\n\n";
+            $content .= "<img src=\"$thumbPath\" alt=\"{$game['title']} thumbnail\" width=\"200\">\n\n";
         }
 
         $content .= "**Category:** {$game['category']}\n\n";

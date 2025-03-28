@@ -31,14 +31,8 @@
             "url": "https:\/\/3dtankbattle.com",
             "category": "FPS",
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
-            "cover_image": {
-                "type": "github",
-                "path": "images\/3d-tank-battle-2025-03-28T18-24-54-182Z.jpg"
-            },
-            "thumbnail": {
-                "type": "github",
-                "path": "images\/thumb.jpg"
-            }
+            "screenshot": null,
+            "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
         },
         {
             "id": "bruno-simon-portfolio",
@@ -47,14 +41,8 @@
             "url": "https:\/\/bruno-simon.com\/",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
-            "cover_image": {
-                "type": "github",
-                "path": "images\/bruno-simon-portfolio-2025-03-28T18-25-26-433Z.jpg"
-            },
-            "thumbnail": {
-                "type": "github",
-                "path": "images\/thumb.jpg"
-            }
+            "screenshot": null,
+            "thumbnail": "\/games\/bruno-simon-portfolio\/images\/thumb.jpg"
         },
         {
             "id": "fly.pieter.com",
@@ -63,14 +51,8 @@
             "url": "https:\/\/fly.pieter.com",
             "category": "Simulator",
             "how_to_play": "Fly your plane with the controls on your keyboard or using the virtual joystick on mobile",
-            "cover_image": {
-                "type": "github",
-                "path": "images\/fly.pieter.com-2025-03-28T18-25-16-507Z.jpg"
-            },
-            "thumbnail": {
-                "type": "github",
-                "path": "images\/thumb.jpg"
-            }
+            "screenshot": null,
+            "thumbnail": "\/games\/fly.pieter.com\/images\/thumb.jpg"
         },
         {
             "id": "vibesail.com",
@@ -79,14 +61,8 @@
             "url": "https:\/\/vibesail.com",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to control your sailboat. Adjust the sails to catch the wind and navigate through the waters. On mobile, use the virtual joystick!",
-            "cover_image": {
-                "type": "github",
-                "path": "images\/vibesail.com-2025-03-28T18-25-01-732Z.jpg"
-            },
-            "thumbnail": {
-                "type": "github",
-                "path": "images\/thumb.jpg"
-            }
+            "screenshot": null,
+            "thumbnail": "\/games\/vibesail.com\/images\/thumb.jpg"
         }
     ]
 }

@@ -104,8 +104,8 @@ class CategoryGenerator {
         $content = "## {$game['title']}\n\n";
         
         // Add thumbnail if available
-        if (isset($game['thumbnail']) && $game['thumbnail']['type'] === 'github') {
-            $thumbPath = "../games/{$game['id']}/{$game['thumbnail']['path']}";
+        if (isset($game['thumbnail'])) {
+            $thumbPath = ".." . $game['thumbnail'];
             $content .= "<img src=\"$thumbPath\" alt=\"{$game['title']} thumbnail\" width=\"200\">\n\n";
         }
 

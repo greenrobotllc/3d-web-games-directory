@@ -56,30 +56,6 @@ class IndexGenerator {
             'games' => []
         ];
 
-        // Add all games with their full data
-        foreach ($this->games as $game) {
-            $gameData = [
-                'id' => $game['id'],
-                'title' => $game['title'],
-                'description' => $game['description'],
-                'url' => $game['url'],
-                'category' => $game['category'],
-                'how_to_play' => $game['how_to_play']
-            ];
-
-            // Add cover image if available
-            if (isset($game['cover_image']) && $game['cover_image']['type'] === 'github') {
-                $gameData['cover_image'] = $game['cover_image'];
-            }
-
-            // Add thumbnail if available
-            if (isset($game['thumbnail']) && $game['thumbnail']['type'] === 'github') {
-                $gameData['thumbnail'] = $game['thumbnail'];
-            }
-
-            $indexData['games'][] = $gameData;
-        }
-
         // Add categories with their games
         foreach ($this->categories as $categoryName => $categoryGames) {
             $indexData['categories'][] = [
@@ -89,6 +65,30 @@ class IndexGenerator {
                     return $game['id'];
                 }, $categoryGames)
             ];
+        }
+
+        // Add all games with their full data
+        foreach ($this->games as $game) {
+            $gameDir = dirname(dirname(__FILE__)) . '/games/' . $game['id'];
+            $screenshotDir = $gameDir . '/screenshots';
+            $imagesDir = $gameDir . '/images';
+            
+            // Find the most recent screenshot
+            $screenshots = glob($screenshotDir . '/*.{jpg,jpeg,png}', GLOB_BRACE);
+            $screenshot = !empty($screenshots) ? end($screenshots) : null;
+            
+            $gameData = [
+                'id' => $game['id'],
+                'title' => $game['title'],
+                'description' => $game['description'],
+                'url' => $game['url'],
+                'category' => $game['category'],
+                'how_to_play' => $game['how_to_play'],
+                'screenshot' => $screenshot ? '/games/' . $game['id'] . '/screenshots/' . basename($screenshot) : null,
+                'thumbnail' => '/games/' . $game['id'] . '/images/thumb.jpg'
+            ];
+
+            $indexData['games'][] = $gameData;
         }
 
         // Write the index file

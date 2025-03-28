@@ -6,10 +6,8 @@
   "category": "Other",
   "cover_image": {
     "type": "github",
-    "path": "images/vibesail.com-2025-03-28T18-47-48-203Z.jpg"
+    "path": "images/vibesail.com-2025-03-28T18-51-53-904Z.jpg"
   },
-  "thumbnail": {
-    "type": "github",
-    "path": "images/thumb.jpg"
-  }
+  "thumbnail": "/games/vibesail.com/images/thumb.jpg",
+  "screenshot": "/games/vibesail.com/screenshots/vibesail.com-2025-03-28T18-54-08-982Z.jpg"
 }

@@ -75,7 +75,8 @@ class IndexGenerator {
             
             // Find the most recent screenshot
             $screenshots = glob($screenshotDir . '/*.{jpg,jpeg,png}', GLOB_BRACE);
-            $screenshot = !empty($screenshots) ? end($screenshots) : null;
+            rsort($screenshots); // Sort in reverse order to get most recent first
+            $screenshot = !empty($screenshots) ? '/games/' . $game['id'] . '/screenshots/' . basename($screenshots[0]) : null;
             
             $gameData = [
                 'id' => $game['id'],
@@ -84,7 +85,7 @@ class IndexGenerator {
                 'url' => $game['url'],
                 'category' => $game['category'],
                 'how_to_play' => $game['how_to_play'],
-                'screenshot' => $screenshot ? '/games/' . $game['id'] . '/screenshots/' . basename($screenshot) : null,
+                'screenshot' => $screenshot,
                 'thumbnail' => '/games/' . $game['id'] . '/images/thumb.jpg'
             ];
 

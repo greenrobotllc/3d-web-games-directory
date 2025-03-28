@@ -6,10 +6,8 @@
   "category": "Other",
   "cover_image": {
     "type": "github",
-    "path": "images/bruno-simon-portfolio-2025-03-28T18-48-13-663Z.jpg"
+    "path": "images/bruno-simon-portfolio-2025-03-28T18-52-17-856Z.jpg"
   },
-  "thumbnail": {
-    "type": "github",
-    "path": "images/thumb.jpg"
-  }
+  "thumbnail": "/games/bruno-simon-portfolio/images/thumb.jpg",
+  "screenshot": "/games/bruno-simon-portfolio/screenshots/bruno-simon-portfolio-2025-03-28T18-54-35-686Z.jpg"
 }

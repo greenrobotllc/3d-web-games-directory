@@ -150,8 +150,8 @@ async function takeScreenshot(url, gameId) {
 
         if (ogImageUrl) {
             console.log('Found og:image, downloading:', ogImageUrl);
-            // Download og:image to images directory
-            const imagePath = path.join(imagesDir, `${gameId}-${timestamp}.jpg`);
+            // Download og:image to screenshots directory
+            const imagePath = path.join(screenshotsDir, `${gameId}-${timestamp}.jpg`);
             await downloadImage(ogImageUrl, imagePath);
             screenshotPath = imagePath;
         } else {
@@ -180,15 +180,9 @@ async function takeScreenshot(url, gameId) {
         const gameJsonPath = path.join('games', gameId, 'game.json');
         const gameData = JSON.parse(fs.readFileSync(gameJsonPath, 'utf8'));
         
-        gameData.cover_image = {
-            type: 'github',
-            path: path.relative(path.join('games', gameId), screenshotPath)
-        };
-        
-        gameData.thumbnail = {
-            type: 'github',
-            path: path.relative(path.join('games', gameId), thumbPath)
-        };
+        // Use simple paths relative to root
+        gameData.screenshot = '/games/' + gameId + '/screenshots/' + path.basename(screenshotPath);
+        gameData.thumbnail = '/games/' + gameId + '/images/thumb.jpg';
 
         fs.writeFileSync(gameJsonPath, JSON.stringify(gameData, null, 2));
         console.log(`Successfully processed ${gameData.title}`);

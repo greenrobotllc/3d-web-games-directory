@@ -120,16 +120,14 @@ class IndexGenerator {
                 'how_to_play' => $game['how_to_play']
             ];
 
-            // Add screenshot if available
-            $screenshotPath = $this->getLatestScreenshot($game['id']);
-            if ($screenshotPath) {
-                $gameData['screenshot'] = $screenshotPath;
+            // Add cover image if available
+            if (isset($game['cover_image']) && $game['cover_image']['type'] === 'github') {
+                $gameData['cover_image'] = $game['cover_image'];
             }
 
-            // Add thumbnail
-            $thumbPath = "/games/{$game['id']}/images/thumb.jpg";
-            if (file_exists(__DIR__ . "/.." . $thumbPath)) {
-                $gameData['thumbnail'] = $thumbPath;
+            // Add thumbnail if available
+            if (isset($game['thumbnail']) && $game['thumbnail']['type'] === 'github') {
+                $gameData['thumbnail'] = $game['thumbnail'];
             }
 
             $indexData['games'][] = $gameData;

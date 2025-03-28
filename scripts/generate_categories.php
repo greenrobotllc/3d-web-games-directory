@@ -38,14 +38,14 @@ class CategoryGenerator {
         }
 
         // Load games data
-        $games = json_decode(file_get_contents($indexFile), true);
-        if (!$games) {
-            throw new Exception("Failed to load index.json");
+        $indexData = json_decode(file_get_contents($indexFile), true);
+        if (!$indexData || !isset($indexData['games'])) {
+            throw new Exception("Failed to load index.json or no games found");
         }
 
         // Group games by category
         $gamesByCategory = [];
-        foreach ($games as $game) {
+        foreach ($indexData['games'] as $game) {
             $category = $game['category'];
             if (!isset($gamesByCategory[$category])) {
                 $gamesByCategory[$category] = [];
@@ -60,7 +60,7 @@ class CategoryGenerator {
         }
 
         // Generate all games page
-        $this->generateAllGamesPage($games, "$categoriesDir/all-games.md");
+        $this->generateAllGamesPage($indexData['games'], "$categoriesDir/all-games.md");
 
         echo "Category pages generated successfully!\n";
     }
@@ -103,12 +103,16 @@ class CategoryGenerator {
     private function formatGameEntry($game) {
         $content = "## {$game['title']}\n\n";
         
+        // Add cover image if available
+        if (isset($game['cover_image']) && $game['cover_image']['type'] === 'github') {
+            $coverPath = "../games/{$game['id']}/{$game['cover_image']['path']}";
+            $content .= "<img src=\"$coverPath\" alt=\"{$game['title']} cover image\" width=\"512\" height=\"512\">\n\n";
+        }
+
         // Add thumbnail if available
-        if (isset($game['thumbnail'])) {
-            $thumbPath = $game['thumbnail']['type'] === 'github' 
-                ? "..{$game['thumbnail']['path']}"
-                : $game['thumbnail']['path'];
-            $content .= "<img src=\"$thumbPath\" alt=\"{$game['title']} thumbnail\" width=\"256\" height=\"256\">\n\n";
+        if (isset($game['thumbnail']) && $game['thumbnail']['type'] === 'github') {
+            $thumbPath = "../games/{$game['id']}/{$game['thumbnail']['path']}";
+            $content .= "<img src=\"$thumbPath\" alt=\"{$game['title']} thumbnail\" width=\"200\" height=\"200\">\n\n";
         }
 
         $content .= "**Category:** {$game['category']}\n\n";

@@ -1,7 +1,14 @@
 import puppeteer from 'puppeteer';
-import fs from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import https from 'https';
+import http from 'http';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const MOBILE_VIEWPORT = {
     width: 390,
@@ -11,39 +18,92 @@ const MOBILE_VIEWPORT = {
     hasTouch: true
 };
 
-const waitTillHTMLRendered = async (page, timeout = 30000) => {
+// Function to download image from URL
+async function downloadImage(url, filepath) {
+    return new Promise((resolve, reject) => {
+        // Convert HTTP to HTTPS if possible
+        const secureUrl = url.replace('http://', 'https://');
+        const protocol = secureUrl.startsWith('https') ? https : http;
+        
+        protocol.get(secureUrl, (response) => {
+            if (response.statusCode === 200) {
+                response.pipe(fs.createWriteStream(filepath))
+                    .on('error', reject)
+                    .once('close', () => resolve(filepath));
+            } else if (response.statusCode === 301 || response.statusCode === 302) {
+                // Handle redirects
+                const redirectUrl = response.headers.location;
+                console.log(`Following redirect to: ${redirectUrl}`);
+                downloadImage(redirectUrl, filepath)
+                    .then(resolve)
+                    .catch(reject);
+            } else {
+                response.resume();
+                reject(new Error(`Request Failed With a Status Code: ${response.statusCode}`));
+            }
+        });
+    });
+}
+
+// Function to get og:image URL from page
+async function getOgImage(page) {
+    try {
+        // Log all meta tags for debugging
+        const allMetaTags = await page.evaluate(() => {
+            const metas = document.querySelectorAll('meta');
+            return Array.from(metas).map(meta => ({
+                property: meta.getAttribute('property'),
+                content: meta.getAttribute('content')
+            }));
+        });
+        console.log('All meta tags:', JSON.stringify(allMetaTags, null, 2));
+
+        const ogImage = await page.evaluate(() => {
+            const meta = document.querySelector('meta[property="og:image"]');
+            console.log('Found meta tag:', meta ? meta.outerHTML : 'none');
+            return meta ? meta.getAttribute('content') : null;
+        });
+        console.log('og:image URL:', ogImage);
+        return ogImage;
+    } catch (error) {
+        console.error('Error getting og:image:', error);
+        return null;
+    }
+}
+
+// Function to wait for HTML to be fully rendered
+async function waitTillHTMLRendered(page, timeout = 30000) {
     const checkDurationMsecs = 1000;
     const maxChecks = timeout / checkDurationMsecs;
     let lastHTMLSize = 0;
-    let checkCounts = 1;
+    let checkCounts = 0;
     let countStableSizeIterations = 0;
     const minStableSizeIterations = 3;
 
-    while(checkCounts++ <= maxChecks){
-        let html = await page.content();
-        let currentHTMLSize = html.length; 
+    while (checkCounts++ < maxChecks) {
+        const html = await page.content();
+        const currentHTMLSize = html.length;
+        const bodyHTMLSize = await page.evaluate(() => document.body.innerHTML.length);
 
-        let bodyHTMLSize = await page.evaluate(() => document.body.innerHTML.length);
+        console.log('last: ', lastHTMLSize, ' <> curr: ', currentHTMLSize, ' body html size: ', bodyHTMLSize);
 
-        console.log('last: ', lastHTMLSize, ' <> curr: ', currentHTMLSize, " body html size: ", bodyHTMLSize);
-
-        if(lastHTMLSize != 0 && currentHTMLSize == lastHTMLSize) 
-            countStableSizeIterations++;
-        else 
-            countStableSizeIterations = 0; //reset the counter
-
-        if(countStableSizeIterations >= minStableSizeIterations) {
-            console.log("Page rendered fully..");
-            break;
+        if (lastHTMLSize != 0) {
+            if (currentHTMLSize == lastHTMLSize) {
+                countStableSizeIterations++;
+                if (countStableSizeIterations >= minStableSizeIterations) {
+                    console.log('Page rendered fully..');
+                    break;
+                }
+            } else {
+                countStableSizeIterations = 0;
+            }
         }
-
         lastHTMLSize = currentHTMLSize;
         await new Promise(resolve => setTimeout(resolve, checkDurationMsecs));
-    }  
-};
+    }
+}
 
-async function takeScreenshot(url, outputPath) {
-    console.log(`Taking screenshot of ${url}`);
+async function takeScreenshot(url, gameId) {
     const browser = await puppeteer.launch({
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
@@ -51,158 +111,106 @@ async function takeScreenshot(url, outputPath) {
 
     try {
         const page = await browser.newPage();
-        await page.setViewport(MOBILE_VIEWPORT);
-        
-        // Navigate and wait for initial load
-        console.log(`Navigating to ${url}...`);
-        await page.goto(url, {
-            waitUntil: 'load',
-            timeout: 30000
-        });
+        await page.setViewport({ width: 1920, height: 1080 });
 
-        // Wait for the page to be fully rendered
-        console.log('Waiting for page to fully render...');
+        console.log(`Taking screenshot of ${url}`);
+        console.log(`Navigating to ${url}...`);
+        await page.goto(url, { waitUntil: 'load' });
         await waitTillHTMLRendered(page);
 
-        // Take screenshot
-        console.log('Taking screenshot...');
-        await page.screenshot({
-            path: outputPath,
-            fullPage: false,
-            type: 'jpeg',
-            quality: 90
-        });
+        // Check for og:image first
+        console.log('Checking for og:image...');
+        const ogImageUrl = await getOgImage(page);
+        let screenshotPath;
+        let timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 
-        // Optimize and resize image
-        console.log('Optimizing screenshot...');
-        await sharp(outputPath)
-            .resize(512, 512, {
-                fit: 'contain',
-                background: { r: 0, g: 0, b: 0, alpha: 0 }
+        const screenshotsDir = path.join('games', gameId, 'screenshots');
+        const imagesDir = path.join('games', gameId, 'images');
+        
+        if (!fs.existsSync(screenshotsDir)) {
+            fs.mkdirSync(screenshotsDir, { recursive: true });
+        }
+        if (!fs.existsSync(imagesDir)) {
+            fs.mkdirSync(imagesDir, { recursive: true });
+        }
+
+        // Clean up old files
+        console.log('Cleaning up old files...');
+        const oldScreenshots = fs.readdirSync(screenshotsDir);
+        for (const file of oldScreenshots) {
+            fs.unlinkSync(path.join(screenshotsDir, file));
+        }
+
+        const oldImages = fs.readdirSync(imagesDir);
+        for (const file of oldImages) {
+            if (file !== 'thumb.jpg') {
+                fs.unlinkSync(path.join(imagesDir, file));
+            }
+        }
+
+        if (ogImageUrl) {
+            console.log('Found og:image, downloading:', ogImageUrl);
+            // Download og:image to images directory
+            const imagePath = path.join(imagesDir, `${gameId}-${timestamp}.jpg`);
+            await downloadImage(ogImageUrl, imagePath);
+            screenshotPath = imagePath;
+        } else {
+            console.log('No og:image found, taking screenshot...');
+            // Take screenshot to screenshots directory
+            const imagePath = path.join(screenshotsDir, `${gameId}-${timestamp}.jpg`);
+            await page.screenshot({
+                path: imagePath,
+                fullPage: true
+            });
+            screenshotPath = imagePath;
+        }
+
+        // Generate thumbnail
+        console.log('Generating thumbnail...');
+        const thumbPath = path.join(imagesDir, 'thumb.jpg');
+        await sharp(screenshotPath)
+            .resize(200, null, {  // Set width to 200, height will scale proportionally
+                fit: 'inside',    // Maintain aspect ratio
+                withoutEnlargement: true
             })
-            .jpeg({ quality: 85 })
-            .toFile(outputPath + '.tmp');
+            .jpeg({ quality: 80 })
+            .toFile(thumbPath);
 
-        // Replace original with optimized version
-        await fs.rename(outputPath + '.tmp', outputPath);
-        console.log('Screenshot completed successfully');
+        // Update game.json
+        const gameJsonPath = path.join('games', gameId, 'game.json');
+        const gameData = JSON.parse(fs.readFileSync(gameJsonPath, 'utf8'));
+        
+        gameData.cover_image = {
+            type: 'github',
+            path: path.relative(path.join('games', gameId), screenshotPath)
+        };
+        
+        gameData.thumbnail = {
+            type: 'github',
+            path: path.relative(path.join('games', gameId), thumbPath)
+        };
+
+        fs.writeFileSync(gameJsonPath, JSON.stringify(gameData, null, 2));
+        console.log(`Successfully processed ${gameData.title}`);
 
     } catch (error) {
-        console.error(`Error taking screenshot of ${url}:`, error);
-        // Try one more time with minimal wait conditions
-        try {
-            console.log('Retrying with minimal wait conditions...');
-            const page = await browser.newPage();
-            await page.setViewport(MOBILE_VIEWPORT);
-            await page.goto(url, {
-                waitUntil: 'domcontentloaded',
-                timeout: 30000
-            });
-            // Still wait for rendering but with shorter timeout
-            await waitTillHTMLRendered(page, 15000);
-            await page.screenshot({
-                path: outputPath,
-                fullPage: false,
-                type: 'jpeg',
-                quality: 90
-            });
-            console.log('Retry successful');
-        } catch (retryError) {
-            console.error('Retry also failed:', retryError);
-            throw error;
-        }
+        console.error(`Error processing ${url}:`, error);
+        throw error;
     } finally {
         await browser.close();
     }
 }
 
 async function processChangedGames() {
-    // Get list of changed files from environment variable
-    const changedFiles = process.env.ALL_CHANGED_FILES?.split(' ') || [];
-
-    if (changedFiles.length === 0) {
-        console.log('No changed files found in PR');
-        return;
-    }
-
-    // Process each changed game.json
+    const changedFiles = process.env.ALL_CHANGED_FILES.split(' ');
+    
     for (const file of changedFiles) {
-        if (!file.endsWith('game.json')) continue;
-
-        const gameDir = path.dirname(file);
-        const gameName = path.basename(gameDir);
-        const gameJson = JSON.parse(
-            await fs.readFile(file, 'utf8')
-        );
-
-        if (!gameJson.url) {
-            console.log(`No URL found in ${file}, skipping`);
-            continue;
+        if (file.endsWith('game.json')) {
+            const gameData = JSON.parse(fs.readFileSync(file, 'utf8'));
+            const gameId = path.basename(path.dirname(file));
+            await takeScreenshot(gameData.url, gameId);
         }
-
-        // Create screenshots directory if it doesn't exist
-        const screenshotsDir = path.join(gameDir, 'screenshots');
-        await fs.mkdir(screenshotsDir, { recursive: true });
-
-        // Create images directory for thumbnail
-        const imagesDir = path.join(gameDir, 'images');
-        await fs.mkdir(imagesDir, { recursive: true });
-
-        // Clean up old files
-        console.log('Cleaning up old files...');
-        const oldScreenshots = await fs.readdir(screenshotsDir);
-        for (const file of oldScreenshots) {
-            await fs.unlink(path.join(screenshotsDir, file));
-        }
-        const oldImages = await fs.readdir(imagesDir);
-        for (const file of oldImages) {
-            if (file !== 'thumb.jpg') {
-                await fs.unlink(path.join(imagesDir, file));
-            }
-        }
-
-        // Generate timestamp for the filename
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const screenshotPath = path.join(
-            screenshotsDir, 
-            `${gameName}-${timestamp}.jpg`
-        );
-
-        // Take screenshot
-        await takeScreenshot(gameJson.url, screenshotPath);
-
-        // Generate thumbnail
-        const thumbPath = path.join(imagesDir, 'thumb.jpg');
-        await sharp(screenshotPath)
-            .resize(200, 200, {
-                fit: 'contain',
-                background: { r: 0, g: 0, b: 0, alpha: 0 }
-            })
-            .jpeg({ quality: 85 })
-            .toFile(thumbPath);
-
-        // Update game.json with new screenshot
-        gameJson.cover_image = {
-            type: "github",
-            path: `screenshots/${path.basename(screenshotPath)}`
-        };
-        gameJson.thumbnail = {
-            type: "github",
-            path: "images/thumb.jpg"
-        };
-
-        // Write updated game.json
-        await fs.writeFile(
-            file,
-            JSON.stringify(gameJson, null, 2)
-        );
-
-        console.log(`Successfully processed ${gameJson.title}`);
     }
 }
 
-// Run the script
-processChangedGames().catch(error => {
-    console.error('Error:', error);
-    process.exit(1);
-}); 
+processChangedGames().catch(console.error); 

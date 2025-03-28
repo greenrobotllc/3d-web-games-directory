@@ -10,9 +10,11 @@ GAMES_DIR="games"
 
 # Parse arguments
 PROCESS_ALL=false
+LIMIT=0
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --all) PROCESS_ALL=true ;;
+        --limit=*) LIMIT="${1#*=}" ;;
         *) echo "Unknown parameter: $1"; exit 1 ;;
     esac
     shift
@@ -50,6 +52,16 @@ else
         echo "Processing changed games..."
         export ALL_CHANGED_FILES="$CHANGED_FILES"
     fi
+fi
+
+# Apply limit if specified
+if [ "$LIMIT" -gt 0 ]; then
+    echo "Limiting to $LIMIT games..."
+    # Convert space-separated string to array
+    IFS=' ' read -ra FILES <<< "$ALL_CHANGED_FILES"
+    # Take only the first N files
+    ALL_CHANGED_FILES="${FILES[@]:0:$LIMIT}"
+    echo "Processing files: $ALL_CHANGED_FILES"
 fi
 
 # Only run screenshot generation if there are files to process

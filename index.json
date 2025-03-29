@@ -1,18 +1,36 @@
 {
     "categories": [
         {
-            "name": "FPS",
+            "name": "Adventure",
             "game_count": 1,
             "games": [
-                "3d-tank-battle"
+                "plume"
+            ]
+        },
+        {
+            "name": "FPS",
+            "game_count": 3,
+            "games": [
+                "3d-tank-battle",
+                "bullet-force",
+                "shell-shockers"
             ]
         },
         {
             "name": "Other",
-            "game_count": 2,
+            "game_count": 4,
             "games": [
                 "bruno-simon-portfolio",
+                "interland",
+                "summer-afternoon",
                 "vibesail.com"
+            ]
+        },
+        {
+            "name": "Racing",
+            "game_count": 1,
+            "games": [
+                "hexgl"
             ]
         },
         {
@@ -31,7 +49,7 @@
             "url": "https:\/\/3dtankbattle.com",
             "category": "FPS",
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
-            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-28T18-58-32-338Z.jpg",
+            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-29T03-30-04-388Z.jpg",
             "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
         },
         {
@@ -41,8 +59,18 @@
             "url": "https:\/\/bruno-simon.com\/",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
-            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-28T18-59-05-738Z.jpg",
+            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-29T03-31-02-733Z.jpg",
             "thumbnail": "\/games\/bruno-simon-portfolio\/images\/thumb.jpg"
+        },
+        {
+            "id": "bullet-force",
+            "title": "Bullet Force",
+            "description": "A modern multiplayer FPS with realistic graphics and a wide variety of weapons. Experience intense combat with multiple game modes, customizable loadouts, and special abilities.",
+            "url": "https:\/\/www.crazygames.com\/game\/bullet-force-multiplayer",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, mouse to aim, and click to shoot. Press R to reload, Space to jump, and C to crouch. On mobile, use the virtual joystick and buttons. Earn kill streaks to unlock special abilities!",
+            "screenshot": "\/games\/bullet-force\/screenshots\/bullet-force-2025-03-29T03-31-33-411Z.jpg",
+            "thumbnail": "\/games\/bullet-force\/images\/thumb.jpg"
         },
         {
             "id": "fly.pieter.com",
@@ -51,8 +79,58 @@
             "url": "https:\/\/fly.pieter.com",
             "category": "Simulator",
             "how_to_play": "Fly your plane with the controls on your keyboard or using the virtual joystick on mobile",
-            "screenshot": "\/games\/fly.pieter.com\/screenshots\/fly.pieter.com-2025-03-28T18-58-55-201Z.jpg",
+            "screenshot": "\/games\/fly.pieter.com\/screenshots\/fly.pieter.com-2025-03-29T03-30-42-088Z.jpg",
             "thumbnail": "\/games\/fly.pieter.com\/images\/thumb.jpg"
+        },
+        {
+            "id": "hexgl",
+            "title": "HexGL",
+            "description": "A futuristic racing game inspired by F-Zero and Wipeout. Race through stunning neon tracks in this WebGL-powered game, featuring smooth controls and high-speed action.",
+            "url": "https:\/\/hexgl.bkcore.com\/",
+            "category": "Racing",
+            "how_to_play": "Use arrow keys to control your hovercraft. Up\/Down to accelerate\/brake, Left\/Right to steer. On mobile, use the virtual joystick. Collect power-ups and race against the clock!",
+            "screenshot": "\/games\/hexgl\/screenshots\/hexgl-2025-03-29T03-29-56-427Z.jpg",
+            "thumbnail": "\/games\/hexgl\/images\/thumb.jpg"
+        },
+        {
+            "id": "interland",
+            "title": "Interland",
+            "description": "An educational 3D game by Google that teaches kids about online safety through interactive adventures. Explore four different lands while learning about digital citizenship, security, and kindness.",
+            "url": "https:\/\/beinternetawesome.withgoogle.com\/en_us\/interland",
+            "category": "Other",
+            "how_to_play": "Use WASD or arrow keys to move around. Click to interact with objects and complete challenges. On mobile, use the virtual joystick and tap to interact. Follow the on-screen instructions to complete each level.",
+            "screenshot": "\/games\/interland\/screenshots\/interland-2025-03-29T03-30-53-225Z.jpg",
+            "thumbnail": "\/games\/interland\/images\/thumb.jpg"
+        },
+        {
+            "id": "plume",
+            "title": "Plume",
+            "description": "A beautiful third-person adventure game with a unique art style and stunning visual effects. Explore a mysterious world and solve puzzles in this atmospheric experience.",
+            "url": "https:\/\/plumegame.com\/",
+            "category": "Adventure",
+            "how_to_play": "Use WASD to move, mouse to look around, and click to interact with objects. On mobile, use the virtual joystick and tap to interact. Collect items and solve puzzles to progress through the story.",
+            "screenshot": "\/games\/plume\/screenshots\/plume-2025-03-29T03-30-27-802Z.jpg",
+            "thumbnail": "\/games\/plume\/images\/thumb.jpg"
+        },
+        {
+            "id": "shell-shockers",
+            "title": "Shell Shockers",
+            "description": "A unique multiplayer FPS where you play as an egg character in intense arena battles. Choose from various weapons and compete against other players in this quirky and fun shooter.",
+            "url": "https:\/\/shellshock.io\/",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, mouse to aim, and click to shoot. On mobile, use the virtual joystick and buttons. Choose your weapon and try to crack your opponents' shells!",
+            "screenshot": "\/games\/shell-shockers\/screenshots\/shell-shockers-2025-03-29T03-32-17-823Z.jpg",
+            "thumbnail": "\/games\/shell-shockers\/images\/thumb.jpg"
+        },
+        {
+            "id": "summer-afternoon",
+            "title": "Summer Afternoon",
+            "description": "A beautiful multiplayer 3D environment with a unique cartoon-style aesthetic. Explore this peaceful world with other players, featuring stunning shaders and a relaxing atmosphere.",
+            "url": "https:\/\/summer-afternoon.vlucendo.com\/",
+            "category": "Other",
+            "how_to_play": "Use WASD or arrow keys to move around. Click and drag to look around. On mobile, use the virtual joystick and touch to look around. Join other players in this shared space!",
+            "screenshot": "\/games\/summer-afternoon\/screenshots\/summer-afternoon-2025-03-29T03-31-20-678Z.jpg",
+            "thumbnail": "\/games\/summer-afternoon\/images\/thumb.jpg"
         },
         {
             "id": "vibesail.com",
@@ -61,7 +139,7 @@
             "url": "https:\/\/vibesail.com",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to control your sailboat. Adjust the sails to catch the wind and navigate through the waters. On mobile, use the virtual joystick!",
-            "screenshot": "\/games\/vibesail.com\/screenshots\/vibesail.com-2025-03-28T18-58-40-501Z.jpg",
+            "screenshot": "\/games\/vibesail.com\/screenshots\/vibesail.com-2025-03-29T03-30-13-849Z.jpg",
             "thumbnail": "\/games\/vibesail.com\/images\/thumb.jpg"
         }
     ]

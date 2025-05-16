@@ -1,0 +1,7 @@
+{
+  "title": "AngryBots",
+  "url": "https://beta.unity3d.com/jonas/AngryBots/",
+  "description": "A Unity demo featuring robot combat in a space station environment. This tech demo showcases Unity's capabilities for creating 3D games that run in the browser. Navigate through a detailed sci-fi environment while battling hostile robots with various weapons.",
+  "how_to_play": "Use WASD or arrow keys to move, mouse to aim, and left-click to shoot. Move through the space station, eliminating enemy robots and discovering the environment. This demo highlights the graphical and performance capabilities of Unity's WebGL export.",
+  "category": "Action"
+}

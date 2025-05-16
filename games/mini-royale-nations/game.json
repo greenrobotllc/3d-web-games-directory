@@ -1,0 +1,7 @@
+{
+  "title": "Mini Royale: Nations",
+  "url": "https://miniroyale.io/",
+  "description": "A browser-based FPS with social strategy elements built on PlayCanvas. Combines fast-paced first-person shooter action with base building and resource management. Features multiple game modes, weapon customization, and a persistent world where players can form alliances.",
+  "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and E to interact with objects. Combat takes place in first-person shooter matches, while the strategic layer involves building and upgrading your base, managing resources, and forming alliances with other players.",
+  "category": "FPS"
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Voxel Builder",
+  "url": "https://playground.babylonjs.com/#2IYKJT#1",
+  "description": "A creative sandbox tool for building with voxels in 3D space, built with Babylon.js. Place, color, and remove blocks to create structures and artwork in a Minecraft-inspired interface. Features an intuitive building system, color selection, and the ability to view your creation from any angle.",
+  "how_to_play": "Left-click to place blocks and right-click to remove them. Use the mouse wheel to select different block colors. Hold the middle mouse button and move to rotate the camera around your creation. WASD keys move the camera position. Create anything from simple structures to complex 3D pixel art using the voxel building system.",
+  "category": "Sandbox"
+}

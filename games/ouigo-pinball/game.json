@@ -1,0 +1,7 @@
+{
+  "title": "Ouigo Pinball",
+  "url": "https://letsplay.ouigo.com/",
+  "description": "A polished pinball-style game created for the French train company Ouigo. Features high-quality 3D graphics built with Three.js, realistic physics, and multiple themed tables. The game combines traditional pinball mechanics with unique elements related to train travel and Ouigo branding.",
+  "how_to_play": "Use the left and right arrow keys or A/D to control the flippers. Press Space to launch the ball. Aim for targets, ramps, and bumpers to score points and trigger special events. Complete missions and achieve high scores across different pinball tables, each with unique layouts and challenges.",
+  "category": "Other"
+}

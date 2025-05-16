@@ -1,0 +1,7 @@
+{
+  "title": "Robostorm.io",
+  "url": "https://robostorm.io/",
+  "description": "An online multiplayer robot battle game built with PlayCanvas. Control a customizable robot in arena-style combat against other players. Features various weapons, power-ups, and robot parts that can be unlocked and upgraded as you progress through matches.",
+  "how_to_play": "Use WASD or arrow keys to move your robot. Mouse to aim and left-click to fire your weapons. Collect power-ups scattered around the arena to gain temporary advantages. Destroy enemy robots to earn points and resources, which can be used to upgrade your robot between matches. Last robot standing wins!",
+  "category": "Action"
+}

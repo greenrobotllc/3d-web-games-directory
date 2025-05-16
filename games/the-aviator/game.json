@@ -1,0 +1,7 @@
+{
+  "title": "The Aviator",
+  "url": "https://tympanus.net/codrops/2016/04/26/the-aviator-animating-basic-3d-scene-threejs/",
+  "description": "A stylish 3D game where you fly a plane through a colorful world, collecting items. Originally created as a Three.js tutorial, this game features beautiful low-poly visuals, smooth animations, and simple yet engaging gameplay in a vibrant environment.",
+  "how_to_play": "Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.",
+  "category": "Adventure"
+}

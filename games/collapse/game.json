@@ -1,0 +1,7 @@
+{
+  "title": "Collapse",
+  "url": "https://www.newgrounds.com/portal/view/695777",
+  "description": "A classic falling block puzzle game built with Unity WebGL. Match and clear groups of colored blocks before they reach the top of the screen. Features smooth animations, increasing difficulty, and special blocks that provide unique gameplay mechanics and strategic options.",
+  "how_to_play": "Click or tap on groups of three or more adjacent blocks of the same color to remove them. The remaining blocks will collapse to fill empty spaces. Plan your moves carefully to create chain reactions and clear as many blocks as possible in a single move. The game ends when the blocks reach the top of the screen.",
+  "category": "Puzzle"
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Cubes 2048.io",
+  "url": "https://cubes2048.io",
+  "description": "A multiplayer 3D game that merges the mechanics of Snake and 2048 in a competitive arena. Control your growing chain of numbered cubes, combining identical numbers to create higher values while avoiding other players. Features colorful visuals, power-ups, and real-time multiplayer action.",
+  "how_to_play": "Use WASD or arrow keys to move your cube chain around the arena. Collect numbered cubes to grow your chain. When you have two identical numbers next to each other in your chain, they'll combine into the next higher number (like in 2048). Aim to create the highest number possible while avoiding collisions with other players or walls.",
+  "category": "Puzzle"
+}

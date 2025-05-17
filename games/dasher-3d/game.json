@@ -3,5 +3,7 @@
   "url": "https://esyverse.itch.io/dasher",
   "description": "A top-down shooter with innovative time-freezing mechanics. Navigate through minimalist 3D environments while time only moves when you move. Plan your attacks carefully as enemies and their projectiles only advance when you do, creating a unique puzzle-like combat experience.",
   "how_to_play": "Use a single button (mouse click or space) to move forward in the direction you're facing. Time only progresses when you move, allowing you to plan your path through enemy fire. Rotate your view with the mouse to change direction. Reach the exit in each level while avoiding or eliminating enemies.",
-  "category": "Action"
+  "category": "Action",
+  "screenshot": "/games/dasher-3d/screenshots/dasher-3d-2025-05-16T23-52-01-822Z.jpg",
+  "thumbnail": "/games/dasher-3d/images/thumb.jpg"
 }

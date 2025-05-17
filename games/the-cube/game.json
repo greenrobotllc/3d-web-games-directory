@@ -3,5 +3,7 @@
   "url": "https://codepen.io/bsehovac/pen/EMyWVv",
   "description": "An interactive 3D Rubik's Cube puzzle built with Three.js. Solve the classic puzzle in your browser with smooth animations and intuitive controls. Features customizable cube sizes from 2x2 to 5x5, multiple difficulty levels, and the ability to scramble and reset the cube.",
   "how_to_play": "Click and drag on the cube faces to rotate them. Use the control panel to adjust settings like cube size and scramble difficulty. Solve the puzzle by aligning all colors on each face. For keyboard controls, use the arrow keys to rotate the cube view and WASD to rotate faces. A perfect demonstration of 3D manipulation in the browser.",
-  "category": "Puzzle"
+  "category": "Puzzle",
+  "screenshot": "/games/the-cube/screenshots/the-cube-2025-05-16T23-50-07-267Z.jpg",
+  "thumbnail": "/games/the-cube/images/thumb.jpg"
 }

@@ -1,7 +1,0 @@
-{
-  "title": "Tower Blocks",
-  "url": "https://codepen.io/ste-vg/pen/ppLQNW",
-  "description": "A simple yet addictive arcade game where you stack blocks to build the tallest tower possible. Each block moves back and forth, and you must time your clicks to align them perfectly. Features satisfying physics, colorful visuals, and increasing difficulty as your tower grows higher.",
-  "how_to_play": "Click or tap the screen when the moving block is aligned with the block below it. Perfect alignment adds the full block to your tower, while partial alignment cuts the block to the overlapping section. Try to build your tower as high as possible without making a mistake that causes blocks to fall. The game gets progressively more challenging as your tower grows taller.",
-  "category": "Puzzle"
-}

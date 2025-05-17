@@ -1,36 +1,96 @@
 {
     "categories": [
         {
+            "name": "Action",
+            "game_count": 3,
+            "games": [
+                "dasher-3d",
+                "robostorm-io",
+                "tunnel-rush"
+            ]
+        },
+        {
             "name": "Adventure",
+            "game_count": 3,
+            "games": [
+                "plume",
+                "the-aviator",
+                "valorous-rabbit"
+            ]
+        },
+        {
+            "name": "Battle Royale",
             "game_count": 1,
             "games": [
-                "plume"
+                "rocket-bot-royale"
             ]
         },
         {
             "name": "FPS",
-            "game_count": 3,
+            "game_count": 13,
             "games": [
                 "3d-tank-battle",
                 "bullet-force",
-                "shell-shockers"
+                "bullet-fury-2",
+                "farm-clash-3d",
+                "fields-of-fury",
+                "kirka-io",
+                "krunker-io",
+                "mini-royale-nations",
+                "narrow-one",
+                "pixel-warfare",
+                "shell-shockers",
+                "venge-io",
+                "war-brokers"
             ]
         },
         {
             "name": "Other",
-            "game_count": 4,
+            "game_count": 8,
             "games": [
                 "bruno-simon-portfolio",
                 "interland",
+                "moon-rider",
+                "om-nom-run",
                 "summer-afternoon",
+                "swooop",
+                "temple-run-2",
                 "vibesail.com"
             ]
         },
         {
-            "name": "Racing",
+            "name": "Platformer",
             "game_count": 1,
             "games": [
-                "hexgl"
+                "neuro-cookie-quest-3d"
+            ]
+        },
+        {
+            "name": "Puzzle",
+            "game_count": 3,
+            "games": [
+                "collapse",
+                "the-cube",
+                "xx142-b2-exe"
+            ]
+        },
+        {
+            "name": "RPG",
+            "game_count": 1,
+            "games": [
+                "runescape"
+            ]
+        },
+        {
+            "name": "Racing",
+            "game_count": 6,
+            "games": [
+                "drift-hunters",
+                "hexgl",
+                "madalin-stunt-cars-2",
+                "madalin-stunt-cars-3",
+                "polytrack",
+                "smash-karts"
             ]
         },
         {
@@ -49,7 +109,7 @@
             "url": "https:\/\/3dtankbattle.com",
             "category": "FPS",
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
-            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-03-29T03-30-04-388Z.jpg",
+            "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-05-16T23-47-56-667Z.jpg",
             "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
         },
         {
@@ -59,7 +119,7 @@
             "url": "https:\/\/bruno-simon.com\/",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to drive the car. Click and drag to look around. On mobile, use the virtual joystick!",
-            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-03-29T03-31-02-733Z.jpg",
+            "screenshot": "\/games\/bruno-simon-portfolio\/screenshots\/bruno-simon-portfolio-2025-05-16T23-50-43-147Z.jpg",
             "thumbnail": "\/games\/bruno-simon-portfolio\/images\/thumb.jpg"
         },
         {
@@ -69,8 +129,68 @@
             "url": "https:\/\/www.crazygames.com\/game\/bullet-force-multiplayer",
             "category": "FPS",
             "how_to_play": "Use WASD to move, mouse to aim, and click to shoot. Press R to reload, Space to jump, and C to crouch. On mobile, use the virtual joystick and buttons. Earn kill streaks to unlock special abilities!",
-            "screenshot": "\/games\/bullet-force\/screenshots\/bullet-force-2025-03-29T03-31-33-411Z.jpg",
+            "screenshot": "\/games\/bullet-force\/screenshots\/bullet-force-2025-05-16T23-55-21-360Z.jpg",
             "thumbnail": "\/games\/bullet-force\/images\/thumb.jpg"
+        },
+        {
+            "id": "bullet-fury-2",
+            "title": "Bullet Fury 2",
+            "description": "A 3D first-person shooter with arcade-style gameplay. Battle through various levels filled with enemies using a variety of weapons. Features fast-paced action, power-ups, and boss fights in a stylized 3D environment designed to run smoothly in browsers.",
+            "url": "https:\/\/www.newgrounds.com\/portal\/view\/673609",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, mouse to aim, and left-click to shoot. Press Space to jump, Shift to sprint, and R to reload. Collect new weapons and power-ups throughout levels to increase your combat effectiveness. Eliminate all enemies in each area to progress through the game.",
+            "screenshot": "\/games\/bullet-fury-2\/screenshots\/bullet-fury-2-2025-05-16T23-54-46-221Z.jpg",
+            "thumbnail": "\/games\/bullet-fury-2\/images\/thumb.jpg"
+        },
+        {
+            "id": "collapse",
+            "title": "Collapse",
+            "description": "A classic falling block puzzle game built with Unity WebGL. Match and clear groups of colored blocks before they reach the top of the screen. Features smooth animations, increasing difficulty, and special blocks that provide unique gameplay mechanics and strategic options.",
+            "url": "https:\/\/www.newgrounds.com\/portal\/view\/695777",
+            "category": "Puzzle",
+            "how_to_play": "Click or tap on groups of three or more adjacent blocks of the same color to remove them. The remaining blocks will collapse to fill empty spaces. Plan your moves carefully to create chain reactions and clear as many blocks as possible in a single move. The game ends when the blocks reach the top of the screen.",
+            "screenshot": "\/games\/collapse\/screenshots\/collapse-2025-05-16T23-52-26-248Z.jpg",
+            "thumbnail": "\/games\/collapse\/images\/thumb.jpg"
+        },
+        {
+            "id": "dasher-3d",
+            "title": "Dasher 3D",
+            "description": "A top-down shooter with innovative time-freezing mechanics. Navigate through minimalist 3D environments while time only moves when you move. Plan your attacks carefully as enemies and their projectiles only advance when you do, creating a unique puzzle-like combat experience.",
+            "url": "https:\/\/esyverse.itch.io\/dasher",
+            "category": "Action",
+            "how_to_play": "Use a single button (mouse click or space) to move forward in the direction you're facing. Time only progresses when you move, allowing you to plan your path through enemy fire. Rotate your view with the mouse to change direction. Reach the exit in each level while avoiding or eliminating enemies.",
+            "screenshot": "\/games\/dasher-3d\/screenshots\/dasher-3d-2025-05-16T23-52-01-822Z.jpg",
+            "thumbnail": "\/games\/dasher-3d\/images\/thumb.jpg"
+        },
+        {
+            "id": "drift-hunters",
+            "title": "Drift Hunters",
+            "description": "A realistic 3D drifting game with a focus on authentic drift mechanics and car customization. Features a variety of real-world inspired cars that can be upgraded and tuned for optimal drifting performance. Earn points by performing stylish drifts across multiple tracks and environments.",
+            "url": "https:\/\/www.crazygames.com\/game\/drift-hunters",
+            "category": "Racing",
+            "how_to_play": "Use WASD or arrow keys to control your car: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Space for handbrake to initiate drifts. Earn money from successful drifts to upgrade your car's performance and appearance. Master the art of controlling your car through corners while maintaining a drift for maximum points.",
+            "screenshot": "\/games\/drift-hunters\/screenshots\/drift-hunters-2025-05-16T23-55-08-971Z.jpg",
+            "thumbnail": "\/games\/drift-hunters\/images\/thumb.jpg"
+        },
+        {
+            "id": "farm-clash-3d",
+            "title": "Farm Clash 3D",
+            "description": "A unique third-person shooter set in a colorful farm environment. Battle against other players using farm-themed weapons and characters in various game modes. Features team-based gameplay, multiple maps, and a lighthearted, humorous approach to the shooter genre.",
+            "url": "https:\/\/www.crazygames.com\/game\/farm-clash-3d",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and Q\/E to switch weapons. On mobile, use the virtual joystick and on-screen buttons. Work with your team to defeat the opposing team and complete objectives.",
+            "screenshot": "\/games\/farm-clash-3d\/screenshots\/farm-clash-3d-2025-05-16T23-46-59-415Z.jpg",
+            "thumbnail": "\/games\/farm-clash-3d\/images\/thumb.jpg"
+        },
+        {
+            "id": "fields-of-fury",
+            "title": "Fields of Fury",
+            "description": "A World War II-themed capture the flag FPS built with PlayCanvas. Battle against other players in team-based matches across historically inspired maps. Features multiple soldier classes, authentic weapons, and vehicles from the era in a fast-paced multiplayer environment.",
+            "url": "https:\/\/play.fieldsoffury.io\/",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to interact with objects or enter vehicles. Choose your class and work with your team to capture the enemy flag while defending your own. Use period-appropriate weapons and tactics to secure victory.",
+            "screenshot": "\/games\/fields-of-fury\/screenshots\/fields-of-fury-2025-05-16T23-54-36-109Z.jpg",
+            "thumbnail": "\/games\/fields-of-fury\/images\/thumb.jpg"
         },
         {
             "id": "fly.pieter.com",
@@ -79,7 +199,7 @@
             "url": "https:\/\/fly.pieter.com",
             "category": "Simulator",
             "how_to_play": "Fly your plane with the controls on your keyboard or using the virtual joystick on mobile",
-            "screenshot": "\/games\/fly.pieter.com\/screenshots\/fly.pieter.com-2025-03-29T03-30-42-088Z.jpg",
+            "screenshot": "\/games\/fly.pieter.com\/screenshots\/fly.pieter.com-2025-05-16T23-49-01-356Z.jpg",
             "thumbnail": "\/games\/fly.pieter.com\/images\/thumb.jpg"
         },
         {
@@ -89,7 +209,7 @@
             "url": "https:\/\/hexgl.bkcore.com\/",
             "category": "Racing",
             "how_to_play": "Use arrow keys to control your hovercraft. Up\/Down to accelerate\/brake, Left\/Right to steer. On mobile, use the virtual joystick. Collect power-ups and race against the clock!",
-            "screenshot": "\/games\/hexgl\/screenshots\/hexgl-2025-03-29T03-29-56-427Z.jpg",
+            "screenshot": "\/games\/hexgl\/screenshots\/hexgl-2025-05-16T23-47-22-122Z.jpg",
             "thumbnail": "\/games\/hexgl\/images\/thumb.jpg"
         },
         {
@@ -99,8 +219,108 @@
             "url": "https:\/\/beinternetawesome.withgoogle.com\/en_us\/interland",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to move around. Click to interact with objects and complete challenges. On mobile, use the virtual joystick and tap to interact. Follow the on-screen instructions to complete each level.",
-            "screenshot": "\/games\/interland\/screenshots\/interland-2025-03-29T03-30-53-225Z.jpg",
+            "screenshot": "\/games\/interland\/screenshots\/interland-2025-05-16T23-49-38-511Z.jpg",
             "thumbnail": "\/games\/interland\/images\/thumb.jpg"
+        },
+        {
+            "id": "kirka-io",
+            "title": "Kirka.io",
+            "description": "A block-style FPS with different game modes including team deathmatch, free-for-all, and capture the flag. Features a variety of weapons, character customization, and maps with a distinctive voxel aesthetic. Earn experience and currency to unlock new items and upgrades as you play.",
+            "url": "https:\/\/kirka.io",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and Q for special abilities. Numbers 1-9 to switch weapons. On mobile, use the virtual joystick and buttons. Choose your preferred game mode and work with your team or dominate solo depending on the mode.",
+            "screenshot": "\/games\/kirka-io\/screenshots\/kirka-io-2025-05-16T23-51-13-215Z.jpg",
+            "thumbnail": "\/games\/kirka-io\/images\/thumb.jpg"
+        },
+        {
+            "id": "krunker-io",
+            "title": "Krunker.io",
+            "description": "A fast-paced first-person shooter with low-poly graphics and advanced movement mechanics. Choose from multiple classes with unique abilities and weapons, customize your character, and compete in various game modes. Known for its quick matches and skill-based gameplay.",
+            "url": "https:\/\/krunker.io",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to crouch. Mouse to aim and click to shoot. Advanced players use slide-hopping (jump + crouch while moving) for faster movement. On mobile, use the virtual controls to move and shoot.",
+            "screenshot": "\/games\/krunker-io\/screenshots\/krunker-io-2025-05-16T23-49-49-209Z.jpg",
+            "thumbnail": "\/games\/krunker-io\/images\/thumb.jpg"
+        },
+        {
+            "id": "madalin-stunt-cars-2",
+            "title": "Madalin Stunt Cars 2",
+            "description": "An open-world stunt driving game with a selection of high-performance cars and large maps to explore. Perform incredible stunts, drifts, and jumps across multiple detailed environments. Features multiplayer mode where you can show off your driving skills to other players.",
+            "url": "https:\/\/www.crazygames.com\/game\/madalin-stunt-cars-2",
+            "category": "Racing",
+            "how_to_play": "Use WASD or arrow keys to drive: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Press Space for handbrake to drift. R to reset your car if you get stuck. On mobile, use the on-screen controls. Explore the maps freely and challenge yourself to perform impressive stunts.",
+            "screenshot": "\/games\/madalin-stunt-cars-2\/screenshots\/madalin-stunt-cars-2-2025-05-16T23-49-14-605Z.jpg",
+            "thumbnail": "\/games\/madalin-stunt-cars-2\/images\/thumb.jpg"
+        },
+        {
+            "id": "madalin-stunt-cars-3",
+            "title": "Madalin Stunt Cars 3",
+            "description": "The latest installment in the Madalin Stunt Cars series with improved graphics, physics, and more vehicles. Race and perform stunts in exotic supercars across expansive, detailed maps. Features multiplayer functionality allowing you to drive alongside friends and show off your best tricks.",
+            "url": "https:\/\/www.crazygames.com\/game\/madalin-stunt-cars-3",
+            "category": "Racing",
+            "how_to_play": "Use WASD or arrow keys to drive: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Press Space for handbrake to drift. R to reset your car if you get stuck. On mobile, use the on-screen controls. Explore the maps and challenge yourself to perform the most impressive stunts possible.",
+            "screenshot": "\/games\/madalin-stunt-cars-3\/screenshots\/madalin-stunt-cars-3-2025-05-16T23-50-17-887Z.jpg",
+            "thumbnail": "\/games\/madalin-stunt-cars-3\/images\/thumb.jpg"
+        },
+        {
+            "id": "mini-royale-nations",
+            "title": "Mini Royale: Nations",
+            "description": "A browser-based FPS with social strategy elements built on PlayCanvas. Combines fast-paced first-person shooter action with base building and resource management. Features multiple game modes, weapon customization, and a persistent world where players can form alliances.",
+            "url": "https:\/\/miniroyale.io\/",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and E to interact with objects. Combat takes place in first-person shooter matches, while the strategic layer involves building and upgrading your base, managing resources, and forming alliances with other players.",
+            "screenshot": "\/games\/mini-royale-nations\/screenshots\/mini-royale-nations-2025-05-16T23-51-23-260Z.jpg",
+            "thumbnail": "\/games\/mini-royale-nations\/images\/thumb.jpg"
+        },
+        {
+            "id": "moon-rider",
+            "title": "Moon Rider",
+            "description": "A musical rhythm game where you surf a cosmic road, built with A-Frame for WebXR. Slash through targets and dodge obstacles in time with the music. Features multiple game modes, a large library of songs, and support for both VR headsets and standard browser play with impressive 3D visuals.",
+            "url": "https:\/\/moonrider.xyz",
+            "category": "Other",
+            "how_to_play": "In browser mode, use your mouse to slash through targets in the direction indicated. In VR mode, use your controllers to cut targets and dodge obstacles. Choose from different game modes including classic, punch, and ride modes. Select from a variety of songs with different difficulty levels and enjoy the immersive audio-visual experience.",
+            "screenshot": "\/games\/moon-rider\/screenshots\/moon-rider-2025-05-16T23-51-45-832Z.jpg",
+            "thumbnail": "\/games\/moon-rider\/images\/thumb.jpg"
+        },
+        {
+            "id": "narrow-one",
+            "title": "Narrow One",
+            "description": "A unique multiplayer first-person archery game with a minimalist art style. Compete in team-based capture-the-flag matches using bow and arrow as your primary weapon. Features multiple character classes, maps, and strategic gameplay focused on precision and teamwork.",
+            "url": "https:\/\/narrow.one",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Hold left mouse button to draw your bow and release to shoot. Right-click to zoom\/aim. Press Q\/E to switch abilities. On mobile, use the virtual joystick and on-screen buttons. Work with your team to capture the enemy flag while defending your own.",
+            "screenshot": "\/games\/narrow-one\/screenshots\/narrow-one-2025-05-16T23-49-27-021Z.jpg",
+            "thumbnail": "\/games\/narrow-one\/images\/thumb.jpg"
+        },
+        {
+            "id": "neuro-cookie-quest-3d",
+            "title": "Neuro Cookie Quest 3D",
+            "description": "A fan-made 3D platformer created for the Neuro-sama game jam. Guide the character through colorful levels collecting cookies while avoiding obstacles and enemies. Features charming low-poly graphics, platforming challenges, and puzzle elements in a compact game experience.",
+            "url": "https:\/\/kerneliron.itch.io\/neuro-cookie-quest-3d",
+            "category": "Platformer",
+            "how_to_play": "Use WASD or arrow keys to move, Space to jump, and Shift to sprint. Collect all the cookies in each level to progress. Navigate platforms, avoid hazards, and solve simple puzzles to reach your goal. The game combines classic platforming mechanics with a cute aesthetic in a browser-friendly package.",
+            "screenshot": "\/games\/neuro-cookie-quest-3d\/screenshots\/neuro-cookie-quest-3d-2025-05-16T23-48-50-490Z.jpg",
+            "thumbnail": "\/games\/neuro-cookie-quest-3d\/images\/thumb.jpg"
+        },
+        {
+            "id": "om-nom-run",
+            "title": "Om Nom: Run",
+            "description": "A colorful 3D endless runner featuring the lovable character Om Nom from the Cut the Rope series. Run through vibrant environments, collect candies, avoid obstacles, and use power-ups to achieve high scores in this family-friendly arcade game.",
+            "url": "https:\/\/www.crazygames.com\/game\/om-nom-run",
+            "category": "Other",
+            "how_to_play": "Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!",
+            "screenshot": "\/games\/om-nom-run\/screenshots\/om-nom-run-2025-05-16T23-52-53-379Z.jpg",
+            "thumbnail": "\/games\/om-nom-run\/images\/thumb.jpg"
+        },
+        {
+            "id": "pixel-warfare",
+            "title": "Pixel Warfare",
+            "description": "A fast-paced multiplayer FPS game with pixel graphics. Battle against other players in various game modes with a wide selection of weapons and maps. The blocky, retro aesthetic combines with modern FPS gameplay for a unique shooting experience.",
+            "url": "https:\/\/www.crazygames.com\/game\/pixel-warfare",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, mouse to aim, and click to shoot. Press R to reload, Space to jump, and Shift to sprint. On mobile, use the virtual joystick and buttons to control your character and weapons.",
+            "screenshot": "\/games\/pixel-warfare\/screenshots\/pixel-warfare-2025-05-16T23-55-47-709Z.jpg",
+            "thumbnail": "\/games\/pixel-warfare\/images\/thumb.jpg"
         },
         {
             "id": "plume",
@@ -109,8 +329,48 @@
             "url": "https:\/\/plumegame.com\/",
             "category": "Adventure",
             "how_to_play": "Use WASD to move, mouse to look around, and click to interact with objects. On mobile, use the virtual joystick and tap to interact. Collect items and solve puzzles to progress through the story.",
-            "screenshot": "\/games\/plume\/screenshots\/plume-2025-03-29T03-30-27-802Z.jpg",
+            "screenshot": "\/games\/plume\/screenshots\/plume-2025-05-16T23-48-38-831Z.jpg",
             "thumbnail": "\/games\/plume\/images\/thumb.jpg"
+        },
+        {
+            "id": "polytrack",
+            "title": "PolyTrack",
+            "description": "A low-poly 3D racing game with a built-in track editor. Race through colorful tracks in arcade-style gameplay with drift mechanics and time trials. Create and share your own tracks with the community, featuring an intuitive track editor and multiple vehicle options.",
+            "url": "https:\/\/kodub.itch.io\/polytrack",
+            "category": "Racing",
+            "how_to_play": "Use WASD or arrow keys to control your vehicle: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Hold Space to drift. On mobile, use the on-screen controls. Race against the clock in time trials or create your own tracks in the editor mode.",
+            "screenshot": "\/games\/polytrack\/screenshots\/polytrack-2025-05-16T23-50-29-473Z.jpg",
+            "thumbnail": "\/games\/polytrack\/images\/thumb.jpg"
+        },
+        {
+            "id": "robostorm-io",
+            "title": "Robostorm.io",
+            "description": "An online multiplayer robot battle game built with PlayCanvas. Control a customizable robot in arena-style combat against other players. Features various weapons, power-ups, and robot parts that can be unlocked and upgraded as you progress through matches.",
+            "url": "https:\/\/robostorm.io\/",
+            "category": "Action",
+            "how_to_play": "Use WASD or arrow keys to move your robot. Mouse to aim and left-click to fire your weapons. Collect power-ups scattered around the arena to gain temporary advantages. Destroy enemy robots to earn points and resources, which can be used to upgrade your robot between matches. Last robot standing wins!",
+            "screenshot": "\/games\/robostorm-io\/screenshots\/robostorm-io-2025-05-16T23-54-11-844Z.jpg",
+            "thumbnail": "\/games\/robostorm-io\/images\/thumb.jpg"
+        },
+        {
+            "id": "rocket-bot-royale",
+            "title": "Rocket Bot Royale",
+            "description": "A side-scrolling tank battle game with a focus on physics and destruction. Control a tank equipped with rockets and other weapons, battling against other players in a last-tank-standing format. Features destructible terrain, power-ups, and strategic gameplay in a 2D environment with 3D graphics.",
+            "url": "https:\/\/rocketbotroyale.com",
+            "category": "Battle Royale",
+            "how_to_play": "Use A\/D or Left\/Right arrows to move your tank. Adjust your firing angle with W\/S or Up\/Down. Press Space to fire your weapon. Collect power-ups and coins to upgrade your tank and weapons. The rising water level forces players to move upward as the match progresses. Be the last tank surviving to win!",
+            "screenshot": "\/games\/rocket-bot-royale\/screenshots\/rocket-bot-royale-2025-05-16T23-54-24-371Z.jpg",
+            "thumbnail": "\/games\/rocket-bot-royale\/images\/thumb.jpg"
+        },
+        {
+            "id": "runescape",
+            "title": "RuneScape",
+            "description": "The iconic MMORPG with a browser-accessible version. Explore the vast fantasy world of Gielinor with thousands of other players. Features hundreds of quests, dozens of skills to master, PvP combat, player-driven economy, and regular content updates in a persistent online world with 20+ years of development.",
+            "url": "https:\/\/www.runescape.com\/",
+            "category": "RPG",
+            "how_to_play": "Use mouse clicks to move, interact with objects, and attack enemies. Access skills, inventory, and other menus through the interface. Choose between the modern RS3 version or Old School RuneScape for a classic experience. Create a character and develop various skills like combat, crafting, and magic while completing quests and interacting with other players.",
+            "screenshot": "\/games\/runescape\/screenshots\/runescape-2025-05-16T23-53-08-596Z.jpg",
+            "thumbnail": "\/games\/runescape\/images\/thumb.jpg"
         },
         {
             "id": "shell-shockers",
@@ -119,8 +379,18 @@
             "url": "https:\/\/shellshock.io\/",
             "category": "FPS",
             "how_to_play": "Use WASD to move, mouse to aim, and click to shoot. On mobile, use the virtual joystick and buttons. Choose your weapon and try to crack your opponents' shells!",
-            "screenshot": "\/games\/shell-shockers\/screenshots\/shell-shockers-2025-03-29T03-32-17-823Z.jpg",
+            "screenshot": "\/games\/shell-shockers\/screenshots\/shell-shockers-2025-05-16T23-55-32-715Z.jpg",
             "thumbnail": "\/games\/shell-shockers\/images\/thumb.jpg"
+        },
+        {
+            "id": "smash-karts",
+            "title": "Smash Karts",
+            "description": "A chaotic multiplayer kart racing game with power-ups and battle elements. Race and battle against other players in colorful arenas, collecting weapons and power-ups to take out opponents. Features simple controls, vibrant graphics, and fast-paced gameplay suitable for all ages.",
+            "url": "https:\/\/smashkarts.io",
+            "category": "Racing",
+            "how_to_play": "Use WASD or arrow keys to drive your kart: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Drive over power-up boxes to collect weapons, then click or press Space to use them. Earn points by taking out other players and surviving longer than your opponents. Last kart standing wins!",
+            "screenshot": "\/games\/smash-karts\/screenshots\/smash-karts-2025-05-16T23-51-00-802Z.jpg",
+            "thumbnail": "\/games\/smash-karts\/images\/thumb.jpg"
         },
         {
             "id": "summer-afternoon",
@@ -129,8 +399,78 @@
             "url": "https:\/\/summer-afternoon.vlucendo.com\/",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to move around. Click and drag to look around. On mobile, use the virtual joystick and touch to look around. Join other players in this shared space!",
-            "screenshot": "\/games\/summer-afternoon\/screenshots\/summer-afternoon-2025-03-29T03-31-20-678Z.jpg",
+            "screenshot": "\/games\/summer-afternoon\/screenshots\/summer-afternoon-2025-05-16T23-54-56-306Z.jpg",
             "thumbnail": "\/games\/summer-afternoon\/images\/thumb.jpg"
+        },
+        {
+            "id": "swooop",
+            "title": "SWOOOP",
+            "description": "A beautiful 3D flying game built with PlayCanvas where you pilot a biplane through a colorful island environment. Collect coins, fly through rings, and avoid obstacles in this arcade-style flying game with simple one-button controls and smooth gameplay.",
+            "url": "https:\/\/playcanv.as\/p\/JtL2iqIH\/",
+            "category": "Other",
+            "how_to_play": "Press and hold the mouse button or touch the screen to climb, release to dive. On mobile, simply tap and hold anywhere on the screen. Collect coins for points and fly through rings for speed boosts. Avoid obstacles like mountains and trees!",
+            "screenshot": "\/games\/swooop\/screenshots\/swooop-2025-05-16T23-47-45-940Z.jpg",
+            "thumbnail": "\/games\/swooop\/images\/thumb.jpg"
+        },
+        {
+            "id": "temple-run-2",
+            "title": "Temple Run 2",
+            "description": "The web version of the popular endless runner game where you escape from temple guardians through ancient ruins. Run, jump, slide and turn through challenging terrain while collecting coins and power-ups. Features beautiful 3D environments and increasingly difficult obstacles.",
+            "url": "https:\/\/poki.com\/en\/g\/temple-run-2",
+            "category": "Other",
+            "how_to_play": "Swipe left or right to turn, swipe up to jump, and swipe down to slide. On desktop, use arrow keys: left\/right to turn, up to jump, down to slide. Tilt your device (or use A\/D keys) to move side to side for collecting coins. Avoid obstacles and run as far as possible!",
+            "screenshot": "\/games\/temple-run-2\/screenshots\/temple-run-2-2025-05-16T23-53-22-234Z.jpg",
+            "thumbnail": "\/games\/temple-run-2\/images\/thumb.jpg"
+        },
+        {
+            "id": "the-aviator",
+            "title": "The Aviator",
+            "description": "A stylish 3D game where you fly a plane through a colorful world, collecting items. Originally created as a Three.js tutorial, this game features beautiful low-poly visuals, smooth animations, and simple yet engaging gameplay in a vibrant environment.",
+            "url": "https:\/\/tympanus.net\/codrops\/2016\/04\/26\/the-aviator-animating-basic-3d-scene-threejs\/",
+            "category": "Adventure",
+            "how_to_play": "Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.",
+            "screenshot": "\/games\/the-aviator\/screenshots\/the-aviator-2025-05-16T23-47-35-476Z.jpg",
+            "thumbnail": "\/games\/the-aviator\/images\/thumb.jpg"
+        },
+        {
+            "id": "the-cube",
+            "title": "The Cube",
+            "description": "An interactive 3D Rubik's Cube puzzle built with Three.js. Solve the classic puzzle in your browser with smooth animations and intuitive controls. Features customizable cube sizes from 2x2 to 5x5, multiple difficulty levels, and the ability to scramble and reset the cube.",
+            "url": "https:\/\/codepen.io\/bsehovac\/pen\/EMyWVv",
+            "category": "Puzzle",
+            "how_to_play": "Click and drag on the cube faces to rotate them. Use the control panel to adjust settings like cube size and scramble difficulty. Solve the puzzle by aligning all colors on each face. For keyboard controls, use the arrow keys to rotate the cube view and WASD to rotate faces. A perfect demonstration of 3D manipulation in the browser.",
+            "screenshot": "\/games\/the-cube\/screenshots\/the-cube-2025-05-16T23-50-07-267Z.jpg",
+            "thumbnail": "\/games\/the-cube\/images\/thumb.jpg"
+        },
+        {
+            "id": "valorous-rabbit",
+            "title": "The Frantic Run Of The Valorous Rabbit",
+            "description": "An endless runner where you control a rabbit on a spherical world. Built with Three.js, this charming game features a unique perspective as you guide your rabbit around a planet, avoiding obstacles and collecting items. The distinctive art style and creative gameplay mechanics showcase the capabilities of 3D web technologies.",
+            "url": "https:\/\/codepen.io\/Yakudoo\/pen\/YGxYZj",
+            "category": "Adventure",
+            "how_to_play": "Use left and right arrow keys or A\/D to move the rabbit around the planet. Jump with Space or the up arrow key to avoid obstacles. The game increases in difficulty as you progress, requiring quick reflexes and good timing. See how far you can run before hitting an obstacle!",
+            "screenshot": "\/games\/valorous-rabbit\/screenshots\/valorous-rabbit-2025-05-16T23-52-15-386Z.jpg",
+            "thumbnail": "\/games\/valorous-rabbit\/images\/thumb.jpg"
+        },
+        {
+            "id": "tunnel-rush",
+            "title": "Tunnel Rush",
+            "description": "A fast-paced 3D tunnel avoidance game built with Babylon.js. Speed through colorful geometric tunnels while avoiding obstacles that appear in your path. Features increasing difficulty, vibrant visuals with color-changing environments, and an adrenaline-pumping soundtrack.",
+            "url": "https:\/\/poki.com\/en\/g\/tunnel-rush",
+            "category": "Action",
+            "how_to_play": "Use left and right arrow keys or A\/D to rotate the tunnel and avoid hitting obstacles. The game automatically propels you forward at increasing speeds. In two-player mode, each player controls half of the screen. React quickly to navigate through gaps in the obstacles and survive as long as possible.",
+            "screenshot": "\/games\/tunnel-rush\/screenshots\/tunnel-rush-2025-05-16T23-48-07-559Z.jpg",
+            "thumbnail": "\/games\/tunnel-rush\/images\/thumb.jpg"
+        },
+        {
+            "id": "venge-io",
+            "title": "Venge.io",
+            "description": "A fast-paced multiplayer first-person shooter with stunning 3D graphics built on PlayCanvas. Features multiple game modes, character classes, and weapons with unique abilities. Known for its smooth performance and competitive gameplay in a browser-based environment.",
+            "url": "https:\/\/venge.io",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot, right-click for scope\/aim. Press R to reload and Q for special abilities. On mobile, use the virtual joystick and on-screen buttons. Choose different weapons and classes to match your playstyle.",
+            "screenshot": "\/games\/venge-io\/screenshots\/venge-io-2025-05-16T23-47-11-164Z.jpg",
+            "thumbnail": "\/games\/venge-io\/images\/thumb.jpg"
         },
         {
             "id": "vibesail.com",
@@ -139,8 +479,28 @@
             "url": "https:\/\/vibesail.com",
             "category": "Other",
             "how_to_play": "Use WASD or arrow keys to control your sailboat. Adjust the sails to catch the wind and navigate through the waters. On mobile, use the virtual joystick!",
-            "screenshot": "\/games\/vibesail.com\/screenshots\/vibesail.com-2025-03-29T03-30-13-849Z.jpg",
+            "screenshot": "\/games\/vibesail.com\/screenshots\/vibesail.com-2025-05-16T23-48-17-797Z.jpg",
             "thumbnail": "\/games\/vibesail.com\/images\/thumb.jpg"
+        },
+        {
+            "id": "war-brokers",
+            "title": "War Brokers",
+            "description": "A voxel-style first-person shooter with various vehicles and game modes. Engage in team battles, capture the flag, or battle royale modes with a unique blocky aesthetic. Features tanks, helicopters, and other vehicles alongside traditional FPS combat.",
+            "url": "https:\/\/warbrokers.io",
+            "category": "FPS",
+            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to enter vehicles, Q for special abilities. On mobile, use the virtual controls. Work with your team to complete objectives or be the last player standing in battle royale mode.",
+            "screenshot": "\/games\/war-brokers\/screenshots\/war-brokers-2025-05-16T23-52-38-141Z.jpg",
+            "thumbnail": "\/games\/war-brokers\/images\/thumb.jpg"
+        },
+        {
+            "id": "xx142-b2-exe",
+            "title": "xx142-b2.exe",
+            "description": "A JS13kGames winner where you infiltrate an alien network as a virus. Navigate through a stylized representation of computer systems, avoiding detection while completing objectives. Features unique hacking mechanics, minimalist visuals, and an atmospheric soundtrack, all compressed into less than 13KB of JavaScript.",
+            "url": "https:\/\/js13kgames.com\/games\/xx142-b2exe\/index.html",
+            "category": "Puzzle",
+            "how_to_play": "Use WASD or arrow keys to move through the network. Press Space or E to interact with nodes and systems. Avoid detection by security measures and complete your objectives to progress. The game presents a series of increasingly difficult puzzles that require stealth and strategy to overcome.",
+            "screenshot": "\/games\/xx142-b2-exe\/screenshots\/xx142-b2-exe-2025-05-16T23-51-33-217Z.jpg",
+            "thumbnail": "\/games\/xx142-b2-exe\/images\/thumb.jpg"
         }
     ]
 }

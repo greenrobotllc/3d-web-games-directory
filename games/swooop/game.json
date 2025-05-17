@@ -3,5 +3,7 @@
   "url": "https://playcanv.as/p/JtL2iqIH/",
   "description": "A beautiful 3D flying game built with PlayCanvas where you pilot a biplane through a colorful island environment. Collect coins, fly through rings, and avoid obstacles in this arcade-style flying game with simple one-button controls and smooth gameplay.",
   "how_to_play": "Press and hold the mouse button or touch the screen to climb, release to dive. On mobile, simply tap and hold anywhere on the screen. Collect coins for points and fly through rings for speed boosts. Avoid obstacles like mountains and trees!",
-  "category": "Other"
+  "category": "Other",
+  "screenshot": "/games/swooop/screenshots/swooop-2025-05-16T23-47-45-940Z.jpg",
+  "thumbnail": "/games/swooop/images/thumb.jpg"
 }

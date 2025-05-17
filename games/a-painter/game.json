@@ -1,7 +1,0 @@
-{
-  "title": "A-Painter",
-  "url": "https://aframe.io/a-painter/",
-  "description": "A creative VR painting application built with A-Frame that works in browsers. Express yourself by painting in 3D space with various brushes and effects. Features an intuitive interface, multiple brush types, color selection, and the ability to save and share your creations.",
-  "how_to_play": "In VR mode, use your controllers to paint in 3D space. Select different brushes and colors from the palette. In browser mode without VR, you can still view and interact with the interface using mouse controls. Create three-dimensional artwork by moving your controllers/cursor through space while painting, allowing for unique spatial creations not possible in traditional 2D art applications.",
-  "category": "Other"
-}

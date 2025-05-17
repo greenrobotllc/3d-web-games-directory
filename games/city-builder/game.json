@@ -1,7 +1,0 @@
-{
-  "title": "City Builder",
-  "url": "https://github.com/PicchiKevin/WebXR-games",
-  "description": "A creative sandbox game where you can build virtual cities with pixel-style 3D models. Place buildings, roads, trees, and other elements to create your own urban landscape. Built with WebXR technologies, this game demonstrates the potential for spatial creation in browsers with support for both VR and standard interfaces.",
-  "how_to_play": "In browser mode, use mouse and keyboard to place and manipulate objects in your city. Select different building types from the menu and place them in your world. In VR mode, use hand tracking or controllers to grab and position elements. Rotate, scale, and position objects to design your ideal city layout from any perspective.",
-  "category": "Sandbox"
-}

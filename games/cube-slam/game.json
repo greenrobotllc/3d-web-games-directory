@@ -1,7 +1,0 @@
-{
-  "title": "Cube Slam",
-  "url": "https://cubeslam.com",
-  "description": "A Pong-like game with WebRTC video chat capabilities created by Google. Play against the computer or challenge a friend to a real-time match with video chat. Features 3D graphics, power-ups, and multiple levels with increasing difficulty and obstacles.",
-  "how_to_play": "Use your mouse or arrow keys to move your paddle and prevent the cube from passing you. When playing against a friend, you'll see their video feed on the opposite side of the playing field. Collect power-ups to gain advantages like a wider paddle or multiple cubes. The first player to score 11 points wins the round.",
-  "category": "Other"
-}

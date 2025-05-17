@@ -1,7 +1,0 @@
-{
-  "title": "Banana Bread Demo",
-  "url": "https://kripken.github.io/misc-js-benchmarks/banana/index.html",
-  "description": "A classic first-person shooter demo based on Cube 2 engine, ported to the web using WebAssembly. Features fast-paced shooting action with multiple weapons and enemies in a sci-fi environment. Demonstrates the capabilities of running complex 3D games in the browser.",
-  "how_to_play": "Use WASD to move, mouse to look around, and left-click to shoot. Press Space to jump and Shift to sprint. Number keys to switch weapons. This tech demo showcases how traditional desktop games can be ported to run directly in web browsers using modern web technologies.",
-  "category": "FPS"
-}

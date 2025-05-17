@@ -28,6 +28,34 @@ An educational 3D game by Google that teaches kids about online safety through i
 
 ---
 
+## Moon Rider
+
+<img src="../games/moon-rider/images/thumb.jpg" alt="Moon Rider thumbnail" width="200">
+
+**Category:** Other
+
+A musical rhythm game where you surf a cosmic road, built with A-Frame for WebXR. Slash through targets and dodge obstacles in time with the music. Features multiple game modes, a large library of songs, and support for both VR headsets and standard browser play with impressive 3D visuals.
+
+**How to Play:** In browser mode, use your mouse to slash through targets in the direction indicated. In VR mode, use your controllers to cut targets and dodge obstacles. Choose from different game modes including classic, punch, and ride modes. Select from a variety of songs with different difficulty levels and enjoy the immersive audio-visual experience.
+
+[▶ Play Game](https://moonrider.xyz)
+
+---
+
+## Om Nom: Run
+
+<img src="../games/om-nom-run/images/thumb.jpg" alt="Om Nom: Run thumbnail" width="200">
+
+**Category:** Other
+
+A colorful 3D endless runner featuring the lovable character Om Nom from the Cut the Rope series. Run through vibrant environments, collect candies, avoid obstacles, and use power-ups to achieve high scores in this family-friendly arcade game.
+
+**How to Play:** Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!
+
+[▶ Play Game](https://www.crazygames.com/game/om-nom-run)
+
+---
+
 ## Summer Afternoon
 
 <img src="../games/summer-afternoon/images/thumb.jpg" alt="Summer Afternoon thumbnail" width="200">
@@ -39,6 +67,34 @@ A beautiful multiplayer 3D environment with a unique cartoon-style aesthetic. Ex
 **How to Play:** Use WASD or arrow keys to move around. Click and drag to look around. On mobile, use the virtual joystick and touch to look around. Join other players in this shared space!
 
 [▶ Play Game](https://summer-afternoon.vlucendo.com/)
+
+---
+
+## SWOOOP
+
+<img src="../games/swooop/images/thumb.jpg" alt="SWOOOP thumbnail" width="200">
+
+**Category:** Other
+
+A beautiful 3D flying game built with PlayCanvas where you pilot a biplane through a colorful island environment. Collect coins, fly through rings, and avoid obstacles in this arcade-style flying game with simple one-button controls and smooth gameplay.
+
+**How to Play:** Press and hold the mouse button or touch the screen to climb, release to dive. On mobile, simply tap and hold anywhere on the screen. Collect coins for points and fly through rings for speed boosts. Avoid obstacles like mountains and trees!
+
+[▶ Play Game](https://playcanv.as/p/JtL2iqIH/)
+
+---
+
+## Temple Run 2
+
+<img src="../games/temple-run-2/images/thumb.jpg" alt="Temple Run 2 thumbnail" width="200">
+
+**Category:** Other
+
+The web version of the popular endless runner game where you escape from temple guardians through ancient ruins. Run, jump, slide and turn through challenging terrain while collecting coins and power-ups. Features beautiful 3D environments and increasingly difficult obstacles.
+
+**How to Play:** Swipe left or right to turn, swipe up to jump, and swipe down to slide. On desktop, use arrow keys: left/right to turn, up to jump, down to slide. Tilt your device (or use A/D keys) to move side to side for collecting coins. Avoid obstacles and run as far as possible!
+
+[▶ Play Game](https://poki.com/en/g/temple-run-2)
 
 ---
 

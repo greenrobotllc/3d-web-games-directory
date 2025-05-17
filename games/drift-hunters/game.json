@@ -3,5 +3,7 @@
   "url": "https://www.crazygames.com/game/drift-hunters",
   "description": "A realistic 3D drifting game with a focus on authentic drift mechanics and car customization. Features a variety of real-world inspired cars that can be upgraded and tuned for optimal drifting performance. Earn points by performing stylish drifts across multiple tracks and environments.",
   "how_to_play": "Use WASD or arrow keys to control your car: W/Up to accelerate, S/Down to brake/reverse, A/D or Left/Right to steer. Space for handbrake to initiate drifts. Earn money from successful drifts to upgrade your car's performance and appearance. Master the art of controlling your car through corners while maintaining a drift for maximum points.",
-  "category": "Racing"
+  "category": "Racing",
+  "screenshot": "/games/drift-hunters/screenshots/drift-hunters-2025-05-16T23-55-08-971Z.jpg",
+  "thumbnail": "/games/drift-hunters/images/thumb.jpg"
 }

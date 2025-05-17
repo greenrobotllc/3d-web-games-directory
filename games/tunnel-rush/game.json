@@ -3,5 +3,7 @@
   "url": "https://poki.com/en/g/tunnel-rush",
   "description": "A fast-paced 3D tunnel avoidance game built with Babylon.js. Speed through colorful geometric tunnels while avoiding obstacles that appear in your path. Features increasing difficulty, vibrant visuals with color-changing environments, and an adrenaline-pumping soundtrack.",
   "how_to_play": "Use left and right arrow keys or A/D to rotate the tunnel and avoid hitting obstacles. The game automatically propels you forward at increasing speeds. In two-player mode, each player controls half of the screen. React quickly to navigate through gaps in the obstacles and survive as long as possible.",
-  "category": "Action"
+  "category": "Action",
+  "screenshot": "/games/tunnel-rush/screenshots/tunnel-rush-2025-05-16T23-48-07-559Z.jpg",
+  "thumbnail": "/games/tunnel-rush/images/thumb.jpg"
 }

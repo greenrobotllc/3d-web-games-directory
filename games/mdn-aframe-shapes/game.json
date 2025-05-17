@@ -1,7 +1,0 @@
-{
-  "title": "MDN A-Frame Shapes Demo",
-  "url": "https://end3r.github.io/MDN-Games-3D/A-Frame/shapes.html",
-  "description": "A basic A-Frame demo showcasing 3D shapes and interactions, created for Mozilla Developer Network educational content. Explore simple 3D objects with different materials, colors, and properties in a virtual space. This educational demo helps developers understand the fundamentals of creating WebXR content.",
-  "how_to_play": "Use your mouse to look around the scene. Click on objects to interact with them. In VR mode, use your headset to look around and controllers to interact. This is primarily an educational demo showing how basic 3D shapes and interactions work in A-Frame, serving as a starting point for learning WebXR development.",
-  "category": "Other"
-}

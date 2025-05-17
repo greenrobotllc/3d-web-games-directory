@@ -3,5 +3,7 @@
   "url": "https://kirka.io",
   "description": "A block-style FPS with different game modes including team deathmatch, free-for-all, and capture the flag. Features a variety of weapons, character customization, and maps with a distinctive voxel aesthetic. Earn experience and currency to unlock new items and upgrades as you play.",
   "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and Q for special abilities. Numbers 1-9 to switch weapons. On mobile, use the virtual joystick and buttons. Choose your preferred game mode and work with your team or dominate solo depending on the mode.",
-  "category": "FPS"
+  "category": "FPS",
+  "screenshot": "/games/kirka-io/screenshots/kirka-io-2025-05-16T23-51-13-215Z.jpg",
+  "thumbnail": "/games/kirka-io/images/thumb.jpg"
 }

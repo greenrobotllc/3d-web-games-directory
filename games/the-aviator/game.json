@@ -4,6 +4,6 @@
   "description": "A stylish 3D game where you fly a plane through a colorful world, collecting items. Originally created as a Three.js tutorial, this game features beautiful low-poly visuals, smooth animations, and simple yet engaging gameplay in a vibrant environment.",
   "how_to_play": "Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.",
   "category": "Adventure",
-  "screenshot": "/games/the-aviator/screenshots/the-aviator-2025-05-16T23-47-35-476Z.jpg",
+  "screenshot": "/games/the-aviator/screenshots/the-aviator-2025-05-18T03-39-50-054Z.jpg",
   "thumbnail": "/games/the-aviator/images/thumb.jpg"
 }

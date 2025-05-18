@@ -1,19 +1,5 @@
 # Puzzle Games
 
-## Collapse
-
-<img src="../games/collapse/images/thumb.jpg" alt="Collapse thumbnail" width="200">
-
-**Category:** Puzzle
-
-A classic falling block puzzle game built with Unity WebGL. Match and clear groups of colored blocks before they reach the top of the screen. Features smooth animations, increasing difficulty, and special blocks that provide unique gameplay mechanics and strategic options.
-
-**How to Play:** Click or tap on groups of three or more adjacent blocks of the same color to remove them. The remaining blocks will collapse to fill empty spaces. Plan your moves carefully to create chain reactions and clear as many blocks as possible in a single move. The game ends when the blocks reach the top of the screen.
-
-[▶ Play Game](https://www.newgrounds.com/portal/view/695777)
-
----
-
 ## The Cube
 
 <img src="../games/the-cube/images/thumb.jpg" alt="The Cube thumbnail" width="200">

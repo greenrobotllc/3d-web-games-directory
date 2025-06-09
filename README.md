@@ -4,6 +4,8 @@ Welcome to the 3D Web Games Directory! This repository serves two purposes:
 1. Data source for the interactive 3D game browser at https://3dwebgames.com
 2. Traditional directory listing organized by category (see below)
 
+## 📖 Full Index: [View All Games](categories/all-games.md)
+
 ## Game Categories 📂
 
 ### Action & Combat
@@ -151,3 +153,21 @@ The script keeps track of the last processed commit to avoid reprocessing unchan
 - Ensure all prerequisites are installed
 - Verify the repository path in the cron job is correct
 - Make sure the scripts/update-games.sh file is executable (`chmod +x scripts/update-games.sh`) 
+### Sponsored by GreenRobot LLC
+
+**GreenRobot Sites:**
+
+- [GreenRobot LLC Homepage](https://greenrobot.com) - GreenRobot LLC Homepage
+- [Robot Designs](https://robots.greenrobot.com) - Check out thousands of robot designs
+- [AI Careers](https://aicareers.greenrobot.com) - Find thousands of Artificial Intelligence and Machine Learning (AI/ML) careers. Updated every few hours with new jobs from VC funded companies.
+- [Longevity](https://longevity.greenrobot.com) - Information, research and interactive tools focused on longevity.
+- [Launch Day](https://launchday.greenrobot.com) - Get your site ready for launch with this collaborative marketing and tech validation check list.
+- [Remote Dev Jobs](https://remotedevjobs.greenrobot.com) - Find thousands of Remote Developer/Engineer jobs. Updated every few hours with new jobs from VC funded companies.
+- [Mental Health Lawyers](https://mentalhealthlawyers.greenrobot.com) - Directory of Mental Health Lawyers in the USA for involuntary commitment and guardianship issues.
+- [3D Web Games](https://3dwebgames.com) - Discover 3D web games in this curated directory in the style of a video game store/Blockbuster.
+- [3D Tank Game](https://3dtankgame.com) - Fun free tank survival game. No login or app required.
+- [Cartoonify](https://cartoonify.greenrobot.com) - Turn Yourself Into A Cartoon for Free.
+- [Job Search](https://jobsearch.greenrobot.com) - Discover jobs at portfolio companies backed by Venture Capitalists
+- [Wizard Writer](https://wizardwriter.greenrobot.com) - Automatically write blog posts
+
+

@@ -153,6 +153,8 @@ The script keeps track of the last processed commit to avoid reprocessing unchan
 - Ensure all prerequisites are installed
 - Verify the repository path in the cron job is correct
 - Make sure the scripts/update-games.sh file is executable (`chmod +x scripts/update-games.sh`) 
+
+
 ### Sponsored by GreenRobot LLC
 
 **GreenRobot Sites:**

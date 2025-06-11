@@ -171,5 +171,5 @@ The script keeps track of the last processed commit to avoid reprocessing unchan
 - [Cartoonify](https://cartoonify.greenrobot.com) - Turn Yourself Into A Cartoon for Free.
 - [Job Search](https://jobsearch.greenrobot.com) - Discover jobs at portfolio companies backed by Venture Capitalists
 - [Wizard Writer](https://wizardwriter.greenrobot.com) - Automatically write blog posts
-
-
+- [Pirate Game](https://pirates.greenrobot.com) - Ahoy! Sail the high seas in this pirate game.
+- [Open Space Game](https://openspace.greenrobot.com) - Explore space in this open source space game for iOS and Mac.

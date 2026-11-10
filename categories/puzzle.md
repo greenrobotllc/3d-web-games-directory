@@ -1,5 +1,19 @@
 # Puzzle Games
 
+## Outlier: Unlimited Krillion Game
+
+<img src="../games/outlier-unlimited-krillion/images/thumb.jpg" alt="Outlier: Unlimited Krillion Game thumbnail" width="200">
+
+**Category:** Puzzle
+
+A free unlimited Krillion-style rare-answer trivia game with no daily cap. Name something that fits the category; the rarer your correct answer, the further your cat pilot's UFO flies over a pixel-art city.
+
+**How to Play:** You get a category (e.g. name a river, a cheese, an NBA team) and one answer. Type your answer: obvious picks score a little, rare correct picks score a lot. Your S/A/B grade decides how far the UFO flies. Play in any browser, desktop or mobile, no download.
+
+[▶ Play Game](https://playkrillion.net/)
+
+---
+
 ## The Cube
 
 <img src="../games/the-cube/images/thumb.jpg" alt="The Cube thumbnail" width="200">

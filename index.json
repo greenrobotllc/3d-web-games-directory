@@ -2,9 +2,10 @@
     "categories": [
         {
             "name": "Action",
-            "game_count": 3,
+            "game_count": 4,
             "games": [
                 "dasher-3d",
+                "huss-valley-game",
                 "robostorm-io",
                 "tunnel-rush"
             ]
@@ -67,8 +68,9 @@
         },
         {
             "name": "Puzzle",
-            "game_count": 2,
+            "game_count": 3,
             "games": [
+                "outlier-unlimited-krillion",
                 "the-cube",
                 "xx142-b2-exe"
             ]
@@ -202,6 +204,16 @@
             "thumbnail": "\/games\/hexgl\/images\/thumb.jpg"
         },
         {
+            "id": "huss-valley-game",
+            "title": "Huss Valley Game",
+            "description": "Free multiplayer Halloween chase game in the browser: pumpkin-headed trick-or-treaters race across a field to the finish while up to 4 ghosts hunt them. Up to 30 players per room, WebGL, no download, no account.",
+            "url": "https:\/\/hussvalley.io\/",
+            "category": "Action",
+            "how_to_play": "Press Play to join a live room. Trick-or-treaters: run from START to FINISH with WASD\/arrow keys (or the on-screen joystick on phones), grabbing candy for points and a speed boost. Ghosts: leave the haunted house and catch runners with a swipe attack. Gamepads are supported.",
+            "screenshot": "\/games\/huss-valley-game\/screenshots\/huss-valley-game-2026-11-10T23-28-25-661Z.jpg",
+            "thumbnail": "\/games\/huss-valley-game\/images\/thumb.jpg"
+        },
+        {
             "id": "interland",
             "title": "Interland",
             "description": "An educational 3D game by Google that teaches kids about online safety through interactive adventures. Explore four different lands while learning about digital citizenship, security, and kindness.",
@@ -300,6 +312,16 @@
             "how_to_play": "Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!",
             "screenshot": "\/games\/om-nom-run\/screenshots\/om-nom-run-2025-05-18T03-44-22-687Z.jpg",
             "thumbnail": "\/games\/om-nom-run\/images\/thumb.jpg"
+        },
+        {
+            "id": "outlier-unlimited-krillion",
+            "title": "Outlier: Unlimited Krillion Game",
+            "description": "A free unlimited Krillion-style rare-answer trivia game with no daily cap. Name something that fits the category; the rarer your correct answer, the further your cat pilot's UFO flies over a pixel-art city.",
+            "url": "https:\/\/playkrillion.net\/",
+            "category": "Puzzle",
+            "how_to_play": "You get a category (e.g. name a river, a cheese, an NBA team) and one answer. Type your answer: obvious picks score a little, rare correct picks score a lot. Your S\/A\/B grade decides how far the UFO flies. Play in any browser, desktop or mobile, no download.",
+            "screenshot": "\/games\/outlier-unlimited-krillion\/screenshots\/outlier-unlimited-krillion-2026-11-10T23-45-44-389Z.jpg",
+            "thumbnail": "\/games\/outlier-unlimited-krillion\/images\/thumb.jpg"
         },
         {
             "id": "pixel-warfare",

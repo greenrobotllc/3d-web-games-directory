@@ -140,6 +140,20 @@ A futuristic racing game inspired by F-Zero and Wipeout. Race through stunning n
 
 ---
 
+## Huss Valley Game
+
+<img src="../games/huss-valley-game/images/thumb.jpg" alt="Huss Valley Game thumbnail" width="200">
+
+**Category:** Action
+
+Free multiplayer Halloween chase game in the browser: pumpkin-headed trick-or-treaters race across a field to the finish while up to 4 ghosts hunt them. Up to 30 players per room, WebGL, no download, no account.
+
+**How to Play:** Press Play to join a live room. Trick-or-treaters: run from START to FINISH with WASD/arrow keys (or the on-screen joystick on phones), grabbing candy for points and a speed boost. Ghosts: leave the haunted house and catch runners with a swipe attack. Gamepads are supported.
+
+[▶ Play Game](https://hussvalley.io/)
+
+---
+
 ## Interland
 
 <img src="../games/interland/images/thumb.jpg" alt="Interland thumbnail" width="200">
@@ -277,6 +291,20 @@ A colorful 3D endless runner featuring the lovable character Om Nom from the Cut
 **How to Play:** Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!
 
 [▶ Play Game](https://www.crazygames.com/game/om-nom-run)
+
+---
+
+## Outlier: Unlimited Krillion Game
+
+<img src="../games/outlier-unlimited-krillion/images/thumb.jpg" alt="Outlier: Unlimited Krillion Game thumbnail" width="200">
+
+**Category:** Puzzle
+
+A free unlimited Krillion-style rare-answer trivia game with no daily cap. Name something that fits the category; the rarer your correct answer, the further your cat pilot's UFO flies over a pixel-art city.
+
+**How to Play:** You get a category (e.g. name a river, a cheese, an NBA team) and one answer. Type your answer: obvious picks score a little, rare correct picks score a lot. Your S/A/B grade decides how far the UFO flies. Play in any browser, desktop or mobile, no download.
+
+[▶ Play Game](https://playkrillion.net/)
 
 ---
 

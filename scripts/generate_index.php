@@ -17,6 +17,12 @@ class IndexGenerator {
         // Scan for games
         foreach (glob($gamesDir . '/*/game.json') as $file) {
             $gameData = json_decode(file_get_contents($file), true);
+            // Skip anything that isn't a well-formed https game (validate-games.js explains why)
+            if (!is_array($gameData) || !isset($gameData['title'], $gameData['category'])
+                || !is_string($gameData['url'] ?? null) || !str_starts_with($gameData['url'], 'https://')) {
+                fwrite(STDERR, "Skipping invalid game: $file\n");
+                continue;
+            }
             if ($gameData) {
                 $gameData['id'] = basename(dirname($file));
                 $this->games[] = $gameData;

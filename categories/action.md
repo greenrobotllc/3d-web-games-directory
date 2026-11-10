@@ -14,6 +14,20 @@ A top-down shooter with innovative time-freezing mechanics. Navigate through min
 
 ---
 
+## Huss Valley Game
+
+<img src="../games/huss-valley-game/images/thumb.jpg" alt="Huss Valley Game thumbnail" width="200">
+
+**Category:** Action
+
+Free multiplayer Halloween chase game in the browser: pumpkin-headed trick-or-treaters race across a field to the finish while up to 4 ghosts hunt them. Up to 30 players per room, WebGL, no download, no account.
+
+**How to Play:** Press Play to join a live room. Trick-or-treaters: run from START to FINISH with WASD/arrow keys (or the on-screen joystick on phones), grabbing candy for points and a speed boost. Ghosts: leave the haunted house and catch runners with a swipe attack. Gamepads are supported.
+
+[▶ Play Game](https://hussvalley.io/)
+
+---
+
 ## Robostorm.io
 
 <img src="../games/robostorm-io/images/thumb.jpg" alt="Robostorm.io thumbnail" width="200">

@@ -1,32 +1,12 @@
 <?php
 
 class CategoryGenerator {
-    private $categories = [
-        'Action' => 'action.md',
-        'Adventure' => 'adventure.md',
-        'Battle Royale' => 'battle-royale.md',
-        'Card & Board' => 'card-and-board.md',
-        'Death Match' => 'death-match.md',
-        'Fighting' => 'fighting.md',
-        'First Person Shooter' => 'fps.md',
-        'FPS' => 'fps.md',
-        'Horror' => 'horror.md',
-        'MMO' => 'mmo.md',
-        'Platformer' => 'platformer.md',
-        'Puzzle' => 'puzzle.md',
-        'Racing' => 'racing.md',
-        'Real Time Strategy' => 'rts.md',
-        'RTS' => 'rts.md',
-        'Role Playing Game' => 'rpg.md',
-        'RPG' => 'rpg.md',
-        'Sandbox' => 'sandbox.md',
-        'Shooter' => 'shooter.md',
-        'Simulator' => 'simulator.md',
-        'Sports' => 'sports.md',
-        'Strategy' => 'strategy.md',
-        'Survival' => 'survival.md',
-        'Other' => 'other.md'
-    ];
+    private $categories = [];
+
+    public function __construct() {
+        // Category name => markdown file; shared with validate-games.js
+        $this->categories = json_decode(file_get_contents(__DIR__ . '/categories.json'), true);
+    }
 
     public function generateCategories() {
         $indexFile = __DIR__ . '/../index.json';
@@ -70,7 +50,7 @@ class CategoryGenerator {
         
         if (empty($games)) {
             $content .= "_No games in this category yet._\n\n";
-            $content .= "Want to add a game? Check out our [contribution guidelines](../README.md#how-to-add-your-game-)!\n";
+            $content .= "Want to add a game? Check out our [contribution guidelines](../README.md#adding-your-game-)!\n";
         } else {
             foreach ($games as $game) {
                 $content .= $this->formatGameEntry($game);
@@ -85,7 +65,7 @@ class CategoryGenerator {
         
         if (empty($games)) {
             $content .= "_No games added yet._\n\n";
-            $content .= "Want to add a game? Check out our [contribution guidelines](../README.md#how-to-add-your-game-)!\n";
+            $content .= "Want to add a game? Check out our [contribution guidelines](../README.md#adding-your-game-)!\n";
         } else {
             // Sort games by title
             usort($games, function($a, $b) {

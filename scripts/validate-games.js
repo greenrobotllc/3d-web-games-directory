@@ -29,9 +29,14 @@ const requested = process.argv.slice(2).map(toId);
 const idsToCheck = requested.length ? [...new Set(requested)] : allIds;
 
 const problems = [];
+// Escape for GitHub workflow commands so contributor text can't break out of the annotation.
+const escapeData = (s) => String(s).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+const escapeProperty = (s) => escapeData(s).replace(/:/g, '%3A').replace(/,/g, '%2C');
 const report = (id, message) => {
     problems.push({ id, message });
-    if (inActions) console.log(`::error file=games/${id}/game.json::${message}`);
+    if (inActions) {
+        console.log(`::error file=${escapeProperty(`games/${id}/game.json`)}::${escapeData(message)}`);
+    }
 };
 
 // Load everything once so duplicate checks see the whole directory.

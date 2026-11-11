@@ -103,7 +103,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 Two GitHub Actions workflows handle everything:
 
 - **Validate games** (`.github/workflows/validate.yml`) runs on every pull request. It checks each `game.json` (required fields, `https://` URL, category, no HTML, no duplicates) and adds annotations to the PR explaining what to fix. It also warns if a submission changes files other than its `game.json`.
-- **Process games** (`.github/workflows/process-games.yml`) runs when a `game.json` lands on `main`. It takes the screenshot and thumbnail, rebuilds `index.json` and `categories/*.md`, and commits the result. The browser that opens contributor URLs runs with a read-only token. A separate job with write access commits only the generated files. To redo a screenshot, run the workflow by hand from the Actions tab and enter the game ids, or leave the field blank to redo every game.
+- **Process games** (`.github/workflows/process-games.yml`) runs when a `game.json` lands on `main`. It takes the screenshot and thumbnail, rebuilds `index.json` and `categories/*.md`, and commits the result. The browser that opens contributor URLs runs with a read-only token. A separate job with write access commits only the generated files. If a game's site is down or returns an error, its existing screenshot is kept (a new game gets a grey placeholder). To redo a screenshot, run the workflow by hand from the Actions tab and enter the game ids, or leave the field blank to redo every game.
 
 So adding a game is: **review the PR → merge**. 3dwebgames.com picks up the new `index.json` the next time its update script runs.
 

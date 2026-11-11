@@ -58,9 +58,15 @@ async function downloadImage(url) {
     const declared = Number(response.headers.get('content-length') || 0);
     if (declared > MAX_IMAGE_BYTES) throw new Error(`Image too large (${declared} bytes)`);
 
-    const buffer = Buffer.from(await response.arrayBuffer());
-    if (buffer.length > MAX_IMAGE_BYTES) throw new Error(`Image too large (${buffer.length} bytes)`);
-    return buffer;
+    // Enforce the cap while streaming; content-length can be missing or wrong.
+    const chunks = [];
+    let total = 0;
+    for await (const chunk of response.body) {
+        total += chunk.length;
+        if (total > MAX_IMAGE_BYTES) throw new Error(`Image too large (over ${MAX_IMAGE_BYTES} bytes)`);
+        chunks.push(chunk);
+    }
+    return Buffer.concat(chunks);
 }
 
 /** Return the absolute og:image URL for the current page, or null. */
@@ -122,10 +128,17 @@ async function captureRawImage(url) {
         page.on('dialog', (dialog) => dialog.dismiss().catch(() => {}));
 
         console.log(`  Navigating to ${url}`);
+        let response = null;
         try {
-            await page.goto(url, { waitUntil: 'load', timeout: NAV_TIMEOUT_MS });
+            response = await page.goto(url, { waitUntil: 'load', timeout: NAV_TIMEOUT_MS });
         } catch (error) {
+            // DNS/connection/TLS failures leave only Chrome's error page: treat as a failed capture.
+            if (/net::ERR_/.test(error.message)) throw error;
+            // Slow games often time out on "load" but have rendered enough to capture.
             console.warn(`  Navigation issue (continuing with what loaded): ${error.message}`);
+        }
+        if (response && response.status() >= 400) {
+            throw new Error(`Game page returned HTTP ${response.status()}`);
         }
         await waitForStablePage(page);
 
@@ -156,7 +169,9 @@ async function processGame(gameId) {
     const gameDir = path.join(GAMES_DIR, gameId);
     const gameJsonPath = path.join(gameDir, 'game.json');
     const gameData = JSON.parse(fs.readFileSync(gameJsonPath, 'utf8'));
-    if (!isHttpUrl(gameData.url)) throw new Error(`Invalid url in ${gameJsonPath}`);
+    if (!isHttpUrl(gameData.url) || new URL(gameData.url).protocol !== 'https:') {
+        throw new Error(`Game url must start with https:// in ${gameJsonPath}`);
+    }
 
     console.log(`\n${gameData.title} (${gameId})`);
 
@@ -171,6 +186,13 @@ async function processGame(gameId) {
     }
     const usedPlaceholder = !raw;
     if (usedPlaceholder) {
+        // Don't replace a good screenshot with a grey box because the site was briefly down.
+        const existing = typeof gameData.screenshot === 'string'
+            ? path.join(REPO_ROOT, gameData.screenshot) : null;
+        if (existing && existing.startsWith(gameDir + path.sep) && fs.existsSync(existing)) {
+            console.warn('  All attempts failed; keeping the existing screenshot');
+            return false;
+        }
         console.warn('  All attempts failed; using a placeholder image');
         raw = await placeholderImage();
     }

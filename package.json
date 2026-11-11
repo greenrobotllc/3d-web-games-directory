@@ -4,10 +4,17 @@
   "description": "3D Web Games Directory",
   "type": "module",
   "scripts": {
-    "test": "node test-screenshot.js"
+    "validate": "node scripts/validate-games.js",
+    "process": "bash scripts/process-games.sh",
+    "screenshots": "node scripts/take-screenshots.js",
+    "build-index": "php scripts/generate_index.php && php scripts/generate_categories.php",
+    "test": "npm run validate"
   },
   "dependencies": {
-    "puppeteer": "^22.15.0",
-    "sharp": "^0.33.5"
+    "puppeteer": "^25.17.0",
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

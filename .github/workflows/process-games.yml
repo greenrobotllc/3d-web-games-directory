@@ -1,0 +1,158 @@
+# After a game is merged into main: take its screenshot, rebuild index.json and the
+# category pages, and commit the results. 3dwebgames.com picks up index.json from here.
+#
+# The browser that visits contributor URLs runs in a job with a read-only token;
+# a separate job with write access commits only the generated files.
+name: Process games
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "games/*/game.json"
+  workflow_dispatch:
+    inputs:
+      games:
+        description: "Game ids to (re)process, space separated. Leave empty for all games."
+        required: false
+        default: ""
+
+concurrency:
+  group: process-games
+  cancel-in-progress: false
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      games: ${{ steps.changed.outputs.games }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Work out which games changed
+        id: changed
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          INPUT_GAMES: ${{ inputs.games }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -f  # no globbing of folder names
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            if [ -n "$INPUT_GAMES" ]; then games="$INPUT_GAMES"; else games=$(ls games | tr '\n' ' '); fi
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            games=$(git diff-tree --no-commit-id --name-only -r --diff-filter=AM "$AFTER" -- 'games/*/game.json' | xargs -r -n1 dirname | xargs -r -n1 basename | tr '\n' ' ')
+          else
+            games=$(git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- 'games/*/game.json' | xargs -r -n1 dirname | xargs -r -n1 basename | tr '\n' ' ')
+          fi
+          # Keep only safe folder names (same rule as validate-games.js) before the list is used anywhere else.
+          games=$(for g in $games; do echo "$g"; done | grep -E '^[a-z0-9]([a-z0-9.-]{0,62}[a-z0-9])?$' | grep -v '\.\.' | tr '\n' ' ' || true)
+          games=$(echo $games)
+          echo "games=$games" >> "$GITHUB_OUTPUT"
+          echo "Games to process: ${games:-none}"
+
+      - uses: actions/setup-node@v7
+        if: steps.changed.outputs.games != ''
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Validate
+        if: steps.changed.outputs.games != ''
+        env:
+          GAMES: ${{ steps.changed.outputs.games }}
+        run: node scripts/validate-games.js $GAMES
+
+      - name: Install dependencies and Chrome
+        if: steps.changed.outputs.games != ''
+        run: |
+          npm ci
+          npx puppeteer browsers install chrome
+          # Ubuntu 24.04 blocks the user namespaces Chrome's sandbox needs; allow them on this throwaway runner.
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      - name: Screenshots
+        if: steps.changed.outputs.games != ''
+        env:
+          GAMES: ${{ steps.changed.outputs.games }}
+        run: node scripts/take-screenshots.js $GAMES || echo "::warning::Some screenshots fell back to a placeholder image. Re-run this workflow for those games, or replace the image by hand."
+
+      - name: Package screenshots and game.json updates
+        if: steps.changed.outputs.games != ''
+        run: |
+          # Only games/** travels to the write job; index.json and categories/ are rebuilt there
+          # from the latest main so back-to-back merges can't conflict. --no-renames keeps every
+          # entry a plain add/modify/delete that the write job can check path by path.
+          git add -A games
+          git diff --cached --binary --no-renames -- games > generated.patch
+          ls -l generated.patch
+
+      - uses: actions/upload-artifact@v7
+        if: steps.changed.outputs.games != ''
+        with:
+          name: generated
+          path: generated.patch
+          retention-days: 7
+
+  commit:
+    needs: screenshots
+    if: needs.screenshots.outputs.games != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: generated
+          path: ${{ runner.temp }}/generated
+
+      - name: Check the patch only touches generated game files
+        env:
+          PATCH: ${{ runner.temp }}/generated/generated.patch
+        run: |
+          if [ ! -s "$PATCH" ]; then echo "Nothing changed."; exit 0; fi
+          # No renames, copies, mode changes or symlinks: only plain 100644 files.
+          if grep -qE '^(rename|copy) (from|to) |^(old|new) mode |^(similarity|dissimilarity) index ' "$PATCH"; then
+            echo "::error::Patch contains renames, copies or mode changes"; exit 1
+          fi
+          if grep -E '^(new|deleted) file mode |^index [0-9a-f]+\.\.[0-9a-f]+ ' "$PATCH" | grep -vE ' 100644$' | grep -q .; then
+            echo "::error::Patch contains a non-regular file (e.g. a symlink)"; exit 1
+          fi
+          # Both sides of every diff header must be an allowed generated path.
+          paths=$(grep -E '^diff --git ' "$PATCH" | awk '{print $3; print $4}' | sed -E 's|^[ab]/||')
+          bad=$(echo "$paths" | grep -vE '^games/[a-z0-9][a-z0-9.-]*/(game\.json|images/thumb\.jpg|screenshots/[A-Za-z0-9._-]+\.(jpe?g|png))$' || true)
+          bad="$bad$(echo "$paths" | grep -F '..' || true)"
+          if [ -n "$bad" ]; then echo "::error::Patch touches unexpected files:"; echo "$bad"; exit 1; fi
+
+      - name: Apply, rebuild index.json and category pages, commit and push
+        env:
+          PATCH: ${{ runner.temp }}/generated/generated.patch
+          GAMES: ${{ needs.screenshots.outputs.games }}
+        run: |
+          if [ ! -s "$PATCH" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            git apply --index "$PATCH"
+            php scripts/generate_index.php
+            php scripts/generate_categories.php
+            git add -A games index.json categories
+            if git diff --cached --quiet; then echo "Nothing to commit."; exit 0; fi
+            git commit -q -m "Process games: $GAMES" -m "Screenshots, thumbnails, index.json and category pages generated by the Process games workflow."
+            if git push origin HEAD:main; then exit 0; fi
+            echo "main moved during the run; rebuilding on the new main (attempt $attempt)"
+            sleep 5
+          done
+          echo "::error::Could not push after 3 attempts"; exit 1

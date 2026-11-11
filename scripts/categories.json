@@ -1,0 +1,23 @@
+{
+  "Action": "action.md",
+  "Adventure": "adventure.md",
+  "Battle Royale": "battle-royale.md",
+  "Card & Board": "card-and-board.md",
+  "Death Match": "death-match.md",
+  "Fighting": "fighting.md",
+  "FPS": "fps.md",
+  "Horror": "horror.md",
+  "MMO": "mmo.md",
+  "Platformer": "platformer.md",
+  "Puzzle": "puzzle.md",
+  "Racing": "racing.md",
+  "RPG": "rpg.md",
+  "RTS": "rts.md",
+  "Sandbox": "sandbox.md",
+  "Shooter": "shooter.md",
+  "Simulator": "simulator.md",
+  "Sports": "sports.md",
+  "Strategy": "strategy.md",
+  "Survival": "survival.md",
+  "Other": "other.md"
+}

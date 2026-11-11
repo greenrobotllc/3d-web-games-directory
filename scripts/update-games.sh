@@ -26,7 +26,7 @@ done
 echo "Starting games directory update process..."
 
 # Ensure we're in the repository directory
-cd $REPO_PATH
+cd "$REPO_PATH"
 
 # Get current commit hash (needed for all modes)
 CURRENT_COMMIT=$(git rev-parse HEAD)
@@ -35,8 +35,8 @@ CURRENT_COMMIT=$(git rev-parse HEAD)
 if [ "$FORCE" = false ]; then
     echo "Updating repository..."
     git fetch origin
-    git checkout $MAIN_BRANCH
-    git pull origin $MAIN_BRANCH
+    git checkout "$MAIN_BRANCH"
+    git pull origin "$MAIN_BRANCH"
 fi
 
 if [ "$FORCE" = true ] || [ "$PROCESS_ALL" = true ]; then
@@ -50,7 +50,8 @@ else
     LAST_COMMIT=$(cat "$LAST_COMMIT_FILE" 2>/dev/null || echo "HEAD^")
 
     # Convert newlines to spaces and remove trailing space
-    CHANGED_FILES=$(git diff --name-only "$LAST_COMMIT" "$CURRENT_COMMIT" | grep "game.json" | tr '\n' ' ' | sed 's/ *$//' || true)
+    # Only added/modified games; deleted ones have nothing to screenshot
+    CHANGED_FILES=$(git diff --name-only --diff-filter=AM "$LAST_COMMIT" "$CURRENT_COMMIT" -- 'games/*/game.json' | tr '\n' ' ' | sed 's/ *$//' || true)
     
     if [ -z "$CHANGED_FILES" ]; then
         echo "No new or modified game.json files found."
@@ -73,7 +74,9 @@ fi
 # Only run screenshot generation if there are files to process
 if [ ! -z "$ALL_CHANGED_FILES" ]; then
     echo "Processing files: $ALL_CHANGED_FILES"
-    node scripts/take-screenshots.js
+    # Validate before loading any contributor URL in a browser
+    node scripts/validate-games.js $ALL_CHANGED_FILES
+    node scripts/take-screenshots.js || echo "WARNING: some screenshots fell back to a placeholder"
 fi
 
 # Generate index files

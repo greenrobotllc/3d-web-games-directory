@@ -14,9 +14,13 @@ export const CARD = { width: 800, height: 420 };
 /** An og:image narrower than this is too small to use; take a screenshot instead. */
 export const MIN_SHARE_IMAGE_WIDTH = 600;
 
-/** Re-encode any image as the cover: at most 1200px wide, flattened onto black, JPEG. */
+/**
+ * Re-encode any image as the cover: upright, at most 1200px wide, flattened onto black, JPEG.
+ * autoOrient applies an EXIF rotation (common in phone photos) before it is stripped.
+ */
 export async function makeCover(input) {
     return sharp(input)
+        .autoOrient()
         .resize({ width: COVER_MAX_WIDTH, withoutEnlargement: true })
         .flatten({ background: '#000000' })
         .jpeg({ quality: 85, mozjpeg: true })
@@ -30,17 +34,21 @@ export async function makeCover(input) {
  * are fitted inside the card on a blurred, darkened copy of themselves.
  */
 export async function makeCard(input) {
-    const { width, height } = await sharp(input).metadata();
+    // Use the upright size: metadata width/height ignore an EXIF rotation.
+    const meta = await sharp(input).metadata();
+    const { width, height } = meta.autoOrient || meta;
     const ratio = width / height;
 
     if (ratio >= 1.5 && ratio <= 2.4) {
         return sharp(input)
+            .autoOrient()
             .resize(CARD.width, CARD.height, { fit: 'cover', position: 'centre' })
             .jpeg({ quality: 80, mozjpeg: true })
             .toBuffer();
     }
 
     const backdrop = await sharp(input)
+        .autoOrient()
         .resize(CARD.width, CARD.height, { fit: 'cover' })
         .blur(24)
         .modulate({ brightness: 0.55 })
@@ -48,6 +56,7 @@ export async function makeCard(input) {
     // Don't enlarge small art more than 1.5x; past that it only gets blurrier.
     const scale = Math.min(CARD.width / width, CARD.height / height, 1.5);
     const fitted = await sharp(input)
+        .autoOrient()
         .resize(Math.round(width * scale), Math.round(height * scale))
         .toBuffer();
     return sharp(backdrop)
@@ -56,10 +65,11 @@ export async function makeCard(input) {
         .toBuffer();
 }
 
-/** Width of an image buffer, or 0 if it can't be read. */
+/** Upright width of an image buffer, or 0 if it can't be read. */
 export async function imageWidth(input) {
     try {
-        return (await sharp(input).metadata()).width || 0;
+        const meta = await sharp(input).metadata();
+        return (meta.autoOrient || meta).width || 0;
     } catch {
         return 0;
     }

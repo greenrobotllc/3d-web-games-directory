@@ -26,12 +26,21 @@ async function rebuild(id) {
     if (typeof game.screenshot !== 'string' || !game.screenshot.startsWith(`/games/${id}/screenshots/`)) {
         return `${id}: no cover yet, skipped`;
     }
-    const coverPath = path.join(REPO_ROOT, game.screenshot);
+    // The cover must be a regular file directly inside this game's screenshots folder,
+    // so a malformed path ("../../other-game/...") can't read or overwrite another game's image.
+    const screenshotsDir = path.join(GAMES_DIR, id, 'screenshots');
+    const coverPath = path.resolve(REPO_ROOT, `.${game.screenshot}`);
+    if (path.dirname(coverPath) !== screenshotsDir) {
+        throw new Error(`screenshot path ${game.screenshot} is outside games/${id}/screenshots/`);
+    }
+    if (!fs.lstatSync(coverPath).isFile()) {
+        throw new Error(`screenshot ${game.screenshot} is not a regular file`);
+    }
     let cover = fs.readFileSync(coverPath);
-    const { format, width, height } = await sharp(cover).metadata();
+    const { format, width, height, orientation } = await sharp(cover).metadata();
 
     let note = `${width}x${height} ${format}`;
-    if (format !== 'jpeg' || width > COVER_MAX_WIDTH) {
+    if (format !== 'jpeg' || width > COVER_MAX_WIDTH || (orientation && orientation !== 1)) {
         const before = cover.length;
         cover = await makeCover(cover);
         fs.writeFileSync(coverPath, cover);

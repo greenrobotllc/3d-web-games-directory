@@ -1,5 +1,16 @@
 # RTS Games
 
-_No games in this category yet._
+## BotGrid
 
-Want to add a game? Check out our [contribution guidelines](../README.md#adding-your-game-)!
+<img src="../games/botgrid/images/thumb.jpg" alt="BotGrid thumbnail" width="200">
+
+**Category:** RTS
+
+A real-time territory strategy game on a neon circuit board. Build robots that claim nodes, fight rivals and hack enemy Cores while you power your network out from your own Core. Take on up to five AI rivals from Easy to Brutal, or play online with friends. Free in your browser on phone or desktop.
+
+**How to Play:** Own 3 of a cell's 4 corner nodes to claim it and earn energy, then spend energy on bots: Build bots claim nodes, Strike bots fight and Hack bots break enemy nodes and Cores. Nodes cut off from your Core go dark. Win by crashing every rival Core or by holding most of the grid for 40 seconds. Keyboard: drag or WASD to pan, wheel to zoom, 1-9 to build, U to upgrade, Space to jump home. Touch: drag to look, pinch to zoom, tap a bot to build it.
+
+[▶ Play Game](https://botgrid.greenrobot.com/)
+
+---
+

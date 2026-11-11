@@ -1,5 +1,19 @@
 # Adventure Games
 
+## Jolly Roger
+
+<img src="../games/jolly-roger/images/thumb.jpg" alt="Jolly Roger thumbnail" width="200">
+
+**Category:** Adventure
+
+An open-world 3D pirate adventure. Sail an open sea, trade between harbors, fight rival ships broadside to broadside, board and capture them, and go ashore anywhere to dig up buried treasure. Hunt down four captains for the pieces of a legendary map. Free in your browser on phone or desktop, with no account and nothing to buy.
+
+**How to Play:** A and D steer, W and S set or furl the sails, and drag to look around; she is fastest with the wind behind her. Fire a broadside with Space when a gun button glows, or pick a side with Q and E. Come alongside a crippled ship and press F to board, then click to cut and hold Shift to guard. Press F to dock at a harbor, anchor off a beach to swim ashore, and press F on a red X to dig. On touch, steer with the left stick.
+
+[▶ Play Game](https://jollyroger.greenrobot.com/)
+
+---
+
 ## Plume
 
 <img src="../games/plume/images/thumb.jpg" alt="Plume thumbnail" width="200">

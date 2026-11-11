@@ -3,5 +3,7 @@
   "url": "https://jollyroger.greenrobot.com/",
   "description": "An open-world 3D pirate adventure. Sail an open sea, trade between harbors, fight rival ships broadside to broadside, board and capture them, and go ashore anywhere to dig up buried treasure. Hunt down four captains for the pieces of a legendary map. Free in your browser on phone or desktop, with no account and nothing to buy.",
   "how_to_play": "A and D steer, W and S set or furl the sails, and drag to look around; she is fastest with the wind behind her. Fire a broadside with Space when a gun button glows, or pick a side with Q and E. Come alongside a crippled ship and press F to board, then click to cut and hold Shift to guard. Press F to dock at a harbor, anchor off a beach to swim ashore, and press F on a red X to dig. On touch, steer with the left stick.",
-  "category": "Adventure"
+  "category": "Adventure",
+  "thumbnail": "/games/jolly-roger/images/thumb.jpg",
+  "screenshot": "/games/jolly-roger/screenshots/jolly-roger-2026-11-11T00-47-14-895Z.jpg"
 }

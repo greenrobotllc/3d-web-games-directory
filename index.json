@@ -12,8 +12,9 @@
         },
         {
             "name": "Adventure",
-            "game_count": 3,
+            "game_count": 4,
             "games": [
+                "jolly-roger",
                 "plume",
                 "the-aviator",
                 "valorous-rabbit"
@@ -21,8 +22,9 @@
         },
         {
             "name": "Battle Royale",
-            "game_count": 1,
+            "game_count": 2,
             "games": [
+                "daybreak",
                 "rocket-bot-royale"
             ]
         },
@@ -83,6 +85,13 @@
             ]
         },
         {
+            "name": "RTS",
+            "game_count": 1,
+            "games": [
+                "botgrid"
+            ]
+        },
+        {
             "name": "Racing",
             "game_count": 6,
             "games": [
@@ -112,6 +121,16 @@
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
             "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-05-18T03-40-10-769Z.jpg",
             "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
+        },
+        {
+            "id": "botgrid",
+            "title": "BotGrid",
+            "description": "A real-time territory strategy game on a neon circuit board. Build robots that claim nodes, fight rivals and hack enemy Cores while you power your network out from your own Core. Take on up to five AI rivals from Easy to Brutal, or play online with friends. Free in your browser on phone or desktop.",
+            "url": "https:\/\/botgrid.greenrobot.com\/",
+            "category": "RTS",
+            "how_to_play": "Own 3 of a cell's 4 corner nodes to claim it and earn energy, then spend energy on bots: Build bots claim nodes, Strike bots fight and Hack bots break enemy nodes and Cores. Nodes cut off from your Core go dark. Win by crashing every rival Core or by holding most of the grid for 40 seconds. Keyboard: drag or WASD to pan, wheel to zoom, 1-9 to build, U to upgrade, Space to jump home. Touch: drag to look, pinch to zoom, tap a bot to build it.",
+            "screenshot": "\/games\/botgrid\/screenshots\/botgrid-2026-11-11T00-46-07-874Z.jpg",
+            "thumbnail": "\/games\/botgrid\/images\/thumb.jpg"
         },
         {
             "id": "bruno-simon-portfolio",
@@ -152,6 +171,16 @@
             "how_to_play": "Use a single button (mouse click or space) to move forward in the direction you're facing. Time only progresses when you move, allowing you to plan your path through enemy fire. Rotate your view with the mouse to change direction. Reach the exit in each level while avoiding or eliminating enemies.",
             "screenshot": "\/games\/dasher-3d\/screenshots\/dasher-3d-2025-05-18T03-43-48-384Z.jpg",
             "thumbnail": "\/games\/dasher-3d\/images\/thumb.jpg"
+        },
+        {
+            "id": "daybreak",
+            "title": "Daybreak",
+            "description": "A free 3D battle royale on a shrinking island. Twelve contestants smash crates for weapons, chain hits into heavy finishers and dodge-roll out of danger. A supply drop lands at every daybreak and the tide rises every night. Last one standing wins. Play online or solo against bots, in your browser on phone or desktop.",
+            "url": "https:\/\/daybreak.greenrobot.com\/",
+            "category": "Battle Royale",
+            "how_to_play": "WASD to move, mouse or drag to look, click or J to attack, Space to jump, Shift or right-click to dodge-roll, Q to switch weapons, Tab for the scoreboard. Walk over loot to take it and over food to heal. Land three hits in a row for a heavy finisher, and keep to high ground at night because the sea drains your health. Touch: left thumb moves, drag on the right to look, the big button attacks.",
+            "screenshot": "\/games\/daybreak\/screenshots\/daybreak-2026-11-11T00-47-04-270Z.jpg",
+            "thumbnail": "\/games\/daybreak\/images\/thumb.jpg"
         },
         {
             "id": "drift-hunters",
@@ -222,6 +251,16 @@
             "how_to_play": "Use WASD or arrow keys to move around. Click to interact with objects and complete challenges. On mobile, use the virtual joystick and tap to interact. Follow the on-screen instructions to complete each level.",
             "screenshot": "\/games\/interland\/screenshots\/interland-2025-05-18T03-41-42-076Z.jpg",
             "thumbnail": "\/games\/interland\/images\/thumb.jpg"
+        },
+        {
+            "id": "jolly-roger",
+            "title": "Jolly Roger",
+            "description": "An open-world 3D pirate adventure. Sail an open sea, trade between harbors, fight rival ships broadside to broadside, board and capture them, and go ashore anywhere to dig up buried treasure. Hunt down four captains for the pieces of a legendary map. Free in your browser on phone or desktop, with no account and nothing to buy.",
+            "url": "https:\/\/jollyroger.greenrobot.com\/",
+            "category": "Adventure",
+            "how_to_play": "A and D steer, W and S set or furl the sails, and drag to look around; she is fastest with the wind behind her. Fire a broadside with Space when a gun button glows, or pick a side with Q and E. Come alongside a crippled ship and press F to board, then click to cut and hold Shift to guard. Press F to dock at a harbor, anchor off a beach to swim ashore, and press F on a red X to dig. On touch, steer with the left stick.",
+            "screenshot": "\/games\/jolly-roger\/screenshots\/jolly-roger-2026-11-11T00-47-14-895Z.jpg",
+            "thumbnail": "\/games\/jolly-roger\/images\/thumb.jpg"
         },
         {
             "id": "kirka-io",

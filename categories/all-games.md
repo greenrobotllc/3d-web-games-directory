@@ -14,6 +14,20 @@ An intense multiplayer tank battle game in 3D. Battle against other players in r
 
 ---
 
+## BotGrid
+
+<img src="../games/botgrid/images/thumb.jpg" alt="BotGrid thumbnail" width="200">
+
+**Category:** RTS
+
+A real-time territory strategy game on a neon circuit board. Build robots that claim nodes, fight rivals and hack enemy Cores while you power your network out from your own Core. Take on up to five AI rivals from Easy to Brutal, or play online with friends. Free in your browser on phone or desktop.
+
+**How to Play:** Own 3 of a cell's 4 corner nodes to claim it and earn energy, then spend energy on bots: Build bots claim nodes, Strike bots fight and Hack bots break enemy nodes and Cores. Nodes cut off from your Core go dark. Win by crashing every rival Core or by holding most of the grid for 40 seconds. Keyboard: drag or WASD to pan, wheel to zoom, 1-9 to build, U to upgrade, Space to jump home. Touch: drag to look, pinch to zoom, tap a bot to build it.
+
+[▶ Play Game](https://botgrid.greenrobot.com/)
+
+---
+
 ## Bruno Simon Portfolio
 
 <img src="../games/bruno-simon-portfolio/images/thumb.jpg" alt="Bruno Simon Portfolio thumbnail" width="200">
@@ -67,6 +81,20 @@ A top-down shooter with innovative time-freezing mechanics. Navigate through min
 **How to Play:** Use a single button (mouse click or space) to move forward in the direction you're facing. Time only progresses when you move, allowing you to plan your path through enemy fire. Rotate your view with the mouse to change direction. Reach the exit in each level while avoiding or eliminating enemies.
 
 [▶ Play Game](https://esyverse.itch.io/dasher)
+
+---
+
+## Daybreak
+
+<img src="../games/daybreak/images/thumb.jpg" alt="Daybreak thumbnail" width="200">
+
+**Category:** Battle Royale
+
+A free 3D battle royale on a shrinking island. Twelve contestants smash crates for weapons, chain hits into heavy finishers and dodge-roll out of danger. A supply drop lands at every daybreak and the tide rises every night. Last one standing wins. Play online or solo against bots, in your browser on phone or desktop.
+
+**How to Play:** WASD to move, mouse or drag to look, click or J to attack, Space to jump, Shift or right-click to dodge-roll, Q to switch weapons, Tab for the scoreboard. Walk over loot to take it and over food to heal. Land three hits in a row for a heavy finisher, and keep to high ground at night because the sea drains your health. Touch: left thumb moves, drag on the right to look, the big button attacks.
+
+[▶ Play Game](https://daybreak.greenrobot.com/)
 
 ---
 
@@ -165,6 +193,20 @@ An educational 3D game by Google that teaches kids about online safety through i
 **How to Play:** Use WASD or arrow keys to move around. Click to interact with objects and complete challenges. On mobile, use the virtual joystick and tap to interact. Follow the on-screen instructions to complete each level.
 
 [▶ Play Game](https://beinternetawesome.withgoogle.com/en_us/interland)
+
+---
+
+## Jolly Roger
+
+<img src="../games/jolly-roger/images/thumb.jpg" alt="Jolly Roger thumbnail" width="200">
+
+**Category:** Adventure
+
+An open-world 3D pirate adventure. Sail an open sea, trade between harbors, fight rival ships broadside to broadside, board and capture them, and go ashore anywhere to dig up buried treasure. Hunt down four captains for the pieces of a legendary map. Free in your browser on phone or desktop, with no account and nothing to buy.
+
+**How to Play:** A and D steer, W and S set or furl the sails, and drag to look around; she is fastest with the wind behind her. Fire a broadside with Space when a gun button glows, or pick a side with Q and E. Come alongside a crippled ship and press F to board, then click to cut and hold Shift to guard. Press F to dock at a harbor, anchor off a beach to swim ashore, and press F on a red X to dig. On touch, steer with the left stick.
+
+[▶ Play Game](https://jollyroger.greenrobot.com/)
 
 ---
 

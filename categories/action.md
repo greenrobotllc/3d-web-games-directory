@@ -28,6 +28,20 @@ Free multiplayer Halloween chase game in the browser: pumpkin-headed trick-or-tr
 
 ---
 
+## Keep Out!
+
+<img src="../games/keep-out/images/thumb.jpg" alt="Keep Out! thumbnail" width="200">
+
+**Category:** Action
+
+A first-person dungeon crawler by Little Workshop. Explore the dungeon room by room, fight the monsters inside and unlock new weapons as you go.
+
+**How to Play:** Press Play Now and pick your keyboard layout. The How to play screen then shows the keys for moving and fighting.
+
+[▶ Play Game](https://www.playkeepout.com/)
+
+---
+
 ## Tunnel Rush
 
 <img src="../games/tunnel-rush/images/thumb.jpg" alt="Tunnel Rush thumbnail" width="200">

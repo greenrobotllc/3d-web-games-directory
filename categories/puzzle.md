@@ -1,5 +1,19 @@
 # Puzzle Games
 
+## Kacho Refine
+
+<img src="../games/kacho-refine/images/thumb.jpg" alt="Kacho Refine thumbnail" width="200">
+
+**Category:** Puzzle
+
+A 3D remake of a 1998 panel puzzle game. Guide a penguin to the goal by turning the arrow tiles it walks over, while germ enemies follow the same arrows. It has 30 stages and a stage builder for making your own.
+
+**How to Play:** Turn the arrow panels with the mouse or touch to steer the penguin. Collect the four panels on each stage, then reach the goal. Switch the language to English on the loading screen. The first load takes about 30 seconds.
+
+[▶ Play Game](https://kacho.modern-orange.com/)
+
+---
+
 ## Outlier: Unlimited Krillion Game
 
 <img src="../games/outlier-unlimited-krillion/images/thumb.jpg" alt="Outlier: Unlimited Krillion Game thumbnail" width="200">

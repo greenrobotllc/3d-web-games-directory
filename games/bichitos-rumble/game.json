@@ -3,5 +3,7 @@
   "url": "https://www.bichitosrumble.com/",
   "description": "An arena brawler where nine animal characters headbutt each other off a platform. Each critter has its own abilities and an ultimate. Play against bots, online with up to four players, or with friends. No sign-up.",
   "how_to_play": "WASD to move, Space to headbutt, J and K for abilities and L for your ultimate. Press R to restart. Knock your rivals off the edge and be the last one standing. Gamepads are supported.",
-  "category": "Fighting"
+  "category": "Fighting",
+  "thumbnail": "/games/bichitos-rumble/images/thumb.jpg",
+  "screenshot": "/games/bichitos-rumble/screenshots/bichitos-rumble-2026-11-11T04-58-19-181Z.jpg"
 }

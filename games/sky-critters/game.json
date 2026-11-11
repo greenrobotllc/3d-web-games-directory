@@ -3,5 +3,7 @@
   "url": "https://skycritters.io/",
   "description": "Fly a drone over a toy-like 3D city and shoot down waves of flying critters before they reach your base tower. Earn coins to upgrade your gear, alone or in multiplayer.",
   "how_to_play": "WASD to fly, mouse to look, Space and Shift to go up and down, and click to shoot. Keys 1-4 switch weapons. M mutes sounds and N mutes music.",
-  "category": "Shooter"
+  "category": "Shooter",
+  "thumbnail": "/games/sky-critters/images/thumb.jpg",
+  "screenshot": "/games/sky-critters/screenshots/sky-critters-2026-11-11T05-01-03-256Z.jpg"
 }

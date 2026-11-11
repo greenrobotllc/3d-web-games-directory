@@ -3,5 +3,7 @@
   "url": "https://www.playkeepout.com/",
   "description": "A first-person dungeon crawler by Little Workshop. Explore the dungeon room by room, fight the monsters inside and unlock new weapons as you go.",
   "how_to_play": "Press Play Now and pick your keyboard layout. The How to play screen then shows the keys for moving and fighting.",
-  "category": "Action"
+  "category": "Action",
+  "thumbnail": "/games/keep-out/images/thumb.jpg",
+  "screenshot": "/games/keep-out/screenshots/keep-out-2026-11-11T04-59-32-912Z.jpg"
 }

@@ -3,5 +3,7 @@
   "url": "https://hollowlands.andreelias.dev/",
   "description": "A third-person survival and crafting game in a stylised, procedurally generated world. Explore, gather resources, craft tools, build and fight, on your own or online with other players.",
   "how_to_play": "Choose Singleplayer or Online Multiplayer. WASD to move, Shift to run, Space to jump and R to open your inventory. The first quests on screen get you started.",
-  "category": "Survival"
+  "category": "Survival",
+  "thumbnail": "/games/hollowlands/images/thumb.jpg",
+  "screenshot": "/games/hollowlands/screenshots/hollowlands-2026-11-11T04-59-10-807Z.jpg"
 }

@@ -3,5 +3,7 @@
   "url": "https://manablade.com/",
   "description": "A free anime-styled 3D multiplayer RPG that drops you straight onto a tutorial beach with no sign-up. Fight the demons that are stealing the world's mana, alongside other players.",
   "how_to_play": "WASD to run and move the mouse to look around. Follow the on-screen tutorial to learn the rest.",
-  "category": "MMO"
+  "category": "MMO",
+  "thumbnail": "/games/mana-blade/images/thumb.jpg",
+  "screenshot": "/games/mana-blade/screenshots/mana-blade-2026-11-11T04-59-54-294Z.jpg"
 }

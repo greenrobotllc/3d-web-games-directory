@@ -1,5 +1,19 @@
 # All Games
 
+## 13th Floor
+
+<img src="../games/13th-floor/images/thumb.jpg" alt="13th Floor thumbnail" width="200">
+
+**Category:** Horror
+
+A first-person stealth horror game that fits in 13 kilobytes, and the overall winner of js13kGames 2024. Search a hotel floor room by room for keys while hiding from whatever is hunting you.
+
+**How to Play:** Click to start. WASD to move and the mouse to look. Press E or left-click to interact and F to toggle your flashlight. Find the keys and avoid being caught.
+
+[▶ Play Game](https://play.js13kgames.com/13th-floor/)
+
+---
+
 ## 3D Tank Battle
 
 <img src="../games/3d-tank-battle/images/thumb.jpg" alt="3D Tank Battle thumbnail" width="200">
@@ -11,6 +25,34 @@ An intense multiplayer tank battle game in 3D. Battle against other players in r
 **How to Play:** Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!
 
 [▶ Play Game](https://3dtankbattle.com)
+
+---
+
+## AFK City
+
+<img src="../games/afk-city/images/thumb.jpg" alt="AFK City thumbnail" width="200">
+
+**Category:** Strategy
+
+A relaxing low-poly city builder that can build itself. Watch a city grow from a settlement into a skyline on its own, or take over and zone and design it yourself.
+
+**How to Play:** Choose a mode and press Play. Auto grows the city while you watch, Classic lets you zone and design it with the mouse, and Survive is the third mode to try once you know the basics.
+
+[▶ Play Game](https://afkcity.com/)
+
+---
+
+## Bichitos Rumble
+
+<img src="../games/bichitos-rumble/images/thumb.jpg" alt="Bichitos Rumble thumbnail" width="200">
+
+**Category:** Fighting
+
+An arena brawler where nine animal characters headbutt each other off a platform. Each critter has its own abilities and an ultimate. Play against bots, online with up to four players, or with friends. No sign-up.
+
+**How to Play:** WASD to move, Space to headbutt, J and K for abilities and L for your ultimate. Press R to restart. Knock your rivals off the edge and be the last one standing. Gamepads are supported.
+
+[▶ Play Game](https://www.bichitosrumble.com/)
 
 ---
 
@@ -112,6 +154,20 @@ A realistic 3D drifting game with a focus on authentic drift mechanics and car c
 
 ---
 
+## FLOAT
+
+<img src="../games/float/images/thumb.jpg" alt="FLOAT thumbnail" width="200">
+
+**Category:** Platformer
+
+First-person momentum parkour through huge concrete monoliths hanging in the sky. Chain wall runs, slides and wall jumps to cross nine sectors. There is no combat, only movement.
+
+**How to Play:** WASD to move and Shift to sprint. Jump with Space, the right mouse button or the wheel. Ctrl to slide or stomp. Keep your speed up and link moves together.
+
+[▶ Play Game](https://floatparkour.vercel.app/)
+
+---
+
 ## Farm Clash 3D
 
 <img src="../games/farm-clash-3d/images/thumb.jpg" alt="Farm Clash 3D thumbnail" width="200">
@@ -154,6 +210,34 @@ A fun free-to-play MMO flight sim, made with AI. Fly and dogfight with your frie
 
 ---
 
+## Freeze Out
+
+<img src="../games/freeze-out/images/thumb.jpg" alt="Freeze Out thumbnail" width="200">
+
+**Category:** Shooter
+
+A first-person snowball fight: four against four with bots across eight winter maps, from an alpine village to an ice rink. It has three game modes and tournament cups, and no ads.
+
+**How to Play:** Works with keyboard and mouse, touch or a gamepad. Click or tap to throw a snowball, and hold to wind up a longer throw. Choose Quick match to jump in, or Training to practise first.
+
+[▶ Play Game](https://newkrok.com/gamer-zone/freeze-out)
+
+---
+
+## Heraclos
+
+<img src="../games/heraclos/images/thumb.jpg" alt="Heraclos thumbnail" width="200">
+
+**Category:** Adventure
+
+A short, polished 3D adventure about a reluctant hero in ancient Greece, made as a graduation project at the Gobelins school. The story is split into chapters.
+
+**How to Play:** Pick a quality level to match your computer, then start a new game. Follow the on-screen prompts through each chapter; you can return to any chapter from the menu.
+
+[▶ Play Game](https://heraclosgame.com/)
+
+---
+
 ## HexGL
 
 <img src="../games/hexgl/images/thumb.jpg" alt="HexGL thumbnail" width="200">
@@ -165,6 +249,20 @@ A futuristic racing game inspired by F-Zero and Wipeout. Race through stunning n
 **How to Play:** Use arrow keys to control your hovercraft. Up/Down to accelerate/brake, Left/Right to steer. On mobile, use the virtual joystick. Collect power-ups and race against the clock!
 
 [▶ Play Game](https://hexgl.bkcore.com/)
+
+---
+
+## Hollowlands
+
+<img src="../games/hollowlands/images/thumb.jpg" alt="Hollowlands thumbnail" width="200">
+
+**Category:** Survival
+
+A third-person survival and crafting game in a stylised, procedurally generated world. Explore, gather resources, craft tools, build and fight, on your own or online with other players.
+
+**How to Play:** Choose Singleplayer or Online Multiplayer. WASD to move, Shift to run, Space to jump and R to open your inventory. The first quests on screen get you started.
+
+[▶ Play Game](https://hollowlands.andreelias.dev/)
 
 ---
 
@@ -210,6 +308,34 @@ An open-world 3D pirate adventure. Sail an open sea, trade between harbors, figh
 
 ---
 
+## Kacho Refine
+
+<img src="../games/kacho-refine/images/thumb.jpg" alt="Kacho Refine thumbnail" width="200">
+
+**Category:** Puzzle
+
+A 3D remake of a 1998 panel puzzle game. Guide a penguin to the goal by turning the arrow tiles it walks over, while germ enemies follow the same arrows. It has 30 stages and a stage builder for making your own.
+
+**How to Play:** Turn the arrow panels with the mouse or touch to steer the penguin. Collect the four panels on each stage, then reach the goal. Switch the language to English on the loading screen. The first load takes about 30 seconds.
+
+[▶ Play Game](https://kacho.modern-orange.com/)
+
+---
+
+## Keep Out!
+
+<img src="../games/keep-out/images/thumb.jpg" alt="Keep Out! thumbnail" width="200">
+
+**Category:** Action
+
+A first-person dungeon crawler by Little Workshop. Explore the dungeon room by room, fight the monsters inside and unlock new weapons as you go.
+
+**How to Play:** Press Play Now and pick your keyboard layout. The How to play screen then shows the keys for moving and fighting.
+
+[▶ Play Game](https://www.playkeepout.com/)
+
+---
+
 ## Kirka.io
 
 <img src="../games/kirka-io/images/thumb.jpg" alt="Kirka.io thumbnail" width="200">
@@ -252,6 +378,34 @@ An open-world stunt driving game with a selection of high-performance cars and l
 
 ---
 
+## Mana Blade
+
+<img src="../games/mana-blade/images/thumb.jpg" alt="Mana Blade thumbnail" width="200">
+
+**Category:** MMO
+
+A free anime-styled 3D multiplayer RPG that drops you straight onto a tutorial beach with no sign-up. Fight the demons that are stealing the world's mana, alongside other players.
+
+**How to Play:** WASD to run and move the mouse to look around. Follow the on-screen tutorial to learn the rest.
+
+[▶ Play Game](https://manablade.com/)
+
+---
+
+## Minecraft Classic
+
+<img src="../games/minecraft-classic/images/thumb.jpg" alt="Minecraft Classic thumbnail" width="200">
+
+**Category:** Sandbox
+
+Mojang's official browser release of the original 2009 creative build of Minecraft. Wander a small block world and build with the 32 original blocks. No mobs, no survival, and no account needed.
+
+**How to Play:** WASD to move, Space to jump and the mouse to look. Use the mouse buttons to break and place blocks. Press B to choose a block, or use the number keys for the hotbar.
+
+[▶ Play Game](https://classic.minecraft.net/)
+
+---
+
 ## Moon Rider
 
 <img src="../games/moon-rider/images/thumb.jpg" alt="Moon Rider thumbnail" width="200">
@@ -291,6 +445,20 @@ A fan-made 3D platformer created for the Neuro-sama game jam. Guide the characte
 **How to Play:** Use WASD or arrow keys to move, Space to jump, and Shift to sprint. Collect all the cookies in each level to progress. Navigate platforms, avoid hazards, and solve simple puzzles to reach your goal. The game combines classic platforming mechanics with a cute aesthetic in a browser-friendly package.
 
 [▶ Play Game](https://kerneliron.itch.io/neuro-cookie-quest-3d)
+
+---
+
+## Nine Loops: Subway
+
+<img src="../games/nine-loops-subway/images/thumb.jpg" alt="Nine Loops: Subway thumbnail" width="200">
+
+**Category:** Horror
+
+An anomaly-spotting loop game set in a cyberpunk subway. You walk the same corridor again and again, looking for anything that has changed while you search for a missing girl in a red hood. Free, in English or Japanese.
+
+**How to Play:** Walk down the corridor. If you notice anything unusual, turn back; if everything looks normal, keep going. Nine correct choices in a row gets you out, and a wrong one resets the count. Keyboard on desktop and touch on phones; the Controls menu lists the keys.
+
+[▶ Play Game](https://design9.jp/ninecity/loops/)
 
 ---
 
@@ -364,6 +532,20 @@ A low-poly 3D racing game with a built-in track editor. Race through colorful tr
 
 ---
 
+## Riviera Rivals
+
+<img src="../games/riviera-rivals/images/thumb.jpg" alt="Riviera Rivals thumbnail" width="200">
+
+**Category:** Card & Board
+
+A 15-minute strategy card game played on a 3D seaside resort. Draft rooms and amenities from a shared market, earn the best guest reviews and out-build the neighbouring resorts. Play solo against bots or online with a friend.
+
+**How to Play:** Played with the mouse. Start with Learn to play for a guided game, then choose Play now for a match against two bots, or share a room code with a friend. The rulebook is linked from the menu.
+
+[▶ Play Game](https://rivierarivals.com/)
+
+---
+
 ## Rocket Bot Royale
 
 <img src="../games/rocket-bot-royale/images/thumb.jpg" alt="Rocket Bot Royale thumbnail" width="200">
@@ -420,6 +602,34 @@ A unique multiplayer FPS where you play as an egg character in intense arena bat
 
 ---
 
+## Sky Critters
+
+<img src="../games/sky-critters/images/thumb.jpg" alt="Sky Critters thumbnail" width="200">
+
+**Category:** Shooter
+
+Fly a drone over a toy-like 3D city and shoot down waves of flying critters before they reach your base tower. Earn coins to upgrade your gear, alone or in multiplayer.
+
+**How to Play:** WASD to fly, mouse to look, Space and Shift to go up and down, and click to shoot. Keys 1-4 switch weapons. M mutes sounds and N mutes music.
+
+[▶ Play Game](https://skycritters.io/)
+
+---
+
+## Slow Roads
+
+<img src="../games/slow-roads/images/thumb.jpg" alt="Slow Roads thumbnail" width="200">
+
+**Category:** Simulator
+
+An endless driving game with no traffic, no timer and no goal. The road, hills and scenery are generated as you go, so you can cruise for as long as you like. Runs straight in the browser with nothing to install.
+
+**How to Play:** Click begin, then steer with WASD. Press F to switch on autodrive and just watch the scenery. The hints shown at the start list the other keys.
+
+[▶ Play Game](https://slowroads.io/)
+
+---
+
 ## Smash Karts
 
 <img src="../games/smash-karts/images/thumb.jpg" alt="Smash Karts thumbnail" width="200">
@@ -434,6 +644,20 @@ A chaotic multiplayer kart racing game with power-ups and battle elements. Race 
 
 ---
 
+## Stovetop
+
+<img src="../games/stovetop/images/thumb.jpg" alt="Stovetop thumbnail" width="200">
+
+**Category:** Simulator
+
+A cooking simulation set in a detailed 3D kitchen. Make popcorn, eggs, pancakes, spaghetti aglio e olio and a pan-seared steak on a gas hob where the heat, oil, water and flame are all simulated.
+
+**How to Play:** Tap to open, then use the mouse to pick up ingredients and tools and to work the hob. The cookbook in the kitchen has the recipes; nothing else tells you the steps. Best with sound on.
+
+[▶ Play Game](https://frustum.me/play/stovetop/)
+
+---
+
 ## Summer Afternoon
 
 <img src="../games/summer-afternoon/images/thumb.jpg" alt="Summer Afternoon thumbnail" width="200">
@@ -445,6 +669,20 @@ A beautiful multiplayer 3D environment with a unique cartoon-style aesthetic. Ex
 **How to Play:** Use WASD or arrow keys to move around. Click and drag to look around. On mobile, use the virtual joystick and touch to look around. Join other players in this shared space!
 
 [▶ Play Game](https://summer-afternoon.vlucendo.com/)
+
+---
+
+## TANX
+
+<img src="../games/tanx/images/thumb.jpg" alt="TANX thumbnail" width="200">
+
+**Category:** Death Match
+
+A fast team-based tank battle from the makers of the PlayCanvas engine. You are dropped straight into a live match with a random name; shoot the other teams' tanks to push your team's score up.
+
+**How to Play:** WASD to drive and the mouse to aim and shoot. On phones, use the two on-screen joysticks. Gamepads are supported.
+
+[▶ Play Game](https://tanx.io/)
 
 ---
 
@@ -504,6 +742,20 @@ An endless runner where you control a rabbit on a spherical world. Built with Th
 
 ---
 
+## Townscaper
+
+<img src="../games/townscaper/images/thumb.jpg" alt="Townscaper thumbnail" width="200">
+
+**Category:** Sandbox
+
+The web demo of the town-building toy. Click on the open sea and colourful houses, arches, stairways and towers assemble themselves into an island town. There are no goals and no way to lose.
+
+**How to Play:** Left-click to add a block and right-click to remove one. Pick a colour from the palette on the left. Stack blocks and build over water to see how the houses connect. The first load takes around 20 seconds.
+
+[▶ Play Game](https://oskarstalberg.com/Townscaper/)
+
+---
+
 ## Tunnel Rush
 
 <img src="../games/tunnel-rush/images/thumb.jpg" alt="Tunnel Rush thumbnail" width="200">
@@ -557,6 +809,20 @@ A voxel-style first-person shooter with various vehicles and game modes. Engage 
 **How to Play:** Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to enter vehicles, Q for special abilities. On mobile, use the virtual controls. Work with your team to complete objectives or be the last player standing in battle royale mode.
 
 [▶ Play Game](https://warbrokers.io)
+
+---
+
+## Warzone 2100
+
+<img src="../games/warzone-2100/images/thumb.jpg" alt="Warzone 2100 thumbnail" width="200">
+
+**Category:** RTS
+
+The open-source 3D real-time strategy game from 1999, officially ported to the browser. Build a base, research technology, design your own tanks from parts and fight through the campaign or a skirmish against the AI.
+
+**How to Play:** Choose Play Now under Web Edition. The first run downloads about 60 MB of game data. Start the campaign or a skirmish, build structures and factories, research upgrades and send your units to destroy the enemy base. Played with mouse and keyboard.
+
+[▶ Play Game](https://play.wz2100.net/)
 
 ---
 

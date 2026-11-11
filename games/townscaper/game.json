@@ -3,5 +3,7 @@
   "url": "https://oskarstalberg.com/Townscaper/",
   "description": "The web demo of the town-building toy. Click on the open sea and colourful houses, arches, stairways and towers assemble themselves into an island town. There are no goals and no way to lose.",
   "how_to_play": "Left-click to add a block and right-click to remove one. Pick a colour from the palette on the left. Stack blocks and build over water to see how the houses connect. The first load takes around 20 seconds.",
-  "category": "Sandbox"
+  "category": "Sandbox",
+  "thumbnail": "/games/townscaper/images/thumb.jpg",
+  "screenshot": "/games/townscaper/screenshots/townscaper-2026-11-11T05-02-00-120Z.jpg"
 }

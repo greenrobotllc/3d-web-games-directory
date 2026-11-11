@@ -14,3 +14,17 @@ A real-time territory strategy game on a neon circuit board. Build robots that c
 
 ---
 
+## Warzone 2100
+
+<img src="../games/warzone-2100/images/thumb.jpg" alt="Warzone 2100 thumbnail" width="200">
+
+**Category:** RTS
+
+The open-source 3D real-time strategy game from 1999, officially ported to the browser. Build a base, research technology, design your own tanks from parts and fight through the campaign or a skirmish against the AI.
+
+**How to Play:** Choose Play Now under Web Edition. The first run downloads about 60 MB of game data. Start the campaign or a skirmish, build structures and factories, research upgrades and send your units to destroy the enemy base. Played with mouse and keyboard.
+
+[▶ Play Game](https://play.wz2100.net/)
+
+---
+

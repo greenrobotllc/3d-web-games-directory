@@ -3,5 +3,7 @@
   "url": "https://design9.jp/ninecity/loops/",
   "description": "An anomaly-spotting loop game set in a cyberpunk subway. You walk the same corridor again and again, looking for anything that has changed while you search for a missing girl in a red hood. Free, in English or Japanese.",
   "how_to_play": "Walk down the corridor. If you notice anything unusual, turn back; if everything looks normal, keep going. Nine correct choices in a row gets you out, and a wrong one resets the count. Keyboard on desktop and touch on phones; the Controls menu lists the keys.",
-  "category": "Horror"
+  "category": "Horror",
+  "thumbnail": "/games/nine-loops-subway/images/thumb.jpg",
+  "screenshot": "/games/nine-loops-subway/screenshots/nine-loops-subway-2026-11-11T05-00-26-846Z.jpg"
 }

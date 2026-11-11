@@ -1,5 +1,19 @@
 # Adventure Games
 
+## Heraclos
+
+<img src="../games/heraclos/images/thumb.jpg" alt="Heraclos thumbnail" width="200">
+
+**Category:** Adventure
+
+A short, polished 3D adventure about a reluctant hero in ancient Greece, made as a graduation project at the Gobelins school. The story is split into chapters.
+
+**How to Play:** Pick a quality level to match your computer, then start a new game. Follow the on-screen prompts through each chapter; you can return to any chapter from the menu.
+
+[▶ Play Game](https://heraclosgame.com/)
+
+---
+
 ## Jolly Roger
 
 <img src="../games/jolly-roger/images/thumb.jpg" alt="Jolly Roger thumbnail" width="200">

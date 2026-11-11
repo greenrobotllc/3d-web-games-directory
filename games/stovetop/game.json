@@ -3,5 +3,7 @@
   "url": "https://frustum.me/play/stovetop/",
   "description": "A cooking simulation set in a detailed 3D kitchen. Make popcorn, eggs, pancakes, spaghetti aglio e olio and a pan-seared steak on a gas hob where the heat, oil, water and flame are all simulated.",
   "how_to_play": "Tap to open, then use the mouse to pick up ingredients and tools and to work the hob. The cookbook in the kitchen has the recipes; nothing else tells you the steps. Best with sound on.",
-  "category": "Simulator"
+  "category": "Simulator",
+  "thumbnail": "/games/stovetop/images/thumb.jpg",
+  "screenshot": "/games/stovetop/screenshots/stovetop-2026-11-11T05-01-35-320Z.jpg"
 }

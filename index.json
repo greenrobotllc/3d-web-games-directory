@@ -2,17 +2,19 @@
     "categories": [
         {
             "name": "Action",
-            "game_count": 3,
+            "game_count": 4,
             "games": [
                 "dasher-3d",
                 "huss-valley-game",
+                "keep-out",
                 "tunnel-rush"
             ]
         },
         {
             "name": "Adventure",
-            "game_count": 4,
+            "game_count": 5,
             "games": [
+                "heraclos",
                 "jolly-roger",
                 "plume",
                 "the-aviator",
@@ -25,6 +27,20 @@
             "games": [
                 "daybreak",
                 "rocket-bot-royale"
+            ]
+        },
+        {
+            "name": "Card & Board",
+            "game_count": 1,
+            "games": [
+                "riviera-rivals"
+            ]
+        },
+        {
+            "name": "Death Match",
+            "game_count": 1,
+            "games": [
+                "tanx"
             ]
         },
         {
@@ -46,6 +62,28 @@
             ]
         },
         {
+            "name": "Fighting",
+            "game_count": 1,
+            "games": [
+                "bichitos-rumble"
+            ]
+        },
+        {
+            "name": "Horror",
+            "game_count": 2,
+            "games": [
+                "13th-floor",
+                "nine-loops-subway"
+            ]
+        },
+        {
+            "name": "MMO",
+            "game_count": 1,
+            "games": [
+                "mana-blade"
+            ]
+        },
+        {
             "name": "Other",
             "game_count": 8,
             "games": [
@@ -61,15 +99,17 @@
         },
         {
             "name": "Platformer",
-            "game_count": 1,
+            "game_count": 2,
             "games": [
+                "float",
                 "neuro-cookie-quest-3d"
             ]
         },
         {
             "name": "Puzzle",
-            "game_count": 3,
+            "game_count": 4,
             "games": [
+                "kacho-refine",
                 "outlier-unlimited-krillion",
                 "the-cube",
                 "xx142-b2-exe"
@@ -84,9 +124,10 @@
         },
         {
             "name": "RTS",
-            "game_count": 1,
+            "game_count": 2,
             "games": [
-                "botgrid"
+                "botgrid",
+                "warzone-2100"
             ]
         },
         {
@@ -101,14 +142,56 @@
             ]
         },
         {
+            "name": "Sandbox",
+            "game_count": 2,
+            "games": [
+                "minecraft-classic",
+                "townscaper"
+            ]
+        },
+        {
+            "name": "Shooter",
+            "game_count": 2,
+            "games": [
+                "freeze-out",
+                "sky-critters"
+            ]
+        },
+        {
             "name": "Simulator",
+            "game_count": 3,
+            "games": [
+                "fly.pieter.com",
+                "slow-roads",
+                "stovetop"
+            ]
+        },
+        {
+            "name": "Strategy",
             "game_count": 1,
             "games": [
-                "fly.pieter.com"
+                "afk-city"
+            ]
+        },
+        {
+            "name": "Survival",
+            "game_count": 1,
+            "games": [
+                "hollowlands"
             ]
         }
     ],
     "games": [
+        {
+            "id": "13th-floor",
+            "title": "13th Floor",
+            "description": "A first-person stealth horror game that fits in 13 kilobytes, and the overall winner of js13kGames 2024. Search a hotel floor room by room for keys while hiding from whatever is hunting you.",
+            "url": "https:\/\/play.js13kgames.com\/13th-floor\/",
+            "category": "Horror",
+            "how_to_play": "Click to start. WASD to move and the mouse to look. Press E or left-click to interact and F to toggle your flashlight. Find the keys and avoid being caught.",
+            "screenshot": "\/games\/13th-floor\/screenshots\/13th-floor-2026-11-11T04-57-59-447Z.jpg",
+            "thumbnail": "\/games\/13th-floor\/images\/thumb.jpg"
+        },
         {
             "id": "3d-tank-battle",
             "title": "3D Tank Battle",
@@ -118,6 +201,26 @@
             "how_to_play": "Use WASD or arrow keys to drive your tank, tank turrets auto-fire. On mobile, use the virtual joystick to move!",
             "screenshot": "\/games\/3d-tank-battle\/screenshots\/3d-tank-battle-2025-05-18T03-40-10-769Z.jpg",
             "thumbnail": "\/games\/3d-tank-battle\/images\/thumb.jpg"
+        },
+        {
+            "id": "afk-city",
+            "title": "AFK City",
+            "description": "A relaxing low-poly city builder that can build itself. Watch a city grow from a settlement into a skyline on its own, or take over and zone and design it yourself.",
+            "url": "https:\/\/afkcity.com\/",
+            "category": "Strategy",
+            "how_to_play": "Choose a mode and press Play. Auto grows the city while you watch, Classic lets you zone and design it with the mouse, and Survive is the third mode to try once you know the basics.",
+            "screenshot": "\/games\/afk-city\/screenshots\/afk-city-2026-11-11T04-58-09-372Z.jpg",
+            "thumbnail": "\/games\/afk-city\/images\/thumb.jpg"
+        },
+        {
+            "id": "bichitos-rumble",
+            "title": "Bichitos Rumble",
+            "description": "An arena brawler where nine animal characters headbutt each other off a platform. Each critter has its own abilities and an ultimate. Play against bots, online with up to four players, or with friends. No sign-up.",
+            "url": "https:\/\/www.bichitosrumble.com\/",
+            "category": "Fighting",
+            "how_to_play": "WASD to move, Space to headbutt, J and K for abilities and L for your ultimate. Press R to restart. Knock your rivals off the edge and be the last one standing. Gamepads are supported.",
+            "screenshot": "\/games\/bichitos-rumble\/screenshots\/bichitos-rumble-2026-11-11T04-58-19-181Z.jpg",
+            "thumbnail": "\/games\/bichitos-rumble\/images\/thumb.jpg"
         },
         {
             "id": "botgrid",
@@ -210,6 +313,16 @@
             "thumbnail": "\/games\/fields-of-fury\/images\/thumb.jpg"
         },
         {
+            "id": "float",
+            "title": "FLOAT",
+            "description": "First-person momentum parkour through huge concrete monoliths hanging in the sky. Chain wall runs, slides and wall jumps to cross nine sectors. There is no combat, only movement.",
+            "url": "https:\/\/floatparkour.vercel.app\/",
+            "category": "Platformer",
+            "how_to_play": "WASD to move and Shift to sprint. Jump with Space, the right mouse button or the wheel. Ctrl to slide or stomp. Keep your speed up and link moves together.",
+            "screenshot": "\/games\/float\/screenshots\/float-2026-11-11T04-58-29-984Z.jpg",
+            "thumbnail": "\/games\/float\/images\/thumb.jpg"
+        },
+        {
             "id": "fly.pieter.com",
             "title": "Fly.Pieter.com",
             "description": "A fun free-to-play MMO flight sim, made with AI. Fly and dogfight with your friends online.",
@@ -220,6 +333,26 @@
             "thumbnail": "\/games\/fly.pieter.com\/images\/thumb.jpg"
         },
         {
+            "id": "freeze-out",
+            "title": "Freeze Out",
+            "description": "A first-person snowball fight: four against four with bots across eight winter maps, from an alpine village to an ice rink. It has three game modes and tournament cups, and no ads.",
+            "url": "https:\/\/newkrok.com\/gamer-zone\/freeze-out",
+            "category": "Shooter",
+            "how_to_play": "Works with keyboard and mouse, touch or a gamepad. Click or tap to throw a snowball, and hold to wind up a longer throw. Choose Quick match to jump in, or Training to practise first.",
+            "screenshot": "\/games\/freeze-out\/screenshots\/freeze-out-2026-11-11T04-58-45-686Z.jpg",
+            "thumbnail": "\/games\/freeze-out\/images\/thumb.jpg"
+        },
+        {
+            "id": "heraclos",
+            "title": "Heraclos",
+            "description": "A short, polished 3D adventure about a reluctant hero in ancient Greece, made as a graduation project at the Gobelins school. The story is split into chapters.",
+            "url": "https:\/\/heraclosgame.com\/",
+            "category": "Adventure",
+            "how_to_play": "Pick a quality level to match your computer, then start a new game. Follow the on-screen prompts through each chapter; you can return to any chapter from the menu.",
+            "screenshot": "\/games\/heraclos\/screenshots\/heraclos-2026-11-11T04-58-57-639Z.jpg",
+            "thumbnail": "\/games\/heraclos\/images\/thumb.jpg"
+        },
+        {
             "id": "hexgl",
             "title": "HexGL",
             "description": "A futuristic racing game inspired by F-Zero and Wipeout. Race through stunning neon tracks in this WebGL-powered game, featuring smooth controls and high-speed action.",
@@ -228,6 +361,16 @@
             "how_to_play": "Use arrow keys to control your hovercraft. Up\/Down to accelerate\/brake, Left\/Right to steer. On mobile, use the virtual joystick. Collect power-ups and race against the clock!",
             "screenshot": "\/games\/hexgl\/screenshots\/hexgl-2025-05-18T03-39-37-620Z.jpg",
             "thumbnail": "\/games\/hexgl\/images\/thumb.jpg"
+        },
+        {
+            "id": "hollowlands",
+            "title": "Hollowlands",
+            "description": "A third-person survival and crafting game in a stylised, procedurally generated world. Explore, gather resources, craft tools, build and fight, on your own or online with other players.",
+            "url": "https:\/\/hollowlands.andreelias.dev\/",
+            "category": "Survival",
+            "how_to_play": "Choose Singleplayer or Online Multiplayer. WASD to move, Shift to run, Space to jump and R to open your inventory. The first quests on screen get you started.",
+            "screenshot": "\/games\/hollowlands\/screenshots\/hollowlands-2026-11-11T04-59-10-807Z.jpg",
+            "thumbnail": "\/games\/hollowlands\/images\/thumb.jpg"
         },
         {
             "id": "huss-valley-game",
@@ -260,6 +403,26 @@
             "thumbnail": "\/games\/jolly-roger\/images\/thumb.jpg"
         },
         {
+            "id": "kacho-refine",
+            "title": "Kacho Refine",
+            "description": "A 3D remake of a 1998 panel puzzle game. Guide a penguin to the goal by turning the arrow tiles it walks over, while germ enemies follow the same arrows. It has 30 stages and a stage builder for making your own.",
+            "url": "https:\/\/kacho.modern-orange.com\/",
+            "category": "Puzzle",
+            "how_to_play": "Turn the arrow panels with the mouse or touch to steer the penguin. Collect the four panels on each stage, then reach the goal. Switch the language to English on the loading screen. The first load takes about 30 seconds.",
+            "screenshot": "\/games\/kacho-refine\/screenshots\/kacho-refine-2026-11-11T04-59-22-788Z.jpg",
+            "thumbnail": "\/games\/kacho-refine\/images\/thumb.jpg"
+        },
+        {
+            "id": "keep-out",
+            "title": "Keep Out!",
+            "description": "A first-person dungeon crawler by Little Workshop. Explore the dungeon room by room, fight the monsters inside and unlock new weapons as you go.",
+            "url": "https:\/\/www.playkeepout.com\/",
+            "category": "Action",
+            "how_to_play": "Press Play Now and pick your keyboard layout. The How to play screen then shows the keys for moving and fighting.",
+            "screenshot": "\/games\/keep-out\/screenshots\/keep-out-2026-11-11T04-59-32-912Z.jpg",
+            "thumbnail": "\/games\/keep-out\/images\/thumb.jpg"
+        },
+        {
             "id": "kirka-io",
             "title": "Kirka.io",
             "description": "A block-style FPS with different game modes including team deathmatch, free-for-all, and capture the flag. Features a variety of weapons, character customization, and maps with a distinctive voxel aesthetic. Earn experience and currency to unlock new items and upgrades as you play.",
@@ -290,6 +453,26 @@
             "thumbnail": "\/games\/madalin-stunt-cars-2\/images\/thumb.jpg"
         },
         {
+            "id": "mana-blade",
+            "title": "Mana Blade",
+            "description": "A free anime-styled 3D multiplayer RPG that drops you straight onto a tutorial beach with no sign-up. Fight the demons that are stealing the world's mana, alongside other players.",
+            "url": "https:\/\/manablade.com\/",
+            "category": "MMO",
+            "how_to_play": "WASD to run and move the mouse to look around. Follow the on-screen tutorial to learn the rest.",
+            "screenshot": "\/games\/mana-blade\/screenshots\/mana-blade-2026-11-11T04-59-54-294Z.jpg",
+            "thumbnail": "\/games\/mana-blade\/images\/thumb.jpg"
+        },
+        {
+            "id": "minecraft-classic",
+            "title": "Minecraft Classic",
+            "description": "Mojang's official browser release of the original 2009 creative build of Minecraft. Wander a small block world and build with the 32 original blocks. No mobs, no survival, and no account needed.",
+            "url": "https:\/\/classic.minecraft.net\/",
+            "category": "Sandbox",
+            "how_to_play": "WASD to move, Space to jump and the mouse to look. Use the mouse buttons to break and place blocks. Press B to choose a block, or use the number keys for the hotbar.",
+            "screenshot": "\/games\/minecraft-classic\/screenshots\/minecraft-classic-2026-11-11T05-00-06-236Z.jpg",
+            "thumbnail": "\/games\/minecraft-classic\/images\/thumb.jpg"
+        },
+        {
             "id": "moon-rider",
             "title": "Moon Rider",
             "description": "A musical rhythm game where you surf a cosmic road, built with A-Frame for WebXR. Slash through targets and dodge obstacles in time with the music. Features multiple game modes, a large library of songs, and support for both VR headsets and standard browser play with impressive 3D visuals.",
@@ -318,6 +501,16 @@
             "how_to_play": "Use WASD or arrow keys to move, Space to jump, and Shift to sprint. Collect all the cookies in each level to progress. Navigate platforms, avoid hazards, and solve simple puzzles to reach your goal. The game combines classic platforming mechanics with a cute aesthetic in a browser-friendly package.",
             "screenshot": "\/games\/neuro-cookie-quest-3d\/screenshots\/neuro-cookie-quest-3d-2025-05-18T03-40-55-006Z.jpg",
             "thumbnail": "\/games\/neuro-cookie-quest-3d\/images\/thumb.jpg"
+        },
+        {
+            "id": "nine-loops-subway",
+            "title": "Nine Loops: Subway",
+            "description": "An anomaly-spotting loop game set in a cyberpunk subway. You walk the same corridor again and again, looking for anything that has changed while you search for a missing girl in a red hood. Free, in English or Japanese.",
+            "url": "https:\/\/design9.jp\/ninecity\/loops\/",
+            "category": "Horror",
+            "how_to_play": "Walk down the corridor. If you notice anything unusual, turn back; if everything looks normal, keep going. Nine correct choices in a row gets you out, and a wrong one resets the count. Keyboard on desktop and touch on phones; the Controls menu lists the keys.",
+            "screenshot": "\/games\/nine-loops-subway\/screenshots\/nine-loops-subway-2026-11-11T05-00-26-846Z.jpg",
+            "thumbnail": "\/games\/nine-loops-subway\/images\/thumb.jpg"
         },
         {
             "id": "om-nom-run",
@@ -370,6 +563,16 @@
             "thumbnail": "\/games\/polytrack\/images\/thumb.jpg"
         },
         {
+            "id": "riviera-rivals",
+            "title": "Riviera Rivals",
+            "description": "A 15-minute strategy card game played on a 3D seaside resort. Draft rooms and amenities from a shared market, earn the best guest reviews and out-build the neighbouring resorts. Play solo against bots or online with a friend.",
+            "url": "https:\/\/rivierarivals.com\/",
+            "category": "Card & Board",
+            "how_to_play": "Played with the mouse. Start with Learn to play for a guided game, then choose Play now for a match against two bots, or share a room code with a friend. The rulebook is linked from the menu.",
+            "screenshot": "\/games\/riviera-rivals\/screenshots\/riviera-rivals-2026-11-11T05-00-49-819Z.jpg",
+            "thumbnail": "\/games\/riviera-rivals\/images\/thumb.jpg"
+        },
+        {
             "id": "rocket-bot-royale",
             "title": "Rocket Bot Royale",
             "description": "A side-scrolling tank battle game with a focus on physics and destruction. Control a tank equipped with rockets and other weapons, battling against other players in a last-tank-standing format. Features destructible terrain, power-ups, and strategic gameplay in a 2D environment with 3D graphics.",
@@ -400,6 +603,26 @@
             "thumbnail": "\/games\/shell-shockers\/images\/thumb.jpg"
         },
         {
+            "id": "sky-critters",
+            "title": "Sky Critters",
+            "description": "Fly a drone over a toy-like 3D city and shoot down waves of flying critters before they reach your base tower. Earn coins to upgrade your gear, alone or in multiplayer.",
+            "url": "https:\/\/skycritters.io\/",
+            "category": "Shooter",
+            "how_to_play": "WASD to fly, mouse to look, Space and Shift to go up and down, and click to shoot. Keys 1-4 switch weapons. M mutes sounds and N mutes music.",
+            "screenshot": "\/games\/sky-critters\/screenshots\/sky-critters-2026-11-11T05-01-03-256Z.jpg",
+            "thumbnail": "\/games\/sky-critters\/images\/thumb.jpg"
+        },
+        {
+            "id": "slow-roads",
+            "title": "Slow Roads",
+            "description": "An endless driving game with no traffic, no timer and no goal. The road, hills and scenery are generated as you go, so you can cruise for as long as you like. Runs straight in the browser with nothing to install.",
+            "url": "https:\/\/slowroads.io\/",
+            "category": "Simulator",
+            "how_to_play": "Click begin, then steer with WASD. Press F to switch on autodrive and just watch the scenery. The hints shown at the start list the other keys.",
+            "screenshot": "\/games\/slow-roads\/screenshots\/slow-roads-2026-11-11T05-01-12-449Z.jpg",
+            "thumbnail": "\/games\/slow-roads\/images\/thumb.jpg"
+        },
+        {
             "id": "smash-karts",
             "title": "Smash Karts",
             "description": "A chaotic multiplayer kart racing game with power-ups and battle elements. Race and battle against other players in colorful arenas, collecting weapons and power-ups to take out opponents. Features simple controls, vibrant graphics, and fast-paced gameplay suitable for all ages.",
@@ -408,6 +631,16 @@
             "how_to_play": "Use WASD or arrow keys to drive your kart: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Drive over power-up boxes to collect weapons, then click or press Space to use them. Earn points by taking out other players and surviving longer than your opponents. Last kart standing wins!",
             "screenshot": "\/games\/smash-karts\/screenshots\/smash-karts-2025-05-18T03-42-52-059Z.jpg",
             "thumbnail": "\/games\/smash-karts\/images\/thumb.jpg"
+        },
+        {
+            "id": "stovetop",
+            "title": "Stovetop",
+            "description": "A cooking simulation set in a detailed 3D kitchen. Make popcorn, eggs, pancakes, spaghetti aglio e olio and a pan-seared steak on a gas hob where the heat, oil, water and flame are all simulated.",
+            "url": "https:\/\/frustum.me\/play\/stovetop\/",
+            "category": "Simulator",
+            "how_to_play": "Tap to open, then use the mouse to pick up ingredients and tools and to work the hob. The cookbook in the kitchen has the recipes; nothing else tells you the steps. Best with sound on.",
+            "screenshot": "\/games\/stovetop\/screenshots\/stovetop-2026-11-11T05-01-35-320Z.jpg",
+            "thumbnail": "\/games\/stovetop\/images\/thumb.jpg"
         },
         {
             "id": "summer-afternoon",
@@ -428,6 +661,16 @@
             "how_to_play": "Press and hold the mouse button or touch the screen to climb, release to dive. On mobile, simply tap and hold anywhere on the screen. Collect coins for points and fly through rings for speed boosts. Avoid obstacles like mountains and trees!",
             "screenshot": "\/games\/swooop\/screenshots\/swooop-2025-05-18T03-40-00-685Z.jpg",
             "thumbnail": "\/games\/swooop\/images\/thumb.jpg"
+        },
+        {
+            "id": "tanx",
+            "title": "TANX",
+            "description": "A fast team-based tank battle from the makers of the PlayCanvas engine. You are dropped straight into a live match with a random name; shoot the other teams' tanks to push your team's score up.",
+            "url": "https:\/\/tanx.io\/",
+            "category": "Death Match",
+            "how_to_play": "WASD to drive and the mouse to aim and shoot. On phones, use the two on-screen joysticks. Gamepads are supported.",
+            "screenshot": "\/games\/tanx\/screenshots\/tanx-2026-11-11T05-01-48-490Z.jpg",
+            "thumbnail": "\/games\/tanx\/images\/thumb.jpg"
         },
         {
             "id": "temple-run-2",
@@ -470,6 +713,16 @@
             "thumbnail": "\/games\/valorous-rabbit\/images\/thumb.jpg"
         },
         {
+            "id": "townscaper",
+            "title": "Townscaper",
+            "description": "The web demo of the town-building toy. Click on the open sea and colourful houses, arches, stairways and towers assemble themselves into an island town. There are no goals and no way to lose.",
+            "url": "https:\/\/oskarstalberg.com\/Townscaper\/",
+            "category": "Sandbox",
+            "how_to_play": "Left-click to add a block and right-click to remove one. Pick a colour from the palette on the left. Stack blocks and build over water to see how the houses connect. The first load takes around 20 seconds.",
+            "screenshot": "\/games\/townscaper\/screenshots\/townscaper-2026-11-11T05-02-00-120Z.jpg",
+            "thumbnail": "\/games\/townscaper\/images\/thumb.jpg"
+        },
+        {
             "id": "tunnel-rush",
             "title": "Tunnel Rush",
             "description": "A fast-paced 3D tunnel avoidance game built with Babylon.js. Speed through colorful geometric tunnels while avoiding obstacles that appear in your path. Features increasing difficulty, vibrant visuals with color-changing environments, and an adrenaline-pumping soundtrack.",
@@ -508,6 +761,16 @@
             "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to enter vehicles, Q for special abilities. On mobile, use the virtual controls. Work with your team to complete objectives or be the last player standing in battle royale mode.",
             "screenshot": "\/games\/war-brokers\/screenshots\/war-brokers-2025-05-18T03-44-11-047Z.jpg",
             "thumbnail": "\/games\/war-brokers\/images\/thumb.jpg"
+        },
+        {
+            "id": "warzone-2100",
+            "title": "Warzone 2100",
+            "description": "The open-source 3D real-time strategy game from 1999, officially ported to the browser. Build a base, research technology, design your own tanks from parts and fight through the campaign or a skirmish against the AI.",
+            "url": "https:\/\/play.wz2100.net\/",
+            "category": "RTS",
+            "how_to_play": "Choose Play Now under Web Edition. The first run downloads about 60 MB of game data. Start the campaign or a skirmish, build structures and factories, research upgrades and send your units to destroy the enemy base. Played with mouse and keyboard.",
+            "screenshot": "\/games\/warzone-2100\/screenshots\/warzone-2100-2026-11-11T05-02-08-973Z.jpg",
+            "thumbnail": "\/games\/warzone-2100\/images\/thumb.jpg"
         },
         {
             "id": "xx142-b2-exe",

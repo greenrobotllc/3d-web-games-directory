@@ -3,5 +3,7 @@
   "url": "https://kacho.modern-orange.com/",
   "description": "A 3D remake of a 1998 panel puzzle game. Guide a penguin to the goal by turning the arrow tiles it walks over, while germ enemies follow the same arrows. It has 30 stages and a stage builder for making your own.",
   "how_to_play": "Turn the arrow panels with the mouse or touch to steer the penguin. Collect the four panels on each stage, then reach the goal. Switch the language to English on the loading screen. The first load takes about 30 seconds.",
-  "category": "Puzzle"
+  "category": "Puzzle",
+  "thumbnail": "/games/kacho-refine/images/thumb.jpg",
+  "screenshot": "/games/kacho-refine/screenshots/kacho-refine-2026-11-11T04-59-22-788Z.jpg"
 }

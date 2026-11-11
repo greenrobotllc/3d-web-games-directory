@@ -1,3 +1,5 @@
 {
-  "summer-afternoon": "Stays on its loading counter in headless Chrome; loads fine in a real browser (checked 2026-11)"
+  "summer-afternoon": "Stays on its loading counter in headless Chrome; loads fine in a real browser (checked 2026-11)",
+  "the-cube": "CodePen shows a bot check to GitHub's servers; loads in a real browser (checked 2026-11)",
+  "valorous-rabbit": "CodePen shows a bot check to GitHub's servers; loads in a real browser (checked 2026-11)"
 }

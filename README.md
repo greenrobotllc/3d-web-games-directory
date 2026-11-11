@@ -72,6 +72,7 @@ Don't add `screenshot` or `thumbnail`. They are generated for you. If your page 
 - It's a 3D game that runs in a modern browser, with no download required.
 - It's appropriate for a general audience.
 - The URL goes straight to the game (or its landing page), not to an app store.
+- The page doesn't use misleading ads, such as ads styled as "Play" or "Continue" buttons. Listings that pick these up later are removed.
 
 Example `game.json`:
 ```json

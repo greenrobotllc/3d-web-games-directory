@@ -8,6 +8,7 @@
     "process": "bash scripts/process-games.sh",
     "screenshots": "node scripts/take-screenshots.js",
     "build-index": "php scripts/generate_index.php && php scripts/generate_categories.php",
+    "audit": "node scripts/audit-games.js",
     "test": "npm run validate"
   },
   "dependencies": {

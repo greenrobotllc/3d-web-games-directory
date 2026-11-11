@@ -14,12 +14,12 @@
  * same-origin policy left ON. Set PUPPETEER_NO_SANDBOX=1 only on a throwaway
  * CI machine that cannot run the sandbox.
  */
-import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 import { validateGameId } from './lib/game-schema.js';
+import { launchBrowser, browserUserAgent } from './lib/browser.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
@@ -104,26 +104,12 @@ async function waitForStablePage(page, timeoutMs = 30000) {
     await sleep(2000);
 }
 
-function launchArgs() {
-    const args = [`--window-size=${VIEWPORT.width},${VIEWPORT.height}`, '--hide-scrollbars'];
-    if (process.env.CI) {
-        // CI runners have no GPU; let WebGL games render with SwiftShader.
-        args.push('--use-angle=swiftshader', '--enable-unsafe-swiftshader');
-    }
-    if (process.env.PUPPETEER_NO_SANDBOX === '1') {
-        args.push('--no-sandbox');
-    }
-    return args;
-}
-
 /** Capture a raw image (og:image or screenshot) for a URL. Returns a Buffer. */
 async function captureRawImage(url) {
-    const browser = await puppeteer.launch({ headless: true, args: launchArgs() });
+    const browser = await launchBrowser(VIEWPORT);
     try {
         const page = await browser.newPage();
-        // Some sites block "HeadlessChrome"; present as regular Chrome.
-        const ua = (await browser.userAgent()).replace('HeadlessChrome', 'Chrome');
-        await page.setUserAgent(ua);
+        await page.setUserAgent(await browserUserAgent(browser));
         await page.setViewport(VIEWPORT);
         page.on('dialog', (dialog) => dialog.dismiss().catch(() => {}));
 

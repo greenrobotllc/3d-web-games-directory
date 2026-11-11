@@ -72,6 +72,7 @@ Don't add `screenshot` or `thumbnail`. They are generated for you. If your page 
 - It's a 3D game that runs in a modern browser, with no download required.
 - It's appropriate for a general audience.
 - The URL goes straight to the game (or its landing page), not to an app store.
+- The page doesn't use misleading ads, such as ads styled as "Play" or "Continue" buttons. Listings that pick these up later are removed.
 
 Example `game.json`:
 ```json
@@ -100,12 +101,33 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## Maintainers: How Games Get Processed
 
-Two GitHub Actions workflows handle everything:
+Three GitHub Actions workflows handle everything:
 
 - **Validate games** (`.github/workflows/validate.yml`) runs on every pull request. It checks each `game.json` (required fields, `https://` URL, category, no HTML, no duplicates) and adds annotations to the PR explaining what to fix. It also warns if a submission changes files other than its `game.json`.
-- **Process games** (`.github/workflows/process-games.yml`) runs when a `game.json` lands on `main`. It takes the screenshot and thumbnail, rebuilds `index.json` and `categories/*.md`, and commits the result. The browser that opens contributor URLs runs with a read-only token. A separate job with write access commits only the generated files. If a game's site is down or returns an error, its existing screenshot is kept (a new game gets a grey placeholder). To redo a screenshot, run the workflow by hand from the Actions tab and enter the game ids, or leave the field blank to redo every game.
+- **Process games** (`.github/workflows/process-games.yml`) runs when a `game.json` lands on `main`. It takes the screenshot and thumbnail, rebuilds `index.json` and `categories/*.md`, and commits the result. The browser that opens contributor URLs runs with a read-only token. A separate job with write access commits only the generated files. If a game's site is down or returns an error, its existing screenshot is kept (a new game gets a grey placeholder). When a game is removed, it rebuilds the index without it. To redo a screenshot, run the workflow by hand from the Actions tab and enter the game ids, or leave the field blank to redo every game.
+- **Audit games** (`.github/workflows/audit-games.yml`) runs monthly and opens an issue for listings that have gone offline or changed. See [Monthly audit](#monthly-audit) below.
 
 So adding a game is: **review the PR → merge**. 3dwebgames.com picks up the new `index.json` the next time its update script runs.
+
+### Monthly audit
+
+**Audit games** (`.github/workflows/audit-games.yml`) runs on the 1st of each month, or by hand from the Actions tab. It opens every listed game in a browser and grades it:
+
+- **down**: the domain is gone, the server refuses connections, the certificate is invalid, or the page returns 404/410/5xx.
+- **needs a look**: the address now goes to a different site or away from the game's page, the page title no longer mentions the game, the page is blank or looks parked, or the site blocked the request.
+- **ok**: everything else.
+
+When anything is flagged, it opens an issue titled "Game audit: games that need a look" (or adds a comment to the open one) with the list and reasons. Screenshots of every game are in the run's `audit-report` artifact; the contact sheets (`sheet-1.jpg`, ...) are the quickest way to spot a site that still responds but is no longer the game. Nothing is removed automatically: fix or delete the listing in a pull request.
+
+"Needs a look" is often a healthy site that blocks automated visitors. Once you've confirmed a game is fine, add it to [`scripts/audit-ignore.json`](scripts/audit-ignore.json) as `"game-id": "reason"` and it stops being flagged unless it actually goes down.
+
+GitHub pauses scheduled workflows in a repository with no activity for 60 days, and emails you first. Re-enable it from the Actions tab if that happens.
+
+Run it locally with `npm run audit` (add `-- game-id` for specific games, or `-- --no-browser` for a quick HTTP-only check). The report goes to `audit-report/`.
+
+### Monthly search for new games
+
+A scheduled Claude agent searches the web once a month for new 3D browser games and opens one pull request with candidates for you to prune. It follows [`docs/finding-new-games.md`](docs/finding-new-games.md), which lists what qualifies, where it looks and what it must not do (it never merges). Games it rejected, and games you drop from its pull requests, go in [`scripts/search-declined.json`](scripts/search-declined.json) so they aren't proposed again. To suggest games yourself, such as ones you saw on social media, open an issue titled "Games to check" and paste the links; the next search picks them up.
 
 ### Running it locally
 

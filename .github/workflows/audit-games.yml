@@ -1,0 +1,81 @@
+# Once a month: check that every listed game is still online, and open an issue
+# listing the ones a person should look at. Nothing is removed automatically.
+#
+# The browser that visits game sites runs in a job with a read-only token; a
+# separate job with permission to write issues posts the report.
+name: Audit games
+
+on:
+  schedule:
+    - cron: "17 9 1 * *" # 09:17 UTC on the 1st of each month
+  workflow_dispatch:
+
+concurrency:
+  group: audit-games
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      flagged: ${{ steps.audit.outputs.flagged }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies and Chrome
+        run: |
+          npm ci
+          npx puppeteer browsers install chrome
+          # Ubuntu 24.04 blocks the user namespaces Chrome's sandbox needs; allow them on this throwaway runner.
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      - name: Audit every game
+        id: audit
+        run: node scripts/audit-games.js --out audit-report
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: audit-report
+          path: audit-report
+          retention-days: 90
+
+  report:
+    needs: audit
+    if: needs.audit.outputs.flagged != '0'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: audit-report
+
+      - name: Open the audit issue, or add this month's results to it
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Game audit: games that need a look"
+          {
+            cat report.md
+            echo
+            echo "Screenshots of every game (\`sheet-1.jpg\`, \`sheet-2.jpg\`, ...) are in the **audit-report** artifact of [this run]($RUN_URL)."
+            echo "To fix a listing, edit or delete its \`games/<id>/game.json\` in a pull request. Close this issue when everything is handled."
+          } > body.md
+          existing=$(gh issue list --repo "$REPO" --state open --search "\"$title\" in:title" --json number,title \
+            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$REPO" --body-file body.md
+          else
+            gh issue create --repo "$REPO" --title "$title" --body-file body.md
+          fi

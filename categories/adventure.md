@@ -66,7 +66,7 @@ An endless runner where you control a rabbit on a spherical world. Built with Th
 
 **How to Play:** Use left and right arrow keys or A/D to move the rabbit around the planet. Jump with Space or the up arrow key to avoid obstacles. The game increases in difficulty as you progress, requiring quick reflexes and good timing. See how far you can run before hitting an obstacle!
 
-[▶ Play Game](https://codepen.io/Yakudoo/full/YGxYZj)
+[▶ Play Game](https://codepen.io/Yakudoo/full/YGxYej)
 
 ---
 

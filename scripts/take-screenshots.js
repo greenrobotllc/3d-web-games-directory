@@ -20,6 +20,7 @@ import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 import { validateGameId } from './lib/game-schema.js';
 import { launchBrowser, browserUserAgent } from './lib/browser.js';
+import { makeCover, makeCard, imageWidth, MIN_SHARE_IMAGE_WIDTH } from './lib/images.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
@@ -27,8 +28,6 @@ const GAMES_DIR = path.join(REPO_ROOT, 'games');
 
 const VIEWPORT = { width: 1280, height: 720 };
 const MAX_IMAGE_BYTES = 15 * 1024 * 1024;
-const COVER_MAX_WIDTH = 1200;
-const THUMB_WIDTH = 200;
 const NAV_TIMEOUT_MS = 60000;
 const MAX_RETRIES = 2;
 
@@ -132,7 +131,10 @@ async function captureRawImage(url) {
         if (ogImage) {
             console.log(`  Using og:image ${ogImage}`);
             try {
-                return await downloadImage(ogImage);
+                const image = await downloadImage(ogImage);
+                const width = await imageWidth(image);
+                if (width >= MIN_SHARE_IMAGE_WIDTH) return image;
+                console.warn(`  og:image is only ${width}px wide; taking a screenshot instead`);
             } catch (error) {
                 console.warn(`  og:image download failed (${error.message}); taking a screenshot instead`);
             }
@@ -184,15 +186,8 @@ async function processGame(gameId) {
     }
 
     // Re-encode through sharp: normalizes format to JPEG and drops anything that isn't an image.
-    const cover = await sharp(raw)
-        .resize({ width: COVER_MAX_WIDTH, withoutEnlargement: true })
-        .flatten({ background: '#000000' })
-        .jpeg({ quality: 85, mozjpeg: true })
-        .toBuffer();
-    const thumb = await sharp(cover)
-        .resize({ width: THUMB_WIDTH, withoutEnlargement: true })
-        .jpeg({ quality: 80, mozjpeg: true })
-        .toBuffer();
+    const cover = await makeCover(raw);
+    const thumb = await makeCard(cover);
 
     const screenshotsDir = path.join(gameDir, 'screenshots');
     const imagesDir = path.join(gameDir, 'images');

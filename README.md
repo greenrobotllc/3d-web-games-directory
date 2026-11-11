@@ -129,6 +129,15 @@ Run it locally with `npm run audit` (add `-- game-id` for specific games, or `--
 
 A scheduled Claude task on the maintainer's computer searches the web once a month for new 3D browser games and opens one pull request with candidates for you to prune. It loads candidate sites only inside a locked-down Docker container (`npm run audit:docker`), never in a browser on the computer itself. It follows [`docs/finding-new-games.md`](docs/finding-new-games.md), which lists what qualifies, where it looks and what it must not do (it never merges). Games it rejected, and games you drop from its pull requests, go in [`scripts/search-declined.json`](scripts/search-declined.json) so they aren't proposed again. To suggest games yourself, such as ones you saw on social media, open an issue titled "Games to check" and paste the links; the next search picks them up.
 
+### Images
+
+Each game has two images, both made by `scripts/take-screenshots.js` from the page's `og:image` (or a screenshot when there isn't one, or it's under 600px wide):
+
+- the **cover** in `games/<id>/screenshots/`: up to 1200px wide, shown in the store's game panel and in social previews;
+- the **card** at `games/<id>/images/thumb.jpg`: exactly 800x420, shown on the list pages at 3dwebgames.com/games. Square or tall art is fitted on a blurred copy of itself rather than cropped.
+
+`npm run images` rebuilds every card (and re-encodes any cover that isn't a JPEG up to 1200px wide) from the covers already in the repo, without visiting any site. Run it after changing `scripts/lib/images.js`. To replace a weak cover, put a better image in the game's `screenshots/` folder under the same file name and run `npm run images -- <id>`.
+
 ### Running it locally
 
 Requires Node.js 20+ and PHP 8+.

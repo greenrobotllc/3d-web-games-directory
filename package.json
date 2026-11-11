@@ -7,6 +7,7 @@
     "validate": "node scripts/validate-games.js",
     "process": "bash scripts/process-games.sh",
     "screenshots": "node scripts/take-screenshots.js",
+    "images": "node scripts/rebuild-images.js",
     "build-index": "php scripts/generate_index.php && php scripts/generate_categories.php",
     "audit": "node scripts/audit-games.js",
     "audit:docker": "bash scripts/audit-in-docker.sh",

@@ -38,7 +38,7 @@ A stylish 3D game where you fly a plane through a colorful world, collecting ite
 
 **How to Play:** Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.
 
-[▶ Play Game](https://tympanus.net/codrops/2016/04/26/the-aviator-animating-basic-3d-scene-threejs/)
+[▶ Play Game](https://tympanus.net/Tutorials/TheAviator/)
 
 ---
 
@@ -52,7 +52,7 @@ An endless runner where you control a rabbit on a spherical world. Built with Th
 
 **How to Play:** Use left and right arrow keys or A/D to move the rabbit around the planet. Jump with Space or the up arrow key to avoid obstacles. The game increases in difficulty as you progress, requiring quick reflexes and good timing. See how far you can run before hitting an obstacle!
 
-[▶ Play Game](https://codepen.io/Yakudoo/pen/YGxYZj)
+[▶ Play Game](https://codepen.io/Yakudoo/full/YGxYZj)
 
 ---
 

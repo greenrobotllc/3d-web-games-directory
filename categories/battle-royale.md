@@ -24,7 +24,7 @@ A side-scrolling tank battle game with a focus on physics and destruction. Contr
 
 **How to Play:** Use A/D or Left/Right arrows to move your tank. Adjust your firing angle with W/S or Up/Down. Press Space to fire your weapon. Collect power-ups and coins to upgrade your tank and weapons. The rising water level forces players to move upward as the match progresses. Be the last tank surviving to win!
 
-[▶ Play Game](https://rocketbotroyale.com)
+[▶ Play Game](https://jellycade.com/en/games/rocket-bot-royale)
 
 ---
 

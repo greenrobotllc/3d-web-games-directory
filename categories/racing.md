@@ -42,20 +42,6 @@ An open-world stunt driving game with a selection of high-performance cars and l
 
 ---
 
-## Madalin Stunt Cars 3
-
-<img src="../games/madalin-stunt-cars-3/images/thumb.jpg" alt="Madalin Stunt Cars 3 thumbnail" width="200">
-
-**Category:** Racing
-
-The latest installment in the Madalin Stunt Cars series with improved graphics, physics, and more vehicles. Race and perform stunts in exotic supercars across expansive, detailed maps. Features multiplayer functionality allowing you to drive alongside friends and show off your best tricks.
-
-**How to Play:** Use WASD or arrow keys to drive: W/Up to accelerate, S/Down to brake/reverse, A/D or Left/Right to steer. Press Space for handbrake to drift. R to reset your car if you get stuck. On mobile, use the on-screen controls. Explore the maps and challenge yourself to perform the most impressive stunts possible.
-
-[▶ Play Game](https://www.crazygames.com/game/madalin-stunt-cars-3)
-
----
-
 ## PolyTrack
 
 <img src="../games/polytrack/images/thumb.jpg" alt="PolyTrack thumbnail" width="200">

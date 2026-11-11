@@ -38,7 +38,7 @@ A JS13kGames winner where you infiltrate an alien network as a virus. Navigate t
 
 **How to Play:** Use WASD or arrow keys to move through the network. Press Space or E to interact with nodes and systems. Avoid detection by security measures and complete your objectives to progress. The game presents a series of increasingly difficult puzzles that require stealth and strategy to overcome.
 
-[▶ Play Game](https://js13kgames.com/games/xx142-b2exe/index.html)
+[▶ Play Game](https://play.js13kgames.com/xx142-b2exe/)
 
 ---
 

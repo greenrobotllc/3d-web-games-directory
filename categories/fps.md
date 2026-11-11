@@ -38,7 +38,7 @@ A 3D first-person shooter with arcade-style gameplay. Battle through various lev
 
 **How to Play:** Use WASD to move, mouse to aim, and left-click to shoot. Press Space to jump, Shift to sprint, and R to reload. Collect new weapons and power-ups throughout levels to increase your combat effectiveness. Eliminate all enemies in each area to progress through the game.
 
-[▶ Play Game](https://www.newgrounds.com/portal/view/673609)
+[▶ Play Game](https://www.crazygames.com/game/bullet-fury-2)
 
 ---
 
@@ -66,7 +66,7 @@ A World War II-themed capture the flag FPS built with PlayCanvas. Battle against
 
 **How to Play:** Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to interact with objects or enter vehicles. Choose your class and work with your team to capture the enemy flag while defending your own. Use period-appropriate weapons and tactics to secure victory.
 
-[▶ Play Game](https://play.fieldsoffury.io/)
+[▶ Play Game](https://www.kiloo.com/play/fields-of-fury)
 
 ---
 
@@ -95,20 +95,6 @@ A fast-paced first-person shooter with low-poly graphics and advanced movement m
 **How to Play:** Use WASD to move, Space to jump, and Shift to crouch. Mouse to aim and click to shoot. Advanced players use slide-hopping (jump + crouch while moving) for faster movement. On mobile, use the virtual controls to move and shoot.
 
 [▶ Play Game](https://krunker.io)
-
----
-
-## Mini Royale: Nations
-
-<img src="../games/mini-royale-nations/images/thumb.jpg" alt="Mini Royale: Nations thumbnail" width="200">
-
-**Category:** FPS
-
-A browser-based FPS with social strategy elements built on PlayCanvas. Combines fast-paced first-person shooter action with base building and resource management. Features multiple game modes, weapon customization, and a persistent world where players can form alliances.
-
-**How to Play:** Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and E to interact with objects. Combat takes place in first-person shooter matches, while the strategic layer involves building and upgrading your base, managing resources, and forming alliances with other players.
-
-[▶ Play Game](https://miniroyale.io/)
 
 ---
 

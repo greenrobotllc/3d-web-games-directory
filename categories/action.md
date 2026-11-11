@@ -28,20 +28,6 @@ Free multiplayer Halloween chase game in the browser: pumpkin-headed trick-or-tr
 
 ---
 
-## Robostorm.io
-
-<img src="../games/robostorm-io/images/thumb.jpg" alt="Robostorm.io thumbnail" width="200">
-
-**Category:** Action
-
-An online multiplayer robot battle game built with PlayCanvas. Control a customizable robot in arena-style combat against other players. Features various weapons, power-ups, and robot parts that can be unlocked and upgraded as you progress through matches.
-
-**How to Play:** Use WASD or arrow keys to move your robot. Mouse to aim and left-click to fire your weapons. Collect power-ups scattered around the arena to gain temporary advantages. Destroy enemy robots to earn points and resources, which can be used to upgrade your robot between matches. Last robot standing wins!
-
-[▶ Play Game](https://robostorm.io/)
-
----
-
 ## Tunnel Rush
 
 <img src="../games/tunnel-rush/images/thumb.jpg" alt="Tunnel Rush thumbnail" width="200">

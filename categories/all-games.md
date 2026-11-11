@@ -66,7 +66,7 @@ A 3D first-person shooter with arcade-style gameplay. Battle through various lev
 
 **How to Play:** Use WASD to move, mouse to aim, and left-click to shoot. Press Space to jump, Shift to sprint, and R to reload. Collect new weapons and power-ups throughout levels to increase your combat effectiveness. Eliminate all enemies in each area to progress through the game.
 
-[▶ Play Game](https://www.newgrounds.com/portal/view/673609)
+[▶ Play Game](https://www.crazygames.com/game/bullet-fury-2)
 
 ---
 
@@ -136,7 +136,7 @@ A World War II-themed capture the flag FPS built with PlayCanvas. Battle against
 
 **How to Play:** Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to interact with objects or enter vehicles. Choose your class and work with your team to capture the enemy flag while defending your own. Use period-appropriate weapons and tactics to secure victory.
 
-[▶ Play Game](https://play.fieldsoffury.io/)
+[▶ Play Game](https://www.kiloo.com/play/fields-of-fury)
 
 ---
 
@@ -252,34 +252,6 @@ An open-world stunt driving game with a selection of high-performance cars and l
 
 ---
 
-## Madalin Stunt Cars 3
-
-<img src="../games/madalin-stunt-cars-3/images/thumb.jpg" alt="Madalin Stunt Cars 3 thumbnail" width="200">
-
-**Category:** Racing
-
-The latest installment in the Madalin Stunt Cars series with improved graphics, physics, and more vehicles. Race and perform stunts in exotic supercars across expansive, detailed maps. Features multiplayer functionality allowing you to drive alongside friends and show off your best tricks.
-
-**How to Play:** Use WASD or arrow keys to drive: W/Up to accelerate, S/Down to brake/reverse, A/D or Left/Right to steer. Press Space for handbrake to drift. R to reset your car if you get stuck. On mobile, use the on-screen controls. Explore the maps and challenge yourself to perform the most impressive stunts possible.
-
-[▶ Play Game](https://www.crazygames.com/game/madalin-stunt-cars-3)
-
----
-
-## Mini Royale: Nations
-
-<img src="../games/mini-royale-nations/images/thumb.jpg" alt="Mini Royale: Nations thumbnail" width="200">
-
-**Category:** FPS
-
-A browser-based FPS with social strategy elements built on PlayCanvas. Combines fast-paced first-person shooter action with base building and resource management. Features multiple game modes, weapon customization, and a persistent world where players can form alliances.
-
-**How to Play:** Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and E to interact with objects. Combat takes place in first-person shooter matches, while the strategic layer involves building and upgrading your base, managing resources, and forming alliances with other players.
-
-[▶ Play Game](https://miniroyale.io/)
-
----
-
 ## Moon Rider
 
 <img src="../games/moon-rider/images/thumb.jpg" alt="Moon Rider thumbnail" width="200">
@@ -392,20 +364,6 @@ A low-poly 3D racing game with a built-in track editor. Race through colorful tr
 
 ---
 
-## Robostorm.io
-
-<img src="../games/robostorm-io/images/thumb.jpg" alt="Robostorm.io thumbnail" width="200">
-
-**Category:** Action
-
-An online multiplayer robot battle game built with PlayCanvas. Control a customizable robot in arena-style combat against other players. Features various weapons, power-ups, and robot parts that can be unlocked and upgraded as you progress through matches.
-
-**How to Play:** Use WASD or arrow keys to move your robot. Mouse to aim and left-click to fire your weapons. Collect power-ups scattered around the arena to gain temporary advantages. Destroy enemy robots to earn points and resources, which can be used to upgrade your robot between matches. Last robot standing wins!
-
-[▶ Play Game](https://robostorm.io/)
-
----
-
 ## Rocket Bot Royale
 
 <img src="../games/rocket-bot-royale/images/thumb.jpg" alt="Rocket Bot Royale thumbnail" width="200">
@@ -416,7 +374,7 @@ A side-scrolling tank battle game with a focus on physics and destruction. Contr
 
 **How to Play:** Use A/D or Left/Right arrows to move your tank. Adjust your firing angle with W/S or Up/Down. Press Space to fire your weapon. Collect power-ups and coins to upgrade your tank and weapons. The rising water level forces players to move upward as the match progresses. Be the last tank surviving to win!
 
-[▶ Play Game](https://rocketbotroyale.com)
+[▶ Play Game](https://jellycade.com/en/games/rocket-bot-royale)
 
 ---
 
@@ -514,7 +472,7 @@ A stylish 3D game where you fly a plane through a colorful world, collecting ite
 
 **How to Play:** Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.
 
-[▶ Play Game](https://tympanus.net/codrops/2016/04/26/the-aviator-animating-basic-3d-scene-threejs/)
+[▶ Play Game](https://tympanus.net/Tutorials/TheAviator/)
 
 ---
 
@@ -542,7 +500,7 @@ An endless runner where you control a rabbit on a spherical world. Built with Th
 
 **How to Play:** Use left and right arrow keys or A/D to move the rabbit around the planet. Jump with Space or the up arrow key to avoid obstacles. The game increases in difficulty as you progress, requiring quick reflexes and good timing. See how far you can run before hitting an obstacle!
 
-[▶ Play Game](https://codepen.io/Yakudoo/pen/YGxYZj)
+[▶ Play Game](https://codepen.io/Yakudoo/full/YGxYZj)
 
 ---
 
@@ -612,7 +570,7 @@ A JS13kGames winner where you infiltrate an alien network as a virus. Navigate t
 
 **How to Play:** Use WASD or arrow keys to move through the network. Press Space or E to interact with nodes and systems. Avoid detection by security measures and complete your objectives to progress. The game presents a series of increasingly difficult puzzles that require stealth and strategy to overcome.
 
-[▶ Play Game](https://js13kgames.com/games/xx142-b2exe/index.html)
+[▶ Play Game](https://play.js13kgames.com/xx142-b2exe/)
 
 ---
 

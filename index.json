@@ -2,11 +2,10 @@
     "categories": [
         {
             "name": "Action",
-            "game_count": 4,
+            "game_count": 3,
             "games": [
                 "dasher-3d",
                 "huss-valley-game",
-                "robostorm-io",
                 "tunnel-rush"
             ]
         },
@@ -30,7 +29,7 @@
         },
         {
             "name": "FPS",
-            "game_count": 13,
+            "game_count": 12,
             "games": [
                 "3d-tank-battle",
                 "bullet-force",
@@ -39,7 +38,6 @@
                 "fields-of-fury",
                 "kirka-io",
                 "krunker-io",
-                "mini-royale-nations",
                 "narrow-one",
                 "pixel-warfare",
                 "shell-shockers",
@@ -93,12 +91,11 @@
         },
         {
             "name": "Racing",
-            "game_count": 6,
+            "game_count": 5,
             "games": [
                 "drift-hunters",
                 "hexgl",
                 "madalin-stunt-cars-2",
-                "madalin-stunt-cars-3",
                 "polytrack",
                 "smash-karts"
             ]
@@ -156,10 +153,10 @@
             "id": "bullet-fury-2",
             "title": "Bullet Fury 2",
             "description": "A 3D first-person shooter with arcade-style gameplay. Battle through various levels filled with enemies using a variety of weapons. Features fast-paced action, power-ups, and boss fights in a stylized 3D environment designed to run smoothly in browsers.",
-            "url": "https:\/\/www.newgrounds.com\/portal\/view\/673609",
+            "url": "https:\/\/www.crazygames.com\/game\/bullet-fury-2",
             "category": "FPS",
             "how_to_play": "Use WASD to move, mouse to aim, and left-click to shoot. Press Space to jump, Shift to sprint, and R to reload. Collect new weapons and power-ups throughout levels to increase your combat effectiveness. Eliminate all enemies in each area to progress through the game.",
-            "screenshot": "\/games\/bullet-fury-2\/screenshots\/bullet-fury-2-2025-05-18T03-46-09-043Z.jpg",
+            "screenshot": "\/games\/bullet-fury-2\/screenshots\/bullet-fury-2-2026-11-11T04-47-08-373Z.jpg",
             "thumbnail": "\/games\/bullet-fury-2\/images\/thumb.jpg"
         },
         {
@@ -206,10 +203,10 @@
             "id": "fields-of-fury",
             "title": "Fields of Fury",
             "description": "A World War II-themed capture the flag FPS built with PlayCanvas. Battle against other players in team-based matches across historically inspired maps. Features multiple soldier classes, authentic weapons, and vehicles from the era in a fast-paced multiplayer environment.",
-            "url": "https:\/\/play.fieldsoffury.io\/",
+            "url": "https:\/\/www.kiloo.com\/play\/fields-of-fury",
             "category": "FPS",
             "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press E to interact with objects or enter vehicles. Choose your class and work with your team to capture the enemy flag while defending your own. Use period-appropriate weapons and tactics to secure victory.",
-            "screenshot": "\/games\/fields-of-fury\/screenshots\/fields-of-fury-2025-05-18T03-45-58-773Z.jpg",
+            "screenshot": "\/games\/fields-of-fury\/screenshots\/fields-of-fury-2026-11-11T04-47-26-101Z.jpg",
             "thumbnail": "\/games\/fields-of-fury\/images\/thumb.jpg"
         },
         {
@@ -293,26 +290,6 @@
             "thumbnail": "\/games\/madalin-stunt-cars-2\/images\/thumb.jpg"
         },
         {
-            "id": "madalin-stunt-cars-3",
-            "title": "Madalin Stunt Cars 3",
-            "description": "The latest installment in the Madalin Stunt Cars series with improved graphics, physics, and more vehicles. Race and perform stunts in exotic supercars across expansive, detailed maps. Features multiplayer functionality allowing you to drive alongside friends and show off your best tricks.",
-            "url": "https:\/\/www.crazygames.com\/game\/madalin-stunt-cars-3",
-            "category": "Racing",
-            "how_to_play": "Use WASD or arrow keys to drive: W\/Up to accelerate, S\/Down to brake\/reverse, A\/D or Left\/Right to steer. Press Space for handbrake to drift. R to reset your car if you get stuck. On mobile, use the on-screen controls. Explore the maps and challenge yourself to perform the most impressive stunts possible.",
-            "screenshot": "\/games\/madalin-stunt-cars-3\/screenshots\/madalin-stunt-cars-3-2025-05-18T03-42-14-916Z.jpg",
-            "thumbnail": "\/games\/madalin-stunt-cars-3\/images\/thumb.jpg"
-        },
-        {
-            "id": "mini-royale-nations",
-            "title": "Mini Royale: Nations",
-            "description": "A browser-based FPS with social strategy elements built on PlayCanvas. Combines fast-paced first-person shooter action with base building and resource management. Features multiple game modes, weapon customization, and a persistent world where players can form alliances.",
-            "url": "https:\/\/miniroyale.io\/",
-            "category": "FPS",
-            "how_to_play": "Use WASD to move, Space to jump, and Shift to sprint. Mouse to aim and left-click to shoot. Press R to reload and E to interact with objects. Combat takes place in first-person shooter matches, while the strategic layer involves building and upgrading your base, managing resources, and forming alliances with other players.",
-            "screenshot": "\/games\/mini-royale-nations\/screenshots\/mini-royale-nations-2025-05-18T03-43-14-438Z.jpg",
-            "thumbnail": "\/games\/mini-royale-nations\/images\/thumb.jpg"
-        },
-        {
             "id": "moon-rider",
             "title": "Moon Rider",
             "description": "A musical rhythm game where you surf a cosmic road, built with A-Frame for WebXR. Slash through targets and dodge obstacles in time with the music. Features multiple game modes, a large library of songs, and support for both VR headsets and standard browser play with impressive 3D visuals.",
@@ -393,23 +370,13 @@
             "thumbnail": "\/games\/polytrack\/images\/thumb.jpg"
         },
         {
-            "id": "robostorm-io",
-            "title": "Robostorm.io",
-            "description": "An online multiplayer robot battle game built with PlayCanvas. Control a customizable robot in arena-style combat against other players. Features various weapons, power-ups, and robot parts that can be unlocked and upgraded as you progress through matches.",
-            "url": "https:\/\/robostorm.io\/",
-            "category": "Action",
-            "how_to_play": "Use WASD or arrow keys to move your robot. Mouse to aim and left-click to fire your weapons. Collect power-ups scattered around the arena to gain temporary advantages. Destroy enemy robots to earn points and resources, which can be used to upgrade your robot between matches. Last robot standing wins!",
-            "screenshot": "\/games\/robostorm-io\/screenshots\/robostorm-io-2025-05-18T03-45-35-149Z.jpg",
-            "thumbnail": "\/games\/robostorm-io\/images\/thumb.jpg"
-        },
-        {
             "id": "rocket-bot-royale",
             "title": "Rocket Bot Royale",
             "description": "A side-scrolling tank battle game with a focus on physics and destruction. Control a tank equipped with rockets and other weapons, battling against other players in a last-tank-standing format. Features destructible terrain, power-ups, and strategic gameplay in a 2D environment with 3D graphics.",
-            "url": "https:\/\/rocketbotroyale.com",
+            "url": "https:\/\/jellycade.com\/en\/games\/rocket-bot-royale",
             "category": "Battle Royale",
             "how_to_play": "Use A\/D or Left\/Right arrows to move your tank. Adjust your firing angle with W\/S or Up\/Down. Press Space to fire your weapon. Collect power-ups and coins to upgrade your tank and weapons. The rising water level forces players to move upward as the match progresses. Be the last tank surviving to win!",
-            "screenshot": "\/games\/rocket-bot-royale\/screenshots\/rocket-bot-royale-2025-05-18T03-45-47-399Z.jpg",
+            "screenshot": "\/games\/rocket-bot-royale\/screenshots\/rocket-bot-royale-2026-11-11T04-47-40-498Z.jpg",
             "thumbnail": "\/games\/rocket-bot-royale\/images\/thumb.jpg"
         },
         {
@@ -476,10 +443,10 @@
             "id": "the-aviator",
             "title": "The Aviator",
             "description": "A stylish 3D game where you fly a plane through a colorful world, collecting items. Originally created as a Three.js tutorial, this game features beautiful low-poly visuals, smooth animations, and simple yet engaging gameplay in a vibrant environment.",
-            "url": "https:\/\/tympanus.net\/codrops\/2016\/04\/26\/the-aviator-animating-basic-3d-scene-threejs\/",
+            "url": "https:\/\/tympanus.net\/Tutorials\/TheAviator\/",
             "category": "Adventure",
             "how_to_play": "Use your mouse or touch input to control the plane's movement. Move the cursor left and right to steer the plane horizontally, up and down to control altitude. Collect the floating coins while avoiding obstacles. The game demonstrates core concepts of 3D web development with an appealing aesthetic.",
-            "screenshot": "\/games\/the-aviator\/screenshots\/the-aviator-2025-05-18T03-39-50-054Z.jpg",
+            "screenshot": "\/games\/the-aviator\/screenshots\/the-aviator-2026-11-11T04-47-50-463Z.jpg",
             "thumbnail": "\/games\/the-aviator\/images\/thumb.jpg"
         },
         {
@@ -496,7 +463,7 @@
             "id": "valorous-rabbit",
             "title": "The Frantic Run Of The Valorous Rabbit",
             "description": "An endless runner where you control a rabbit on a spherical world. Built with Three.js, this charming game features a unique perspective as you guide your rabbit around a planet, avoiding obstacles and collecting items. The distinctive art style and creative gameplay mechanics showcase the capabilities of 3D web technologies.",
-            "url": "https:\/\/codepen.io\/Yakudoo\/pen\/YGxYZj",
+            "url": "https:\/\/codepen.io\/Yakudoo\/full\/YGxYZj",
             "category": "Adventure",
             "how_to_play": "Use left and right arrow keys or A\/D to move the rabbit around the planet. Jump with Space or the up arrow key to avoid obstacles. The game increases in difficulty as you progress, requiring quick reflexes and good timing. See how far you can run before hitting an obstacle!",
             "screenshot": "\/games\/valorous-rabbit\/screenshots\/valorous-rabbit-2025-05-18T03-44-00-163Z.jpg",
@@ -546,10 +513,10 @@
             "id": "xx142-b2-exe",
             "title": "xx142-b2.exe",
             "description": "A JS13kGames winner where you infiltrate an alien network as a virus. Navigate through a stylized representation of computer systems, avoiding detection while completing objectives. Features unique hacking mechanics, minimalist visuals, and an atmospheric soundtrack, all compressed into less than 13KB of JavaScript.",
-            "url": "https:\/\/js13kgames.com\/games\/xx142-b2exe\/index.html",
+            "url": "https:\/\/play.js13kgames.com\/xx142-b2exe\/",
             "category": "Puzzle",
             "how_to_play": "Use WASD or arrow keys to move through the network. Press Space or E to interact with nodes and systems. Avoid detection by security measures and complete your objectives to progress. The game presents a series of increasingly difficult puzzles that require stealth and strategy to overcome.",
-            "screenshot": "\/games\/xx142-b2-exe\/screenshots\/xx142-b2-exe-2025-05-18T03-43-24-522Z.jpg",
+            "screenshot": "\/games\/xx142-b2-exe\/screenshots\/xx142-b2-exe-2026-11-11T04-48-12-461Z.jpg",
             "thumbnail": "\/games\/xx142-b2-exe\/images\/thumb.jpg"
         }
     ]

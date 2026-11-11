@@ -1,0 +1,4 @@
+# The audit image only needs the dependency manifests; code is mounted at run time.
+*
+!package.json
+!package-lock.json

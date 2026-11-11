@@ -123,11 +123,11 @@ When anything is flagged, it opens an issue titled "Game audit: games that need 
 
 GitHub pauses scheduled workflows in a repository with no activity for 60 days, and emails you first. Re-enable it from the Actions tab if that happens.
 
-Run it locally with `npm run audit` (add `-- game-id` for specific games, or `-- --no-browser` for a quick HTTP-only check). The report goes to `audit-report/`.
+Run it locally with `npm run audit` (add `-- game-id` for specific games, or `-- --no-browser` for a quick HTTP-only check). The report goes to `audit-report/`. `npm run audit:docker` does the same inside a container that has no access to your files, which is the safer way to open sites you don't know; it needs Docker running.
 
 ### Monthly search for new games
 
-A scheduled Claude agent searches the web once a month for new 3D browser games and opens one pull request with candidates for you to prune. It follows [`docs/finding-new-games.md`](docs/finding-new-games.md), which lists what qualifies, where it looks and what it must not do (it never merges). Games it rejected, and games you drop from its pull requests, go in [`scripts/search-declined.json`](scripts/search-declined.json) so they aren't proposed again. To suggest games yourself, such as ones you saw on social media, open an issue titled "Games to check" and paste the links; the next search picks them up.
+A scheduled Claude task on the maintainer's computer searches the web once a month for new 3D browser games and opens one pull request with candidates for you to prune. It loads candidate sites only inside a locked-down Docker container (`npm run audit:docker`), never in a browser on the computer itself. It follows [`docs/finding-new-games.md`](docs/finding-new-games.md), which lists what qualifies, where it looks and what it must not do (it never merges). Games it rejected, and games you drop from its pull requests, go in [`scripts/search-declined.json`](scripts/search-declined.json) so they aren't proposed again. To suggest games yourself, such as ones you saw on social media, open an issue titled "Games to check" and paste the links; the next search picks them up.
 
 ### Running it locally
 

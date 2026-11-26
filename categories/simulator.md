@@ -1,5 +1,19 @@
 # Simulator Games
 
+## Courier Shift
+
+<img src="../games/courier-shift/images/thumb.jpg" alt="Courier Shift thumbnail" width="200">
+
+**Category:** Simulator
+
+A free 3D grocery-delivery simulator by PNLEE Studio. Collect the right order, get through gates and an intercom, and deliver the groceries intact. Finish the first delivery to unlock a 90-second rush order with a blocked path.
+
+**How to Play:** Use WASD or the arrow keys to move and E to interact. Hold Shift for a careful walk. On touchscreens, use the on-screen controls. Check the order number before picking up the bag.
+
+[▶ Play Game](https://pnlee-courier-shift.reflarre.chatgpt.site/?lang=en)
+
+---
+
 ## Fly.Pieter.com
 
 <img src="../games/fly.pieter.com/images/thumb.jpg" alt="Fly.Pieter.com thumbnail" width="200">

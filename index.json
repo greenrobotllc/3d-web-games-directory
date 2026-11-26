@@ -159,8 +159,9 @@
         },
         {
             "name": "Simulator",
-            "game_count": 3,
+            "game_count": 4,
             "games": [
+                "courier-shift",
                 "fly.pieter.com",
                 "slow-roads",
                 "stovetop"
@@ -261,6 +262,16 @@
             "how_to_play": "Use WASD to move, mouse to aim, and left-click to shoot. Press Space to jump, Shift to sprint, and R to reload. Collect new weapons and power-ups throughout levels to increase your combat effectiveness. Eliminate all enemies in each area to progress through the game.",
             "screenshot": "\/games\/bullet-fury-2\/screenshots\/bullet-fury-2-2026-11-11T04-47-08-373Z.jpg",
             "thumbnail": "\/games\/bullet-fury-2\/images\/thumb.jpg"
+        },
+        {
+            "id": "courier-shift",
+            "title": "Courier Shift",
+            "description": "A free 3D grocery-delivery simulator by PNLEE Studio. Collect the right order, get through gates and an intercom, and deliver the groceries intact. Finish the first delivery to unlock a 90-second rush order with a blocked path.",
+            "url": "https:\/\/pnlee-courier-shift.reflarre.chatgpt.site\/?lang=en",
+            "category": "Simulator",
+            "how_to_play": "Use WASD or the arrow keys to move and E to interact. Hold Shift for a careful walk. On touchscreens, use the on-screen controls. Check the order number before picking up the bag.",
+            "screenshot": "\/games\/courier-shift\/screenshots\/courier-shift-2026-11-26T00-02-30-208Z.jpg",
+            "thumbnail": "\/games\/courier-shift\/images\/thumb.jpg"
         },
         {
             "id": "dasher-3d",

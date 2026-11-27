@@ -1,5 +1,19 @@
 # Shooter Games
 
+## Driftborn
+
+<img src="../games/driftborn/images/thumb.jpg" alt="Driftborn thumbnail" width="200">
+
+**Category:** Shooter
+
+A single-player space shooter across twenty-six connected sectors, with two enemy factions, named boss ships that each have attack patterns to learn, and ship builds made from hulls, equipment and technologies. An arcade cabinet mode adds eight vertical-scrolling stages and a daily run with a global board.
+
+**How to Play:** Plays best with mouse and keyboard in a desktop browser; touch works on recent phones and tablets. No account is needed to play. The game shows its controls on screen.
+
+[▶ Play Game](https://driftborn.space/)
+
+---
+
 ## Freeze Out
 
 <img src="../games/freeze-out/images/thumb.jpg" alt="Freeze Out thumbnail" width="200">

@@ -168,3 +168,17 @@ A voxel-style first-person shooter with various vehicles and game modes. Engage 
 
 ---
 
+## Washiki Washoi!
+
+<img src="../games/washiki-washoi/images/thumb.jpg" alt="Washiki Washoi! thumbnail" width="200">
+
+**Category:** FPS
+
+A fast, colourful arena shooter in the Quake tradition, built on Babylon.js. Bunny hop, wall jump, ledge grab and slide through seventeen arenas in Duel, Free-for-All, Amphi and Search & Destroy, against other players or AI bots, with leaderboards and match replays.
+
+**How to Play:** Best with keyboard and mouse; controllers and touch controls are also supported. Quick Play starts a match with bots, so you can jump in alone. The game shows its key bindings in its settings and manuals.
+
+[▶ Play Game](https://washoi.net/)
+
+---
+

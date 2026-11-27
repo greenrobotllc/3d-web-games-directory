@@ -168,6 +168,20 @@ A realistic 3D drifting game with a focus on authentic drift mechanics and car c
 
 ---
 
+## Driftborn
+
+<img src="../games/driftborn/images/thumb.jpg" alt="Driftborn thumbnail" width="200">
+
+**Category:** Shooter
+
+A single-player space shooter across twenty-six connected sectors, with two enemy factions, named boss ships that each have attack patterns to learn, and ship builds made from hulls, equipment and technologies. An arcade cabinet mode adds eight vertical-scrolling stages and a daily run with a global board.
+
+**How to Play:** Plays best with mouse and keyboard in a desktop browser; touch works on recent phones and tablets. No account is needed to play. The game shows its controls on screen.
+
+[▶ Play Game](https://driftborn.space/)
+
+---
+
 ## FLOAT
 
 <img src="../games/float/images/thumb.jpg" alt="FLOAT thumbnail" width="200">
@@ -235,6 +249,20 @@ A first-person snowball fight: four against four with bots across eight winter m
 **How to Play:** Works with keyboard and mouse, touch or a gamepad. Click or tap to throw a snowball, and hold to wind up a longer throw. Choose Quick match to jump in, or Training to practise first.
 
 [▶ Play Game](https://newkrok.com/gamer-zone/freeze-out)
+
+---
+
+## Full Send Survive
+
+<img src="../games/full-send-survive/images/thumb.jpg" alt="Full Send Survive thumbnail" width="200">
+
+**Category:** Survival
+
+A horde survival game where you pick one of nine classes and try to last ten minutes against hundreds of enemies, choosing an upgrade every time you level up, before the zone's boss arrives. Ten zones, harder Heroic and Nightmare tiers, and a weekly challenge leaderboard.
+
+**How to Play:** Best on a computer. The first three zones and one hero need no account; signing in with Discord unlocks the rest and co-op for up to four players. The game shows its controls on screen.
+
+[▶ Play Game](https://fullsendsurvive.com/)
 
 ---
 
@@ -487,6 +515,20 @@ A colorful 3D endless runner featuring the lovable character Om Nom from the Cut
 **How to Play:** Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!
 
 [▶ Play Game](https://www.crazygames.com/game/om-nom-run)
+
+---
+
+## One Fairway Golf
+
+<img src="../games/one-fairway-golf/images/thumb.jpg" alt="One Fairway Golf thumbnail" width="200">
+
+**Category:** Sports
+
+A free 3D golf game with three 18-hole courses full of terrain, water and forest, a daily hole that everyone plays once, and real-time multiplayer in stroke play, match play and 2v2 alternate shot. Currently in open beta.
+
+**How to Play:** Start as a guest, no account needed. Hold and drag up anywhere, then let go to start the swing, and click again as the marker meets the gold line. Works with a mouse or touch.
+
+[▶ Play Game](https://onefairwaygolf.com/)
 
 ---
 
@@ -837,6 +879,34 @@ The open-source 3D real-time strategy game from 1999, officially ported to the b
 **How to Play:** Choose Play Now under Web Edition. The first run downloads about 60 MB of game data. Start the campaign or a skirmish, build structures and factories, research upgrades and send your units to destroy the enemy base. Played with mouse and keyboard.
 
 [▶ Play Game](https://play.wz2100.net/)
+
+---
+
+## Washiki Washoi!
+
+<img src="../games/washiki-washoi/images/thumb.jpg" alt="Washiki Washoi! thumbnail" width="200">
+
+**Category:** FPS
+
+A fast, colourful arena shooter in the Quake tradition, built on Babylon.js. Bunny hop, wall jump, ledge grab and slide through seventeen arenas in Duel, Free-for-All, Amphi and Search & Destroy, against other players or AI bots, with leaderboards and match replays.
+
+**How to Play:** Best with keyboard and mouse; controllers and touch controls are also supported. Quick Play starts a match with bots, so you can jump in alone. The game shows its key bindings in its settings and manuals.
+
+[▶ Play Game](https://washoi.net/)
+
+---
+
+## Wizardos
+
+<img src="../games/wizardos/images/thumb.jpg" alt="Wizardos thumbnail" width="200">
+
+**Category:** Action
+
+Real-time multiplayer wizard battles in blocky voxel arenas. Cast Fire, Ice, Wind, Light, Toxic and Earth spells that combine with each other, such as a fireball turning a tornado into a fire tornado. Modes include Team Deathmatch, Free-for-All, 1v1 duels and boss fights, plus a block-by-block map editor.
+
+**How to Play:** Join a match from the menu and cast spells at the other wizards. Works on computers, phones and tablets. The game shows its controls on screen.
+
+[▶ Play Game](https://wizardos.io/)
 
 ---
 

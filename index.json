@@ -2,12 +2,13 @@
     "categories": [
         {
             "name": "Action",
-            "game_count": 4,
+            "game_count": 5,
             "games": [
                 "dasher-3d",
                 "huss-valley-game",
                 "keep-out",
-                "tunnel-rush"
+                "tunnel-rush",
+                "wizardos"
             ]
         },
         {
@@ -45,7 +46,7 @@
         },
         {
             "name": "FPS",
-            "game_count": 12,
+            "game_count": 13,
             "games": [
                 "3d-tank-battle",
                 "bullet-force",
@@ -58,7 +59,8 @@
                 "pixel-warfare",
                 "shell-shockers",
                 "venge-io",
-                "war-brokers"
+                "war-brokers",
+                "washiki-washoi"
             ]
         },
         {
@@ -151,8 +153,9 @@
         },
         {
             "name": "Shooter",
-            "game_count": 2,
+            "game_count": 3,
             "games": [
+                "driftborn",
                 "freeze-out",
                 "sky-critters"
             ]
@@ -168,6 +171,13 @@
             ]
         },
         {
+            "name": "Sports",
+            "game_count": 1,
+            "games": [
+                "one-fairway-golf"
+            ]
+        },
+        {
             "name": "Strategy",
             "game_count": 1,
             "games": [
@@ -176,8 +186,9 @@
         },
         {
             "name": "Survival",
-            "game_count": 1,
+            "game_count": 2,
             "games": [
+                "full-send-survive",
                 "hollowlands"
             ]
         }
@@ -304,6 +315,16 @@
             "thumbnail": "\/games\/drift-hunters\/images\/thumb.jpg"
         },
         {
+            "id": "driftborn",
+            "title": "Driftborn",
+            "description": "A single-player space shooter across twenty-six connected sectors, with two enemy factions, named boss ships that each have attack patterns to learn, and ship builds made from hulls, equipment and technologies. An arcade cabinet mode adds eight vertical-scrolling stages and a daily run with a global board.",
+            "url": "https:\/\/driftborn.space\/",
+            "category": "Shooter",
+            "how_to_play": "Plays best with mouse and keyboard in a desktop browser; touch works on recent phones and tablets. No account is needed to play. The game shows its controls on screen.",
+            "screenshot": "\/games\/driftborn\/screenshots\/driftborn-2026-11-27T21-07-48-774Z.jpg",
+            "thumbnail": "\/games\/driftborn\/images\/thumb.jpg"
+        },
+        {
             "id": "farm-clash-3d",
             "title": "Farm Clash 3D",
             "description": "A unique third-person shooter set in a colorful farm environment. Battle against other players using farm-themed weapons and characters in various game modes. Features team-based gameplay, multiple maps, and a lighthearted, humorous approach to the shooter genre.",
@@ -352,6 +373,16 @@
             "how_to_play": "Works with keyboard and mouse, touch or a gamepad. Click or tap to throw a snowball, and hold to wind up a longer throw. Choose Quick match to jump in, or Training to practise first.",
             "screenshot": "\/games\/freeze-out\/screenshots\/freeze-out-2026-11-11T04-58-45-686Z.jpg",
             "thumbnail": "\/games\/freeze-out\/images\/thumb.jpg"
+        },
+        {
+            "id": "full-send-survive",
+            "title": "Full Send Survive",
+            "description": "A horde survival game where you pick one of nine classes and try to last ten minutes against hundreds of enemies, choosing an upgrade every time you level up, before the zone's boss arrives. Ten zones, harder Heroic and Nightmare tiers, and a weekly challenge leaderboard.",
+            "url": "https:\/\/fullsendsurvive.com\/",
+            "category": "Survival",
+            "how_to_play": "Best on a computer. The first three zones and one hero need no account; signing in with Discord unlocks the rest and co-op for up to four players. The game shows its controls on screen.",
+            "screenshot": "\/games\/full-send-survive\/screenshots\/full-send-survive-2026-11-27T21-07-58-041Z.jpg",
+            "thumbnail": "\/games\/full-send-survive\/images\/thumb.jpg"
         },
         {
             "id": "heraclos",
@@ -532,6 +563,16 @@
             "how_to_play": "Swipe left or right to change lanes, swipe up to jump, and swipe down to slide. On desktop, use arrow keys or WASD. Collect candies for points and power-ups to help you progress further. Avoid obstacles to keep running as long as possible!",
             "screenshot": "\/games\/om-nom-run\/screenshots\/om-nom-run-2025-05-18T03-44-22-687Z.jpg",
             "thumbnail": "\/games\/om-nom-run\/images\/thumb.jpg"
+        },
+        {
+            "id": "one-fairway-golf",
+            "title": "One Fairway Golf",
+            "description": "A free 3D golf game with three 18-hole courses full of terrain, water and forest, a daily hole that everyone plays once, and real-time multiplayer in stroke play, match play and 2v2 alternate shot. Currently in open beta.",
+            "url": "https:\/\/onefairwaygolf.com\/",
+            "category": "Sports",
+            "how_to_play": "Start as a guest, no account needed. Hold and drag up anywhere, then let go to start the swing, and click again as the marker meets the gold line. Works with a mouse or touch.",
+            "screenshot": "\/games\/one-fairway-golf\/screenshots\/one-fairway-golf-2026-11-27T21-08-07-216Z.jpg",
+            "thumbnail": "\/games\/one-fairway-golf\/images\/thumb.jpg"
         },
         {
             "id": "outlier-unlimited-krillion",
@@ -782,6 +823,26 @@
             "how_to_play": "Choose Play Now under Web Edition. The first run downloads about 60 MB of game data. Start the campaign or a skirmish, build structures and factories, research upgrades and send your units to destroy the enemy base. Played with mouse and keyboard.",
             "screenshot": "\/games\/warzone-2100\/screenshots\/warzone-2100-2026-11-11T05-02-08-973Z.jpg",
             "thumbnail": "\/games\/warzone-2100\/images\/thumb.jpg"
+        },
+        {
+            "id": "washiki-washoi",
+            "title": "Washiki Washoi!",
+            "description": "A fast, colourful arena shooter in the Quake tradition, built on Babylon.js. Bunny hop, wall jump, ledge grab and slide through seventeen arenas in Duel, Free-for-All, Amphi and Search & Destroy, against other players or AI bots, with leaderboards and match replays.",
+            "url": "https:\/\/washoi.net\/",
+            "category": "FPS",
+            "how_to_play": "Best with keyboard and mouse; controllers and touch controls are also supported. Quick Play starts a match with bots, so you can jump in alone. The game shows its key bindings in its settings and manuals.",
+            "screenshot": "\/games\/washiki-washoi\/screenshots\/washiki-washoi-2026-11-27T21-08-19-494Z.jpg",
+            "thumbnail": "\/games\/washiki-washoi\/images\/thumb.jpg"
+        },
+        {
+            "id": "wizardos",
+            "title": "Wizardos",
+            "description": "Real-time multiplayer wizard battles in blocky voxel arenas. Cast Fire, Ice, Wind, Light, Toxic and Earth spells that combine with each other, such as a fireball turning a tornado into a fire tornado. Modes include Team Deathmatch, Free-for-All, 1v1 duels and boss fights, plus a block-by-block map editor.",
+            "url": "https:\/\/wizardos.io\/",
+            "category": "Action",
+            "how_to_play": "Join a match from the menu and cast spells at the other wizards. Works on computers, phones and tablets. The game shows its controls on screen.",
+            "screenshot": "\/games\/wizardos\/screenshots\/wizardos-2026-11-27T21-08-30-357Z.jpg",
+            "thumbnail": "\/games\/wizardos\/images\/thumb.jpg"
         },
         {
             "id": "xx142-b2-exe",

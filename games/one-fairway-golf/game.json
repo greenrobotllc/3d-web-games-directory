@@ -3,5 +3,7 @@
   "url": "https://onefairwaygolf.com/",
   "description": "A free 3D golf game with three 18-hole courses full of terrain, water and forest, a daily hole that everyone plays once, and real-time multiplayer in stroke play, match play and 2v2 alternate shot. Currently in open beta.",
   "how_to_play": "Start as a guest, no account needed. Hold and drag up anywhere, then let go to start the swing, and click again as the marker meets the gold line. Works with a mouse or touch.",
-  "category": "Sports"
+  "category": "Sports",
+  "thumbnail": "/games/one-fairway-golf/images/thumb.jpg",
+  "screenshot": "/games/one-fairway-golf/screenshots/one-fairway-golf-2026-11-27T21-08-07-216Z.jpg"
 }

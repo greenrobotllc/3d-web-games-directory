@@ -3,5 +3,7 @@
   "url": "https://washoi.net/",
   "description": "A fast, colourful arena shooter in the Quake tradition, built on Babylon.js. Bunny hop, wall jump, ledge grab and slide through seventeen arenas in Duel, Free-for-All, Amphi and Search & Destroy, against other players or AI bots, with leaderboards and match replays.",
   "how_to_play": "Best with keyboard and mouse; controllers and touch controls are also supported. Quick Play starts a match with bots, so you can jump in alone. The game shows its key bindings in its settings and manuals.",
-  "category": "FPS"
+  "category": "FPS",
+  "thumbnail": "/games/washiki-washoi/images/thumb.jpg",
+  "screenshot": "/games/washiki-washoi/screenshots/washiki-washoi-2026-11-27T21-08-19-494Z.jpg"
 }

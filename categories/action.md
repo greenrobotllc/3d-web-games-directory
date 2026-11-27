@@ -56,3 +56,17 @@ A fast-paced 3D tunnel avoidance game built with Babylon.js. Speed through color
 
 ---
 
+## Wizardos
+
+<img src="../games/wizardos/images/thumb.jpg" alt="Wizardos thumbnail" width="200">
+
+**Category:** Action
+
+Real-time multiplayer wizard battles in blocky voxel arenas. Cast Fire, Ice, Wind, Light, Toxic and Earth spells that combine with each other, such as a fireball turning a tornado into a fire tornado. Modes include Team Deathmatch, Free-for-All, 1v1 duels and boss fights, plus a block-by-block map editor.
+
+**How to Play:** Join a match from the menu and cast spells at the other wizards. Works on computers, phones and tablets. The game shows its controls on screen.
+
+[▶ Play Game](https://wizardos.io/)
+
+---
+
